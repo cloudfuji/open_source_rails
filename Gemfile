@@ -11,9 +11,9 @@ gem 'devise', ">=1.2.rc2"
 
 # Asset template engines
 gem 'haml-rails'
-gem 'fancy-buttons'
 gem 'sass-rails', :git => 'git://github.com/rails/sass-rails.git'
 gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
+gem 'fancy-buttons'
 
 # Asset template engines
 gem 'coffee-script'
