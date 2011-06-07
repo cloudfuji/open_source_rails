@@ -36,6 +36,8 @@ group :test, :development do
   # Pretty printed test output
   gem 'turn', :require => false
 
+  gem 'machinist', '>= 2.0.0.beta2'
+
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'

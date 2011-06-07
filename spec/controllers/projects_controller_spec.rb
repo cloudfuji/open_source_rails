@@ -7,6 +7,9 @@ describe ProjectsController do
       get 'index'
       response.should be_success
     end
+
+    it "assigns all projects as @projects" do
+    end
   end
 
   describe "GET 'edit'" do
