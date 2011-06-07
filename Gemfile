@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'devise', ">=1.2.rc2"
 
+gem 'acts-as-taggable-on'
+
 # Asset template engines
 gem 'haml-rails'
 gem 'sass-rails', :git => 'git://github.com/rails/sass-rails.git'
