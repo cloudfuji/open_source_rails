@@ -8,6 +8,7 @@ gem 'rails', '3.1.0.rc1'
 gem 'sqlite3'
 
 gem 'devise', ">=1.2.rc2"
+gem 'devise_cas_authenticatable' #, :git=>'https://github.com/nbudin/devise_cas_authenticatable.git'
 
 gem 'acts-as-taggable-on'
 
