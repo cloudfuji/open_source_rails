@@ -8,4 +8,14 @@ NOTES
     * Filed an issue here https://github.com/nbudin/devise_cas_authenticatable/issues/13
 
 
+Localhost development
+-----------------------
+
+The below steps are written with reference from http://code.google.com/p/rubycas-server/wiki/Downloads?tm=2
+
+* Install the "rubycas-server" rubygem.
+
+* When rubycas-server is run, it tries to create a config file in /etc/rubycas-server/config.yml and a log file in /var/log/casserver.log. For this it is recommended to run rubycas-server as root. But it also allows specifying the config file via 
+
+
  

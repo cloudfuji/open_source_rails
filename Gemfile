@@ -37,6 +37,9 @@ group :test, :development do
   
   gem 'spork'
 
+  # rubycas-server from Bushido's fork
+  gem 'rubycas-server', :git => 'git://github.com/Bushido/rubycas-server.git'
+
   # Pretty printed test output
   gem 'turn', :require => false
 
