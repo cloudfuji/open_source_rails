@@ -1,0 +1,18 @@
+server: webrick
+port: 6789
+ssl_cert: ssl.pem
+
+development:
+  adapter: sqlite3
+  database: cas-server.sqlite3
+  pool: 5
+  timeout: 5000
+
+log:
+  file: cas-server.log
+  level: INFO
+
+theme: simple
+organization: BushidoTest
+default_locale: en
+
