@@ -4,6 +4,12 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  
+  if Rails.env.production?
+    config.cas_base_url = ""
+  else
+    config.cas_base_url = ""
+  end
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"

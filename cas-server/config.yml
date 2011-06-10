@@ -1,12 +1,15 @@
 server: webrick
 port: 6789
-ssl_cert: ssl.pem
+ssl_cert: demo_ssl.pem
 
 development:
   adapter: sqlite3
   database: cas-server.sqlite3
   pool: 5
   timeout: 5000
+
+authenticator:
+  class: CASSERVER::Authenticators::Google
 
 log:
   file: cas-server.log
