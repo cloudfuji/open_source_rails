@@ -21,3 +21,29 @@ The below steps are written with reference from http://code.google.com/p/rubycas
 
     $ CONFIG_FILE=/path/to/config.yml rubycas-server
 
+
+
+...after everything
+
+setting up devise with CAS auth
+========================================
+
+* Add the gem "devise_cas_authenticatable" to your Gemfile.
+
+* Install devise
+
+    rails g devise:install
+
+* Generate your devise model, say User, and remove the options :database_authenticatable and :recoverable from the _devise_ method. Add :cas_authenticatable.
+
+    devise :cas_authenticatable  # other options
+
+* Now open up the migration for the devise model and remove _t.database_authenticatable_ and add _t.cas_authenticatable_. You'll have to remove the index for the email field. Also add the index for the usernames column if required (optional)
+
+    add_index :users, :username, :unique=>true
+
+* Now find the devise initializer at _config/initializers/devise.rb_ and set the CAS base url.
+
+    config.cas_base_url = "your CAS base URL here"
+
+
