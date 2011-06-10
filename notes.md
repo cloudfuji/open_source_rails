@@ -17,7 +17,7 @@ The below steps are written with reference from http://code.google.com/p/rubycas
 
     gem 'rubycas-server', :git => 'git://github.com/Bushido/rubycas-server.git'
 
-* To run rubycas-server you need to specify a config file to it.
+* To run rubycas-server you need to specify a config file to it. Unfortunately, rubycas-server will force you to create a config file in /etc, in order to avoid it, you can setup the environment variable CONFIG_FILE so that it's available to the rubycas-server. An easier way is to just set the env var before running the command. It can be done by the following.
 
+    $ CONFIG_FILE=/path/to/config.yml rubycas-server
 
- 
