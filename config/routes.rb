@@ -1,8 +1,8 @@
 Osrails::Application.routes.draw do
 
-  root :to => "main#index"
-
   devise_for :users
+
+  root :to => "main#index"
 
   resources :projects
 

@@ -8,7 +8,7 @@ Devise.setup do |config|
   if Rails.env.production?
     config.cas_base_url = ""
   else
-    config.cas_base_url = ""
+    config.cas_base_url = "https://localhost"
   end
 
   # Configure the class responsible to send e-mails.
