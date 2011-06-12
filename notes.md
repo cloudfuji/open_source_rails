@@ -1,31 +1,41 @@
 NOTES
 ======
 
-* Add the devise_cas_authenticatable gem to the Gemfile. Do not try a manual install via the command line, it throws an error.
-
-    * It seems to have a cyclic dependency - https://gist.github.com/1013812
-    * And that's because the gemspec of the gem is messed up - https://github.com/nbudin/devise_cas_authenticatable/blob/master/devise_cas_authenticatable.gemspec (the current version is tagged 1.0.0.aplha9 but that has the same messed up gemspec)
-    * Filed an issue here https://github.com/nbudin/devise_cas_authenticatable/issues/13
+* Filed an issue here https://github.com/nbudin/devise_cas_authenticatable/issues/13 and got the cyclic dependency issue fixed.
 
 
 Localhost development
 -----------------------
 
-The below steps are written with reference from http://code.google.com/p/rubycas-server/wiki/Downloads?tm=2
-
 * Install the "rubycas-server". For now, we suggest using the Bushido fork of the gem if you are using Rails 3.1. The repo is at http://github.com/Bushido/rubycas-server. To use the gem from this repo, add this to your Gemfile.
 
     gem 'rubycas-server', :git => 'git://github.com/Bushido/rubycas-server.git'
 
-* To run rubycas-server you need to specify a config file to it. Unfortunately, rubycas-server will force you to create a config file in /etc, in order to avoid it, you can setup the environment variable CONFIG_FILE so that it's available to the rubycas-server. An easier way is to just set the env var before running the command. It can be done by the following.
+* To run rubycas-server you need to specify a config file and create an SSL certificate. To make things easier, clone the repo at <https://github.com/Bushido/cas-credentials>, which should give you a sample config file and a demo SSL cert.
 
-    $ CONFIG_FILE=/path/to/config.yml rubycas-server
+* Also clone the rails app at https://github.com/Bushido/cas-auth-app and do a 
+
+    rake db:migrate
+
+on it. Then signup for a user account at /users/sign_up
+
+* Note the full path of the development database of that app above. THe database is at db/development.sqlite3
+
+* Open up the config file in the cloned cas-credentials repo and change the path options. You'll have to specify the paths where the cas-server database (uses sqlite3) and the log file are to be created. Also change the path to the development database of the cas-auth app.
+
+* Copy the config file to /etc/rubycas-server/config.yml
+
+* start the rubycas-server
+
+    # use sudo
+    sudo rubycas-server
+    
+    # if you have rvm, use rvmsudo
+    rvmsudo rubycas-server
 
 
 
-...after everything
-
-setting up devise with CAS auth
+Setting up devise with CAS auth (client)
 ========================================
 
 * Add the gem "devise_cas_authenticatable" to your Gemfile.
@@ -38,12 +48,15 @@ setting up devise with CAS auth
 
     devise :cas_authenticatable  # other options
 
-* Now open up the migration for the devise model and remove _t.database_authenticatable_ and add _t.cas_authenticatable_. You'll have to remove the index for the email field. Also add the index for the usernames column if required (optional)
+* Now open up the migration for the devise model and remove _t.database_authenticatable_ and add _t.cas_authenticatable_. You'll have to remove the index for the email field. Also add the index for the username column if required (optional)
 
     add_index :users, :username, :unique=>true
 
-* Now find the devise initializer at _config/initializers/devise.rb_ and set the CAS base url.
+* Now find the devise initializer at _config/initializers/devise.rb_ and set the CAS base url. For localhost testing, with default optinos for rubycas-server, the config would look like
 
-    config.cas_base_url = "your CAS base URL here"
+    config.cas_base_url = "https://localhost"
 
+It will not conflict with anything you are running in port-80 (like apache, etc), because this runs no port 443 (ssl)
+
+* Use the normal Devise url helpers, you are good to go :)
 
