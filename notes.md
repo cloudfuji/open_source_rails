@@ -8,6 +8,10 @@ This section helps you simulate Bushido authentication on your localhost for you
 
 * Clone the rails app at https://github.com/Bushido/cas-auth-app
 
+* Update the git module rubycas-server
+
+    $ git submodule update
+
 * To install dependencies and migrate the database, run the following
 
     $ bundle install
