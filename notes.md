@@ -29,7 +29,7 @@ in the application's directory.
     $ rails s -p 3001
 in the cloned repo directory. This will run the CAS server in the port 3001 and therefore not disturbing any other rails dev servers you've started or will start later :)
 
-* Then signup for a user account at http://localhost:3001/users/sign_up and thats how you sign up for more accounts when you need them :)
+* Then signup for a user account at https://localhost:3001/users/sign_up and thats how you sign up for more accounts when you need them :)
 
 * Just leave this rails app running when you test your applications. And follow the next section to setup user authentication for your Bushido Rails app in the next section.
 
