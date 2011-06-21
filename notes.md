@@ -33,7 +33,7 @@ This section helps you simulate Bushido authentication on your localhost for you
 
 * Then signup for a user account at <https://localhost:3001/users/sign_up> and thats how you sign up for more accounts when you need them :)
 
-* Just leave this rails app running when you test your applications. And follow the next section to setup user authentication for your Bushido Rails app in the next section.
+* Just leave this rails app running when you test your applications. And follow the next section to setup user authentication for your Bushido Rails app.
 
 
 Setting up devise with CAS auth (client) in third party Bushido Rails applications
