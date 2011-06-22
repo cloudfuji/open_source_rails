@@ -1,7 +1,7 @@
 require 'rubygems'
-require 'spork'
+# require 'spork'
 
-Spork.prefork do
+# Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
@@ -28,7 +28,7 @@ Spork.prefork do
     # instead of true.
     config.use_transactional_fixtures = true
   end  
-end
+#end
 
-Spork.each_run do
-end
+#Spork.each_run do
+#end

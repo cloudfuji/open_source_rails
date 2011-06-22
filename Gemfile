@@ -35,7 +35,6 @@ gem 'jquery-rails'
 
 group :test, :development do
   
-  gem 'spork'
 
   # rubycas-server from Bushido's fork
   gem 'rubycas-server', :git => 'git://github.com/Bushido/rubycas-server.git'
@@ -43,10 +42,9 @@ group :test, :development do
   # Pretty printed test output
   gem 'turn', :require => false
 
-  gem 'forgery'
-  gem 'machinist', '>= 2.0.0.beta2'
-
   gem 'rspec-rails'
   gem 'cucumber-rails'
+  # gem 'machinist', '>= 2.0.0.beta2'
+  # gem 'forgery', :git=>"https://github.com/sevenwire/forgery.git"
   gem 'capybara'
 end
