@@ -5,15 +5,16 @@ describe ProjectsController do
   describe "GET 'index'" do
     it "assigns all projects as @projects" do
       #TODO should change when paginating project list
-      
+       
       get :index
       assigns(:projects).should eq([project])
     end
   end
 
   describe "GET 'edit'" do
-    it "should be successful" do
-      get 'edit'
+    it "assigns the requested project as @project" do
+      
+      get 'edit', :id => 
       response.should be_success
     end
   end
