@@ -12,7 +12,11 @@ This section helps you simulate Bushido authentication on your localhost for you
 
         $ git submodule update
 
-* To install dependencies and migrate the database, run the following
+* cd into the cas-auth-app/lib/rubycas-server directory. And install the dependencies by running bundle
+
+        $ bundle
+
+* Get back to the root directory of the app. To install dependencies and migrate the database, run the following
 
         $ bundle install
         $ rake db:migrate
