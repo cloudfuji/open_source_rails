@@ -40,10 +40,10 @@ group :test, :development do
   # Pretty printed test output
   gem 'turn', :require => false
 
+  gem 'autotest'
   gem 'rspec-rails'
   gem 'cucumber-rails'
   # gem 'factory_girl_rails'
   gem 'fabrication'
-  gem 'forgery', :git=>"https://github.com/sevenwire/forgery.git"
-  gem 'capybara'
+  gem 'forgery'
 end

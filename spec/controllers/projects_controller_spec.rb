@@ -3,9 +3,15 @@ require 'spec_helper'
 describe ProjectsController do
 
   describe "GET 'index'" do
+  
+    it "should be sucessfull" do
+      get :index
+      response.should be_successful
+    end
+
     it "assigns all projects as @projects" do
-      #TODO should change when paginating project list
-      project = Fabricate(:project)
+      project = Project.new
+      project.save
       get :index
       assigns(:projects).should eq([project])
     end
@@ -40,19 +46,19 @@ describe ProjectsController do
     describe "with valid params" do
       it "creates a new project" do
         expect {
-          post :create, :project => Fabricate(:project).build.attributes
+          post :create, :project => Fabricate.build(:project).attributes
           assigns(:project).should eq(project)
         }.to change(Project, :count).by(1)
       end
 
       it "redirects to the created project" do
-        post :create, :project => Fabricate(:project).build.attributes
+        post :create, :project => Fabricate.build(:project).attributes
         response.should redirect_to(Project.last)
       end
 
       it "assigns a newly created project as @project" do
-        post :create, :project => Fabricate(:project).build.attributes
-        assigns(:project).should be_a(Project) #we know this right?
+        post :create, :project => Fabricate.build(:project).attributes
+        assigns(:project).should be_a(Project)
         assigns(:project).should be_persisted
       end
     end

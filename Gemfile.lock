@@ -17,16 +17,10 @@ GIT
       sass (>= 3.1.3)
       sprockets (>= 2.0.0.beta.9)
 
-GIT
-  remote: https://github.com/sevenwire/forgery.git
-  revision: 750b1fe153d6da49491a862e7306eb7dbd6a9fff
-  specs:
-    forgery (0.3.8)
-      nokogiri (~> 1.4)
-
 GEM
   remote: http://rubygems.org/
   specs:
+    ZenTest (4.5.0)
     actionmailer (3.1.0.rc4)
       actionpack (= 3.1.0.rc4)
       mail (~> 2.3.0)
@@ -60,6 +54,8 @@ GEM
     acts-as-taggable-on (2.0.6)
     ansi (1.2.5)
     arel (2.1.1)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
     bcrypt-ruby (2.1.4)
     builder (3.0.0)
     capybara (1.0.0)
@@ -103,6 +99,8 @@ GEM
     fancy-buttons (1.1.1)
       compass (>= 0.11)
     ffi (1.0.9)
+    forgery (0.3.8)
+      nokogiri (~> 1.4)
     fssm (0.2.7)
     gherkin (2.4.1)
       json (>= 1.4.6)
@@ -203,7 +201,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  capybara
+  autotest
   coffee-script
   compass!
   cucumber-rails
@@ -211,7 +209,7 @@ DEPENDENCIES
   devise_cas_authenticatable
   fabrication
   fancy-buttons
-  forgery!
+  forgery
   haml-rails
   jquery-rails
   rails (= 3.1.0.rc4)
