@@ -4,5 +4,5 @@ Fabricator(:project) do
   about { Forgery::LoremIpsum.paragraph }
   homepage_url { Forgery::Internet.domain_name }
   source_url { Forgery::Internet.domain_name }
-  authors
+  authors!(:count=>2)
 end
