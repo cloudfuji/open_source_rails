@@ -47,7 +47,6 @@ describe ProjectsController do
       it "creates a new project" do
         expect {
           post :create, :project => Fabricate.build(:project).attributes
-          assigns(:project).should eq(project)
         }.to change(Project, :count).by(1)
       end
 
