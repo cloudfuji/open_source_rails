@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc1'
+gem 'rails', '3.1.0.rc4'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -35,16 +35,15 @@ gem 'jquery-rails'
 
 group :test, :development do
   
-
-  # rubycas-server from Bushido's fork
-  gem 'rubycas-server', :git => 'git://github.com/Bushido/rubycas-server.git'
+  gem 'spork'
 
   # Pretty printed test output
   gem 'turn', :require => false
 
   gem 'rspec-rails'
   gem 'cucumber-rails'
-  # gem 'machinist', '>= 2.0.0.beta2'
-  # gem 'forgery', :git=>"https://github.com/sevenwire/forgery.git"
+  # gem 'factory_girl_rails'
+  gem 'fabrication'
+  gem 'forgery', :git=>"https://github.com/sevenwire/forgery.git"
   gem 'capybara'
 end
