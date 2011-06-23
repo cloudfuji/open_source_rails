@@ -6,3 +6,4 @@ Fabricator(:project) do
   source_url { Forgery::Internet.domain_name }
   authors!(:count=>2)
 end
+

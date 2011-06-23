@@ -42,6 +42,7 @@ group :test, :development do
 
   gem 'autotest'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'cucumber-rails'
   # gem 'factory_girl_rails'
   gem 'fabrication'
