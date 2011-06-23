@@ -18,6 +18,8 @@ gem 'sass-rails', :git => 'git://github.com/rails/sass-rails.git'
 gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
 gem 'fancy-buttons'
 
+gem 'sprockets', ">=2.0.0.beta10"
+
 # Asset template engines
 gem 'coffee-script'
 gem 'uglifier'
