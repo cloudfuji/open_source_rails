@@ -47,7 +47,7 @@ module Osrails
     config.assets.enabled = true
 
     config.generators do |g|
-      g.test_framework :rspec, :views => false
+      g.test_framework :rspec
       g.fixture_replacement :fabrication, :dir=>"spec/fabricators"
     end
 

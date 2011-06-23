@@ -61,6 +61,74 @@ describe ProjectsController do
         assigns(:project).should be_persisted
       end
     end
+    
+    describe "with invalid params" do
+      it "assigns to @project but unsaved" do
+        Project.any_instance.stub(:save).and_return(false)
+        post :create, :post=>{}
+        assigns(:project).should be_a_new(Project)
+      end
+
+      it "should render the new action" do
+        Project.any_instance.stub(:save).and_return(false)
+        post :create, :post=>{}
+        response.should render_template("new")
+      end
+    end
   end
+
+  describe "PUT 'update'" do
+    describe "with valid params" do
+      it "finds and assigns the project to @project" do
+        project = Fabricate :project
+        put :update, :id=>project.id, :project=>project.attributes
+        assigns(:project).should eq(project)
+      end
+
+      it "should update attributes" do
+        project = Fabricate :project
+        Project.any_instance.should_receive(:update_attributes).with(project.attributes)
+        put :update, :id=>project.id, :project=>project.attributes
+      end
+
+      it "redirects to the project page once updated" do
+        project = Fabricate :project
+        put :update, :id=>project.id, :project=>project.attributes
+        response.should redirect_to(project)
+      end
+    end
+  
+    describe "with invalid params" do
+      it "assigns project to @project" do
+        project = Fabricate :project
+        Project.any_instance.stub(:save).and_return(false)
+        put :update, :id=>project.id, :project=>{}
+        assigns(:project).should eq(project)
+      end
+
+      it "renders the 'edit' template" do
+        project = Fabricate :project
+        Project.any_instance.stub(:save).and_return(false)
+        put :update, :id=>project.id, :project=>{}
+        response.should render_template("edit")
+      end
+    end
+  end
+
+  describe "DELETE destroy" do
+    it "destroy the requested project" do
+      project = Fabricate :project
+      expect {
+        delete :destroy, :id=>project.id
+      }.to change(Project, :count).by(-1)
+    end
+    
+    it "redirects to the list of projects once deleted" do
+      project = Fabricate :project
+      delete :destroy, :id => project.id
+      response.should redirect_to(projects_url)
+    end
+  end
+
 
 end
