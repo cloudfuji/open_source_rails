@@ -3,15 +3,8 @@ require 'spec_helper'
 describe ProjectsController do
 
   describe "GET 'index'" do
-  
-    it "should be sucessfull" do
-      get :index
-      response.should be_successful
-    end
-
     it "assigns all projects as @projects" do
-      project = Project.new
-      project.save
+      project = Fabricate :project
       get :index
       assigns(:projects).should eq([project])
     end
@@ -129,6 +122,5 @@ describe ProjectsController do
       response.should redirect_to(projects_url)
     end
   end
-
 
 end
