@@ -13,5 +13,5 @@ class Project < ActiveRecord::Base
 
   validates :source_url,
             :presence => true,
-            :format => { :with =>/\A.+\.git\Z/i }
+            :format => { :with =>/\A(https:\/\/).+\.git\Z/i }
 end

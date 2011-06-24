@@ -29,7 +29,7 @@ describe Project do
       end
 
       it "invalid value" do
-        should validate_format_of(:source_url).not_with("some_random_string")
+        should validate_format_of(:source_url).not_with("git://gitsomething.com/project.git")
       end
     end
   end
