@@ -19,24 +19,15 @@ gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
 gem 'fancy-buttons'
 
 gem 'sprockets', ">=2.0.0.beta10"
-
-# Asset template engines
 gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test, :development do
   gem 'turn', :require => false
-
   gem 'spork'
   gem 'autotest'
   gem 'rspec-rails'

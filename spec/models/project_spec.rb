@@ -19,8 +19,18 @@ describe Project do
       should ensure_length_of(:short_desc).is_at_least(10)
     end
 
-    it "presence of source url" do
-      should validate_presence_of(:source_url)
+    describe "source_url" do
+      it "presence" do
+        should validate_presence_of(:source_url)
+      end
+    
+      it "valid value"  do
+        should validate_format_of(:source_url).with("https://github.com/bushido/opensourcerails.git")
+      end
+
+      it "invalid value" do
+        should validate_format_of(:source_url).not_with("some_random_string")
+      end
     end
   end
 

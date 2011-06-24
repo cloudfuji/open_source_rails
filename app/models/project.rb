@@ -11,6 +11,7 @@ class Project < ActiveRecord::Base
             :presence => true,
             :length => {:minimum => 10}
 
-  validates_presence_of :source_url
-   
+  validates :source_url,
+            :presence => true,
+            :format => { :with =>/\A.+\.git\Z/i }
 end
