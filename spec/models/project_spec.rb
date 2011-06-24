@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Project do
+
   describe "validates" do
     it "presence of title" do
       should validate_presence_of(:title)
@@ -22,4 +23,11 @@ describe Project do
       should validate_presence_of(:source_url)
     end
   end
+
+  describe "associations" do
+    it "has many authors" do
+      should have_many(:authors).dependent(:destroy)
+    end
+  end
+
 end
