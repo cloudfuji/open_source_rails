@@ -8,7 +8,7 @@ gem 'rails', '3.1.0.rc4'
 gem 'sqlite3'
 
 gem 'devise', ">=1.2.rc2"
-gem 'devise_cas_authenticatable' #, :git=>'https://github.com/nbudin/devise_cas_authenticatable.git'
+gem 'devise_cas_authenticatable'
 
 gem 'acts-as-taggable-on'
 
@@ -23,7 +23,6 @@ gem 'sprockets', ">=2.0.0.beta10"
 # Asset template engines
 gem 'coffee-script'
 gem 'uglifier'
-
 gem 'jquery-rails'
 
 # Use unicorn as the web server
@@ -36,17 +35,13 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test, :development do
-  
-  gem 'spork'
-
-  # Pretty printed test output
   gem 'turn', :require => false
 
+  gem 'spork'
   gem 'autotest'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'cucumber-rails'
-  # gem 'factory_girl_rails'
   gem 'fabrication'
   gem 'forgery'
 end
