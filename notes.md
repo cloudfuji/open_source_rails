@@ -10,6 +10,7 @@ This section helps you simulate Bushido authentication on your localhost for you
 
 * Update the git module rubycas-server
 
+        $ git submodule init
         $ git submodule update
 
 * cd into the cas-auth-app/lib/rubycas-server directory. And install the dependencies by running bundle
