@@ -10,6 +10,7 @@ This section helps you simulate Bushido authentication on your localhost for you
 
 * Update the git module rubycas-server
 
+        $ git submodule init
         $ git submodule update
 
 * cd into the cas-auth-app/lib/rubycas-server directory. And install the dependencies by running bundle
@@ -51,13 +52,27 @@ Setting up devise with CAS auth (client) in third party Bushido Rails applicatio
     
         $ rails g devise:install
 
-* Generate your devise model, say User, and remove the options :database_authenticatable and :recoverable from the _devise_ method. Add :cas_authenticatable.
+* Generate your devise model
+        $ rails g devise User
+      
+* Edit the migration in `db/migrate/XXXX_devise_create_users.rb` to use t.cas_authenticatable:
+    class DeviseCreateUsers < ActiveRecord::Migration
+      def self.up
+        create_table(:users) do |t|
+          t.cas_authenticatable
+    
+          t.string :username
+    
+        ...
+
+        add_index :users, :username, :unique=>true
+
+        ...
+
+* Edit the model file `app/models/user.rb`, remove :database_authenticatable and :recoverable from the _devise_ method. Add :cas_authenticatable.
 
         devise :cas_authenticatable  # and other options
 
-* Now open up the migration for the devise model and remove _t.database_authenticatable_ and add _t.cas_authenticatable_. You'll have to remove the index for the email field. Also add the index for the username column if required (optional)
-
-        add_index :users, :username, :unique=>true
 
 * Now find the devise initializer at _config/initializers/devise.rb_ and set the CAS base url. For localhost testing, with default options for rubycas-server, the config would look like
   

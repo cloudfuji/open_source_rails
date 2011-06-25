@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "associations" do
+    it "has many bookmarks" do
+      should have_many(:bookmarks)
+    end
+  end
 end
