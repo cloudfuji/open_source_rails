@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self 
+*/
+
+@import "base";
+@import "compass/layout";
+@import "compass/css3";
+@import "fancy-buttons";
+
+@include blueprint;
+@include sticky-footer(30px, ".wrapper", ".wrapper_footer", "footer");
+
+$dark_brown: #CCC;
+$light_brown: #000;
+
+body {
+  background-image:url('/assets/page_bg.png'); 
+  margin: 0 auto;
+}
+
+.header_bg {
+  position: absolute;
+  z-index: -10;
+  margin-top: 25px;
+  left: 0px;
+  background: $dark_brown;
+  height: 30px;
+  width: 100%;
+}
+
+.wrapper {
+  @include container;
+
+  header {
+    @include column(16, true);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    .site_meta {
+      @include column(4);
+    }
+
+    .nav {
+      @include column(12, true);
+      text-align: right;
+      a {
+        color: $light_brown;
+        text-decoration: none;
+        margin-left: 50px;
+      }
+    }
+  }
+
+  .notice {
+  
+  }
+
+  .alert {
+  
+  }
+}
+
+footer {
+  width: 100%;
+  background: $dark_brown;
+  .fwrap {
+    width: 940px;
+    margin: 0px auto;
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
