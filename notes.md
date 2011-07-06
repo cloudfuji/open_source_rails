@@ -6,18 +6,22 @@ Localhost development setup
  
 This section helps you simulate Bushido authentication on your localhost for your development purposes.
 
-* Clone the rails app at https://github.com/Bushido/cas-auth-app
+* Clone the rails app at <https://github.com/Bushido/kagi>
 
 * Update the git module rubycas-server
 
         $ git submodule init
         $ git submodule update
 
-* cd into the cas-auth-app/lib/rubycas-server directory. And install the dependencies by running bundle
+* cd into the kagi/lib/rubycas-server directory. And install the dependencies by running bundle
 
         $ bundle
 
-* Get back to the root directory of the app. To install dependencies and migrate the database, run the following
+* Get back to the root directory of kagi.
+
+        $ cd ../../
+
+* To install dependencies and migrate the database, run the following
 
         $ bundle install
         $ rake db:migrate
@@ -28,9 +32,11 @@ This section helps you simulate Bushido authentication on your localhost for you
 
 * Copy the file cas/config.yml.sample as /etc/rubycas-server/config.yml
 
-* Edit the paths in the config file at /etc/rubycas-server/config.yml. All paths refer to the directories within the cloned cas-auth-app
+        cp kagi/cas/config.yml
 
-* Start the rails development server for cas-auth-app by running
+* Edit the paths in the config file at /etc/rubycas-server/config.yml. All paths refer to the directories within the cloned kagi
+
+* Start the rails development server for kagi by running
 
         $ rails s -p 3001
 
@@ -82,4 +88,7 @@ Setting up devise with CAS auth (client) in third party Bushido Rails applicatio
             config.cas_base_url = "https://localhost:3001/cas"
         end
 
-* Use the normal Devise url helpers, you are good to go :)
+* Use the normal Devise url helpers, you are good to go. For login, use the usual devise path `new_user_session_path` and for logout, use the path `destroy_user_session_path`. For example in erb views,
+
+        <%= link_to "Login", new_user_session_path %>
+        <%= link_to "Logout", destroy_user_session_path %>

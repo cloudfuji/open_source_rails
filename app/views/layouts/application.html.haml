@@ -1,24 +1,34 @@
 !!!
 %html
   %head
-    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'print.css', :media => 'print'
-    /[if IE]
-      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
-    /[if lt IE 7]
-      = stylesheet_link_tag 'ie6.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'application', :media => 'screen, projection'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
 
   %body
-  
-    -if user_signed_in?
-      = link_to "Logout", destroy_user_session_path
-    -else
-      = link_to "Login", new_user_session_path
+    .header_bg
+    .wrapper
+      %header
+        .site_logo
+          = image_tag "logo.png"
+        .site_tag Only the best
+        .nav
+          = link_to "Submit", new_project_path
+          -if user_signed_in?
+            = link_to "Sign out", destroy_user_session_path
+          -else
+            = link_to "Sign in", new_user_session_path
+            = link_to "Sign up", "http://bushi.do/users/sign_up"
 
-    %p{:class=>"notice"}
-      = notice
-    %p{:class=>"alert"}
-      = alert
-    = yield
-
+      - unless notice.nil?
+        %p{:class=>"notice"}
+          = notice
+      - unless alert.nil?
+        %p{:class=>"alert"}
+          = alert
+      
+      = yield
+    %footer
+      .fwrap
+        Powered by Bushido | Special thanks to 
+        =link_to "@railsjedi", "http://twitter.com/railsjedi"
