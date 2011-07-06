@@ -49,7 +49,7 @@ body {
     .site_tag {
       @include column(3);
       margin-top: 30px;
-      color: $tan;
+      color: $beige;
       font-size: 150%;
     }
     .nav {
@@ -58,7 +58,7 @@ body {
       height: 100px;
       text-align: right;
       a {
-        color: $tan;
+        color: $beige;
         text-decoration: none;
         margin-left: 50px;
       }
@@ -76,14 +76,14 @@ footer {
   width: 100%;
   background: $brown;
   .fwrap {
-    color: $tan;
+    color: $beige;
     width: 940px;
     margin: 0px auto;
     text-align: right;
     padding-top: 5px;
     padding-bottom: 5px;
     a {
-      color: $tan;
+      color: $beige;
     }
   }
 }
