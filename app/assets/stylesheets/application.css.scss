@@ -37,11 +37,14 @@ body {
   @include container;
   @include showgrid;
 
+  /* you'll have to negate the top margin
+   *  to accomodate the sticky-footer
+   */
   margin-bottom: -$top_margin;
 
 
   header {
-    @include column(16, true);
+    @include column(16);
     margin-bottom: 20px;
     .site_logo {
       @include column(5);
