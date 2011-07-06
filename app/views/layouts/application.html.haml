@@ -9,8 +9,9 @@
     .header_bg
     .wrapper
       %header
-        .site_meta
-          OpenSourceRails
+        .site_logo
+          = image_tag "logo.png"
+        .site_tag Only the best
         .nav
           = link_to "Submit", new_project_path
           -if user_signed_in?
@@ -29,4 +30,5 @@
       = yield
     %footer
       .fwrap
-        Powered by Bushido | Special thanks to @railsjedi
+        Powered by Bushido | Special thanks to 
+        =link_to "@railsjedi", "http://twitter.com/railsjedi"

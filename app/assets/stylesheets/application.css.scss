@@ -13,8 +13,11 @@
 @include blueprint;
 @include sticky-footer(30px, ".wrapper", ".wrapper_footer", "footer");
 
-$dark_brown: #CCC;
-$light_brown: #000;
+$brown: #4C2D00;
+$beige: #F9F8DE;
+$tan: #EFD58C;
+
+$top_margin: 30px;
 
 body {
   background-image:url('/assets/page_bg.png'); 
@@ -24,29 +27,38 @@ body {
 .header_bg {
   position: absolute;
   z-index: -10;
-  margin-top: 25px;
-  left: 0px;
-  background: $dark_brown;
+  margin-top: $top_margin;
+  background: $brown;
   height: 30px;
   width: 100%;
 }
 
 .wrapper {
   @include container;
+  @include showgrid;
+
+  margin-bottom: -$top_margin;
+
 
   header {
     @include column(16, true);
-    margin-top: 30px;
     margin-bottom: 20px;
-    .site_meta {
-      @include column(4);
+    .site_logo {
+      @include column(5);
     }
-
+    .site_tag {
+      @include column(3);
+      margin-top: 30px;
+      color: $tan;
+      font-size: 150%;
+    }
     .nav {
-      @include column(12, true);
+      @include column(8, true);
+      margin-top: 35px;
+      height: 100px;
       text-align: right;
       a {
-        color: $light_brown;
+        color: $tan;
         text-decoration: none;
         margin-left: 50px;
       }
@@ -54,22 +66,24 @@ body {
   }
 
   .notice {
-  
   }
 
   .alert {
-  
   }
 }
 
 footer {
   width: 100%;
-  background: $dark_brown;
+  background: $brown;
   .fwrap {
+    color: $tan;
     width: 940px;
     margin: 0px auto;
     text-align: right;
     padding-top: 5px;
     padding-bottom: 5px;
+    a {
+      color: $tan;
+    }
   }
 }
