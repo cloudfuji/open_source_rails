@@ -9,7 +9,7 @@ describe Project do
       end
 
       it "length of title" do
-        should ensure_length_of(:title).is_at_least(1).is_at_most(100)
+        should validate_length_of(:title, :minimum=>1, :maximum=>100)
       end
     end
 
@@ -19,7 +19,7 @@ describe Project do
       end
 
       it "length" do
-        should ensure_length_of(:short_desc).is_at_least(10)
+        should validate_length_of(:short_desc, :minimum=>10)
       end
     end
 
@@ -29,11 +29,11 @@ describe Project do
       end
     
       it "valid value"  do
-        should validate_format_of(:source_url).with("https://github.com/bushido/opensourcerails.git")
+        should allow_values_for(:source_url, "https://github.com/bushido/opensourcerails.git")
       end
 
       it "invalid value" do
-        should validate_format_of(:source_url).not_with("git://gitsomething.com/project.git")
+        should_not allow_values_for(:source_url, "git://gitsomething.com/project.git")
       end
     end
   end
