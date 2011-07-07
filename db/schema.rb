@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110624165048) do
+ActiveRecord::Schema.define(:version => 20110707123048) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110624165048) do
     t.string   "source_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved"
   end
 
   create_table "sessions", :force => true do |t|

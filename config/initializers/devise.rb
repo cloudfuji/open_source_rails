@@ -4,7 +4,9 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
-  
+ 
+  config.encryptor = :sha1
+
   if Rails.env.production?
     config.cas_base_url = ""
   else
