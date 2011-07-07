@@ -37,6 +37,7 @@ describe ProjectsController do
   end
 
   describe "POST 'create'" do
+    # TODO test if approved is false
     describe "with valid params" do
       it "creates a new project" do
         expect {
