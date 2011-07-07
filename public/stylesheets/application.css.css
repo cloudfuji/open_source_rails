@@ -2,12 +2,12 @@
 Syntax error: File to import not found or unreadable: base.
               Load paths:
                 Compass::SpriteImporter
-                /Users/kevisazombie/Projects/Web/bushido_opensourcerails/public/stylesheets/sass
-                /Users/kevisazombie/Projects/Web/bushido_opensourcerails/app/assets/stylesheets
-                /Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/bundler/gems/compass-8d2ad57e186a/frameworks/blueprint/stylesheets
-                /Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/bundler/gems/compass-8d2ad57e186a/frameworks/compass/stylesheets
-                /Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/fancy-buttons-1.1.1/lib/stylesheets
-        on line 8 of /Users/kevisazombie/Projects/Web/bushido_opensourcerails/app/assets/stylesheets/application.css.scss
+                /Users/akashmanohar/code/bushido_opensourcerails/public/stylesheets/sass
+                /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets
+                /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/bundler/gems/compass-8d2ad57e186a/frameworks/blueprint/stylesheets
+                /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/bundler/gems/compass-8d2ad57e186a/frameworks/compass/stylesheets
+                /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/fancy-buttons-1.1.1/lib/stylesheets
+        on line 8 of /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets/application.css.scss
 
 3:  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
 4:  * the top of the compiled file, but it's generally better to create a new file per style scope.
@@ -15,83 +15,83 @@ Syntax error: File to import not found or unreadable: base.
 6: */
 7: 
 8: @import "base";
-9: @import "compass/layout";
-10: @import "compass/css3";
-11: @import "fancy-buttons";
-12: 
-13: @include blueprint;
+9: @import "compass/reset";
+10: @import "compass/layout";
+11: @import "compass/css3";
+12: @import "fancy-buttons";
+13: 
 
 Backtrace:
-/Users/kevisazombie/Projects/Web/bushido_opensourcerails/app/assets/stylesheets/application.css.scss:8
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/import_node.rb:64:in `rescue in import'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/import_node.rb:42:in `import'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/import_node.rb:25:in `imported_file'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:148:in `rescue in visit_import'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:153:in `visit_import'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/tree/root_node.rb:20:in `render'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/engine.rb:291:in `_render'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/engine.rb:239:in `block in render'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/util.rb:297:in `silence_sass_warnings'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/engine.rb:239:in `render'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:175:in `each'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:173:in `each'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin.rb:81:in `update_stylesheets'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin.rb:54:in `check_for_updates'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/sass-3.1.3/lib/sass/plugin/rack.rb:51:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/warden-1.0.4/lib/warden/manager.rb:35:in `block in call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/warden-1.0.4/lib/warden/manager.rb:34:in `catch'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/warden-1.0.4/lib/warden/manager.rb:34:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/etag.rb:23:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/conditionalget.rb:25:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/head.rb:14:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/flash.rb:243:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/session/abstract/id.rb:195:in `context'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/session/abstract/id.rb:190:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/cookies.rb:321:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/activerecord-3.1.0.rc4/lib/active_record/query_cache.rb:54:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/activerecord-3.1.0.rc4/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:81:in `run_callbacks'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/reloader.rb:68:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/sendfile.rb:102:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/railties-3.1.0.rc4/lib/rails/rack/logger.rb:13:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/methodoverride.rb:24:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/runtime.rb:17:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/activesupport-3.1.0.rc4/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/lock.rb:34:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/static.rb:53:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/railties-3.1.0.rc4/lib/rails/engine.rb:438:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/railties-3.1.0.rc4/lib/rails/rack/content_length.rb:16:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/railties-3.1.0.rc4/lib/rails/rack/log_tailer.rb:14:in `call'
-/Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/rack-1.3.0/lib/rack/handler/webrick.rb:59:in `service'
-/Users/kevisazombie/.rvm/rubies/ruby-1.9.2-p180-patched/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
-/Users/kevisazombie/.rvm/rubies/ruby-1.9.2-p180-patched/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
-/Users/kevisazombie/.rvm/rubies/ruby-1.9.2-p180-patched/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+/Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets/application.css.scss:8
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/import_node.rb:64:in `rescue in import'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/import_node.rb:42:in `import'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/import_node.rb:25:in `imported_file'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:148:in `rescue in visit_import'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:153:in `visit_import'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/tree/root_node.rb:20:in `render'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/engine.rb:291:in `_render'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/engine.rb:239:in `block in render'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/util.rb:297:in `silence_sass_warnings'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/engine.rb:239:in `render'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:175:in `each'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:173:in `each'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/sass-3.1.3/lib/sass/plugin/rack.rb:51:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/warden-1.0.4/lib/warden/manager.rb:35:in `block in call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/warden-1.0.4/lib/warden/manager.rb:34:in `catch'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/warden-1.0.4/lib/warden/manager.rb:34:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/etag.rb:23:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/conditionalget.rb:25:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/session/abstract/id.rb:195:in `context'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/session/abstract/id.rb:190:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/cookies.rb:321:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/activerecord-3.1.0.rc4/lib/active_record/query_cache.rb:54:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/activerecord-3.1.0.rc4/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/activesupport-3.1.0.rc4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/sendfile.rb:102:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/railties-3.1.0.rc4/lib/rails/rack/logger.rb:13:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/runtime.rb:17:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/activesupport-3.1.0.rc4/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/lock.rb:34:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/railties-3.1.0.rc4/lib/rails/engine.rb:438:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/railties-3.1.0.rc4/lib/rails/rack/content_length.rb:16:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/railties-3.1.0.rc4/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/rack-1.3.0/lib/rack/handler/webrick.rb:59:in `service'
+/Users/akashmanohar/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/akashmanohar/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/akashmanohar/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: base.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/kevisazombie/Projects/Web/bushido_opensourcerails/public/stylesheets/sass\A                 /Users/kevisazombie/Projects/Web/bushido_opensourcerails/app/assets/stylesheets\A                 /Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/bundler/gems/compass-8d2ad57e186a/frameworks/blueprint/stylesheets\A                 /Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/bundler/gems/compass-8d2ad57e186a/frameworks/compass/stylesheets\A                 /Users/kevisazombie/.rvm/gems/ruby-1.9.2-p180-patched@opensourcerails/gems/fancy-buttons-1.1.1/lib/stylesheets\A         on line 8 of /Users/kevisazombie/Projects/Web/bushido_opensourcerails/app/assets/stylesheets/application.css.scss\A \A 3:  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at\A 4:  * the top of the compiled file, but it's generally better to create a new file per style scope.\A 5:  *= require_self \A 6: */\A 7: \A 8: @import \"base\";\A 9: @import \"compass/layout\";\A 10: @import \"compass/css3\";\A 11: @import \"fancy-buttons\";\A 12: \A 13: @include blueprint;"; }
+  content: "Syntax error: File to import not found or unreadable: base.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/akashmanohar/code/bushido_opensourcerails/public/stylesheets/sass\A                 /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/bundler/gems/compass-8d2ad57e186a/frameworks/blueprint/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/bundler/gems/compass-8d2ad57e186a/frameworks/compass/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/fancy-buttons-1.1.1/lib/stylesheets\A         on line 8 of /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets/application.css.scss\A \A 3:  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at\A 4:  * the top of the compiled file, but it's generally better to create a new file per style scope.\A 5:  *= require_self \A 6: */\A 7: \A 8: @import \"base\";\A 9: @import \"compass/reset\";\A 10: @import \"compass/layout\";\A 11: @import \"compass/css3\";\A 12: @import \"fancy-buttons\";\A 13: "; }

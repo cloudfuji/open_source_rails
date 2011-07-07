@@ -7,10 +7,8 @@ gem 'rails', '3.1.0.rc4'
 
 gem 'sqlite3'
 
-gem 'devise', '1.1.5'
-gem 'devise_cas_authenticatable', :git => "git@github.com:Bushido/devise_cas_authenticatable.git"
-
-
+gem 'devise'
+gem 'devise_cas_authenticatable'
 gem 'acts-as-taggable-on'
 
 # Asset template engines

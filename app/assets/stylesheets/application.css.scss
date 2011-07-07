@@ -6,12 +6,15 @@
 */
 
 @import "base";
+@import "compass/reset";
 @import "compass/layout";
 @import "compass/css3";
 @import "fancy-buttons";
 
 @include blueprint;
 @include sticky-footer(30px, ".wrapper", ".wrapper_footer", "footer");
+
+@include global-reset;
 
 $brown: #4C2D00;
 $beige: #F9F8DE;
