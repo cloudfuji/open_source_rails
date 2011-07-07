@@ -1,3 +1,7 @@
+<%- content_for :header do %>
+  <%= javascript_include_tag "nested_form" %>
+<% end %>
+
 <%= nested_form_for @project do |f| %>
 
   <h2>Fill out the below form to submit an application. All fields are necessary.</h2>
@@ -35,7 +39,7 @@
         <%= author_form.text_field :url %>
       </div>
     </div>
-  <%-end %>
+  <% end %>
   <div class="add_more"><%= f.link_to_add "Add author", :authors %></div>
 
   <div class="field">
@@ -52,4 +56,4 @@
     <%= f.submit "Submit application" %>
   </div>
 
-<%-end %>
+<% end %>
