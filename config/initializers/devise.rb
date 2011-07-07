@@ -4,8 +4,9 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
- 
-  config.encryptor = :sha1
+
+  # [NOTE] the new encryptor is bcrypt, we'll have to set it explicitly for god's sake
+  config.encryptor = :bcrypt
 
   if Rails.env.production?
     config.cas_base_url = ""
