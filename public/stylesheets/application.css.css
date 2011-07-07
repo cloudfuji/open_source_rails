@@ -15,11 +15,11 @@ Syntax error: File to import not found or unreadable: base.
 6: */
 7: 
 8: @import "base";
-9: @import "compass/reset";
-10: @import "compass/layout";
-11: @import "compass/css3";
-12: @import "fancy-buttons";
-13: 
+9: @import "compass/layout";
+10: @import "compass/css3";
+11: @import "fancy-buttons";
+12: 
+13: @include blueprint;
 
 Backtrace:
 /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets/application.css.scss:8
@@ -94,4 +94,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: base.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/akashmanohar/code/bushido_opensourcerails/public/stylesheets/sass\A                 /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/bundler/gems/compass-8d2ad57e186a/frameworks/blueprint/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/bundler/gems/compass-8d2ad57e186a/frameworks/compass/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/fancy-buttons-1.1.1/lib/stylesheets\A         on line 8 of /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets/application.css.scss\A \A 3:  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at\A 4:  * the top of the compiled file, but it's generally better to create a new file per style scope.\A 5:  *= require_self \A 6: */\A 7: \A 8: @import \"base\";\A 9: @import \"compass/reset\";\A 10: @import \"compass/layout\";\A 11: @import \"compass/css3\";\A 12: @import \"fancy-buttons\";\A 13: "; }
+  content: "Syntax error: File to import not found or unreadable: base.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/akashmanohar/code/bushido_opensourcerails/public/stylesheets/sass\A                 /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/bundler/gems/compass-8d2ad57e186a/frameworks/blueprint/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/bundler/gems/compass-8d2ad57e186a/frameworks/compass/stylesheets\A                 /Users/akashmanohar/.rvm/gems/ruby-1.9.2-p180@rails31/gems/fancy-buttons-1.1.1/lib/stylesheets\A         on line 8 of /Users/akashmanohar/code/bushido_opensourcerails/app/assets/stylesheets/application.css.scss\A \A 3:  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at\A 4:  * the top of the compiled file, but it's generally better to create a new file per style scope.\A 5:  *= require_self \A 6: */\A 7: \A 8: @import \"base\";\A 9: @import \"compass/layout\";\A 10: @import \"compass/css3\";\A 11: @import \"fancy-buttons\";\A 12: \A 13: @include blueprint;"; }

@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.authors.build
   end
 
   def edit

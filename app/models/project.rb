@@ -14,4 +14,6 @@ class Project < ActiveRecord::Base
   validates :source_url,
             :presence => true,
             :format => { :with =>/\A(https:\/\/).+\.git\Z/i }
+
+  accepts_nested_attributes_for :authors, :allow_destroy=>true
 end

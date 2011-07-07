@@ -5,7 +5,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
-  # [NOTE] the new encryptor is bcrypt, we'll have to set it explicitly for god's sake
+  # NOTE: the new encryptor is bcrypt, we'll have to set it explicitly for god's sake
   config.encryptor = :bcrypt
 
   if Rails.env.production?

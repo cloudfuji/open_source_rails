@@ -34,6 +34,8 @@ describe Project do
     end
   end
 
+  # TODO: test accepts_nested_attributs_for :authors
+
   describe "associations" do
     it "has many authors" do
       should have_many(:authors).dependent(:destroy)

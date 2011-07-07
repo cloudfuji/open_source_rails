@@ -11,6 +11,7 @@ describe ProjectsController do
   end
 
   describe "GET 'new'" do
+    # TODO test if one author is being built
     it "creates a new project and assigns it to @project" do
       get :new
       assigns(:project).should be_a_new(Project)
@@ -20,7 +21,7 @@ describe ProjectsController do
   describe "GET 'edit'" do
     it "assigns the requested project as @project" do
       project = Fabricate(:project)
-      
+       
       get 'edit', :id => project.id.to_s 
       assigns(:project).should eq(project)
     end

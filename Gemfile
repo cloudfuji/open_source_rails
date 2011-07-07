@@ -14,6 +14,8 @@ gem 'acts-as-taggable-on'
 # Asset template engines
 gem 'haml-rails'
 gem 'sass-rails', :git => 'git://github.com/rails/sass-rails.git'
+gem 'nested_form', :git=>"https://github.com/ryanb/nested_form.git"
+
 gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
 gem 'fancy-buttons'
 
