@@ -17,11 +17,7 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :authors, :allow_destroy=>true
 
-  # returns true if the project has been approved
-  def approved?
-    self.approved
-  end
-
+  # approved is a boolean field and approved? is made available by rails
   # returns true if the project is not approved
   def not_approved?
     !self.approved?
