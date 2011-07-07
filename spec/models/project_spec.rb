@@ -51,12 +51,6 @@ describe Project do
   end
 
   describe "custom methods" do
-    it "project#approved? should return true if the project is approved" do
-      project = Fabricate(:project)
-      project.update_attribute :approved, true
-      project.approved?.should be_true
-    end
-
     it "project#not_approved? should return true if the project is not approved" do
       project = Fabricate(:project)
       project.not_approved?.should be_true
