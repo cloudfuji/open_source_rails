@@ -43,7 +43,7 @@ body {
 
 
   header {
-    @include column(16);
+    @include column(16, true);
     margin-bottom: 20px;
     .site_logo {
       @include column(5);
