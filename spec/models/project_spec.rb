@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Project do
 
   describe "validates" do
-    context "title" do
+    describe "title" do
       it "presence of title" do
         should validate_presence_of(:title)
       end
@@ -13,8 +13,8 @@ describe Project do
       end
     end
 
-    context do "short description" do
-      it "presense" do
+    describe "short description" do
+      it "presence" do
         should validate_presence_of(:short_desc)
       end
 
@@ -23,7 +23,7 @@ describe Project do
       end
     end
 
-    context "source_url" do
+    describe "source_url" do
       it "presence" do
         should validate_presence_of(:source_url)
       end

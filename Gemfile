@@ -32,7 +32,7 @@ group :test, :development do
   gem 'spork'
   gem 'autotest'
   gem 'rspec-rails'
-  gem 'remarkable'
+  gem 'remarkable_activerecord', ">=4.0.0.alpha"
   gem 'cucumber-rails'
   gem 'fabrication'
   gem 'forgery'
