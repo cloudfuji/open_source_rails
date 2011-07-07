@@ -32,7 +32,7 @@ group :test, :development do
   gem 'spork'
   gem 'autotest'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'remarkable'
   gem 'cucumber-rails'
   gem 'fabrication'
   gem 'forgery'
