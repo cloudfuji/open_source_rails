@@ -1,0 +1,57 @@
+<%- content_for :header do %>
+  <%= javascript_include_tag "nested_form" %>
+<% end %>
+
+<%= nested_form_for @project do |f| %>
+
+  <div class="field">
+    <%= f.label :title, "Name" %>:
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :short_desc, "Short Description" %>:
+    <%= f.text_field :short_desc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :about, "About the application" %>:<br/>
+    <%= f.text_area :about %>
+  </div>
+
+  <div class="field">
+    <%= f.label :license %>:
+    <%= f.text_field :license %>
+  </div>
+
+  <h3>Authors</h3>
+
+  <%= f.fields_for :authors do |author_form|%>
+    <div class="author">
+      <div class="field">
+        <%= author_form.label :name %>:
+        <%= author_form.text_field :name %>
+      </div>
+      <div class="field">
+        <%= author_form.label :url %>:
+        <%= author_form.text_field :url %>
+      </div>
+    </div>
+  <% end %>
+  <div class="add_more"><%= f.link_to_add "Add author", :authors %></div>
+
+  <div class="field">
+    <%= f.label :homepage_url, "Project homepage URL" %>
+    <%= f.text_field :homepage_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_url, "Source URL (url of git repository)" %>
+    <%= f.text_field :source_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit application" %>
+  </div>
+
+<% end %>
