@@ -38,11 +38,40 @@ describe Project do
     end
   end
 
-  # TODO: test accepts_nested_attributs_for :authors
-
   describe "associations" do
     it "has many authors" do
       should have_many(:authors).dependent(:destroy)
+    end
+  end
+
+  describe "nested attributes" do
+    it "authors" do
+      should accept_nested_attributes_for(:authors, :allow_destroy=>true)
+    end
+  end
+
+  describe "custom methods" do
+    it "project#approved? should return true if the project is approved" do
+      project = Fabricate(:project)
+      project.update_attribute :approved, true
+      project.approved?.should be_true
+    end
+
+    it "project#not_approved? should return true if the project is not approved" do
+      project = Fabricate(:project)
+      project.not_approved?.should be_true
+    end
+
+    it "project#approve! should approve the project" do
+      project = Fabricate(:project)
+      project.approve!
+      project.approved?.should be_true
+    end
+
+    it "project#unapprove! should unapprove the project" do
+      project = Fabricate(:project)
+      project.unapprove!
+      project.approved?.should be_false
     end
   end
 
