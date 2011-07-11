@@ -56,6 +56,7 @@ body {
     }
     .nav {
       @include column(8, true);
+      width: 464px;
       margin-top: 35px;
       text-align: right;
       a {
