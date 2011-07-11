@@ -11,11 +11,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:id])
+    @project = Project.includes(:screenshots, :authors).find(params[:id])
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.includes(:screenshots, :authors).find(params[:id])
   end
 
   def create
