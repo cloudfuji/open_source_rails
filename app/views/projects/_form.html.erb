@@ -38,7 +38,22 @@
       </div>
     </div>
   <% end %>
-  <div class="add_more"><%= f.link_to_add "Add author", :authors %></div>
+  <div class="add_more">
+    <%= f.link_to_add "Add author", :authors %>
+  </div>
+
+  <h3>Screenshots</h3>
+
+  <%=f.fields_for :screenshots do |sh_form| %>
+    <div class="screenshot">
+      <div class="field">
+        <%= sh_form.file_field :image %>
+      </div>
+    </div>
+  <% end %>
+  <div class="add_more">
+    <%= f.link_to_add "Add screenshot", :screenshots %>
+  </div>
 
   <div class="field">
     <%= f.label :homepage_url, "Project homepage URL" %>

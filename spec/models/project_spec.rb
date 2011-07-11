@@ -52,6 +52,10 @@ describe Project do
     it "authors" do
       should accept_nested_attributes_for(:authors, :allow_destroy=>true)
     end
+
+    it "screenshots" do
+      should accept_nested_attributes_for(:screenshots, :allow_destroy=>true)
+    end
   end
 
   describe "custom methods" do
