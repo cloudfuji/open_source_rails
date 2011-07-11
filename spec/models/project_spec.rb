@@ -42,6 +42,10 @@ describe Project do
     it "has many authors" do
       should have_many(:authors).dependent(:destroy)
     end
+
+    it "has many screenshots" do
+      should have_many(:screenshots).dependent(:destroy)
+    end
   end
 
   describe "nested attributes" do
