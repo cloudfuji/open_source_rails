@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'devise_cas_authenticatable'
 gem 'acts-as-taggable-on'
+gem 'paperclip'
 
 # Asset template engines
 gem 'haml-rails'

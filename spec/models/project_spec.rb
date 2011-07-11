@@ -68,5 +68,4 @@ describe Project do
       project.approved?.should be_false
     end
   end
-
 end
