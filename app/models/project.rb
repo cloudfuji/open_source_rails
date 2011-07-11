@@ -1,6 +1,9 @@
 class Project < ActiveRecord::Base
 
   has_many :authors, :dependent => :destroy
+
+  has_many :screenshots, :dependent => :destroy
+  
   acts_as_taggable
 
   validates :title,
