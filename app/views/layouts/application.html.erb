@@ -8,12 +8,15 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]--> 
   <head>  
     <title>Open Source Rails</title> 
-    <link rel="stylesheet" type="text/css" href="/stylesheets/reset_styles.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />   
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	<script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
-	<script src="/javascript/slides.min.jquery.js"></script>
-	<script type="text/javascript">
+    <%= stylesheet_link_tag :reset_styles %>
+    <%= stylesheet_link_tag :main %>
+    <%= javascript_include_tag :application %>
+    <%= javascript_include_tag "jquery.easing.1.3.js" %>
+	<%= javascript_include_tag "jquery.slides.min.js" %>
+
+    <%= yield(:head) %>
+    
+    <script type="text/javascript">
 $(document).ready(function() {
 
 //When page loads...
@@ -45,6 +48,28 @@ return false;
 				hoverPause: true
 			});
 		});
+	</script>
+	<script type="text/javascript">
+	  function slideSwitch() {
+	  var $active = $('#slideshow IMG.active');
+
+	  if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+	  var $next =  $active.next().length ? $active.next()
+          : $('#slideshow IMG:first');
+
+	  $active.addClass('last-active');
+
+	  $next.css({opacity: 0.0})
+          .addClass('active')
+          .animate({opacity: 1.0}, 1000, function() {
+          $active.removeClass('active last-active');
+          });
+	  }
+
+	  $(function() {
+	  window.setInterval( slideSwitch, 5000 );
+	  });
 	</script>
   </head>
   <body>

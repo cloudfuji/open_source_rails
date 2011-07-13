@@ -12,13 +12,12 @@ gem 'devise_cas_authenticatable'
 gem 'acts-as-taggable-on'
 gem 'paperclip'
 
-# Asset template engines
-gem 'haml-rails'
-gem 'sass-rails', :git => 'git://github.com/rails/sass-rails.git'
-gem 'nested_form', :git=>"https://github.com/ryanb/nested_form.git"
+# NOTES meta_search prerelease is required for activeadmin
+gem "meta_search",    '>= 1.1.0.pre'
+gem 'activeadmin', :git=>"https://github.com/gregbell/active_admin/", :branch=>"rails-3-1"
 
-gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
-gem 'fancy-buttons'
+# Asset template engines
+gem 'nested_form', :git=>"https://github.com/ryanb/nested_form.git"
 
 gem 'sprockets', ">=2.0.0.beta10"
 gem 'coffee-script'
