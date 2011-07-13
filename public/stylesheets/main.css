@@ -285,7 +285,49 @@ p.info_blue {
 /*
         Tabs
 */
-#tab_ribon {
+#bottom_ribbon {
+    z-index:-200;
+    top:475px;
+    width:956px;
+    height:48px;
+    position:absolute;
+
+}
+.bottom_left {
+    float:left;
+    width:500px
+    height:48px;
+}
+.bottom_right {
+    float:right;
+    width:500px;
+    height:48px;
+}
+.bot_ribbon_left {
+    float:left;
+    width:25px;
+    height:48px;
+    background:url("../images/bottom-ribbon-left.png") no-repeat;;
+}
+.bot_ribbon_right {
+    float:right;
+    width:25px
+    height:48px;
+    background:url("../images/bottom-ribbon-right.png") no-repeat;
+}
+#bot_ribbon_mid {
+    width:175px;
+    height:48px;
+    margin:0 auto;
+    background:url("../images/bottom-ribbon.png") no-repeat;
+}
+.bot_ribbon_fill {
+    float:left;
+    width:365px;
+    height:50px;
+    background:url("../images/tab.png");
+}
+#tab_ribbon {
     width:956px;
     height:50px;
     position:absolute;
@@ -413,7 +455,7 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 .slides_container a {
     width:950px;
     height:360px;
-    display:block;
+
 }
 
 .slides_container a img {
@@ -473,6 +515,32 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 
 .pagination li.current a {
     background-position:0 -21px;
+}
+/*Screenshots slideshow*/
+#slideshow {
+    position:relative;
+    height:250px;
+}
+
+#slideshow IMG {
+    border: 1px solid #000;
+    border-radius: 10px;
+    moz-border-radius: 10px;
+    webkit-border-radius: 10px;
+    position:absolute;
+    width:920px;
+    height:400px;
+    top:80px;
+    left:18px;
+    z-index:8;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
 }
 
 

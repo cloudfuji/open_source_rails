@@ -1,3 +1,25 @@
+<script type="text/javascript">
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+
+    $active.addClass('last-active');
+
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+window.setInterval( slideSwitch, 5000 );
+});
+</script>
 	<div id="app_holder">
 	  <div id="feature">
 	  </div>
@@ -14,8 +36,7 @@
 	</div>
 	<!--start of showcase-->
 	<div id="showcase_holder">
-	  <div id="tab_ribon">
-
+	  <div id="tab_ribbon">
 	    <div class="ribbon_left">
 	      <div class="ribbon_fill"></div>
 	      <div class="ribbon_triangle"></div>
@@ -32,6 +53,11 @@
 	  </ul>
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
+	      <div id="slideshow">
+		<img src="/images/img1.jpg" alt="" class="active" />
+		<img src="/images/img2.jpg" alt="" />
+		<img src="/images/img3.jpg" alt="" />
+	      </div>
 	    </div>
 	    <div id="tab2" class="tab_content">
 	      <div id="showcase_padd">
@@ -100,5 +126,18 @@
 	      </div>
 	    </div>
 	  </div>
+<!--still working on
+	  <div id="bottom_ribbon">
+	    <div class="bottom_left">
+	      <div class="bot_ribbon_left"></div>
+	      <div class="bot_ribbon_fill"></div>
+	    </div>
+	    <div id="bot_ribbon_mid"></div>
+	    <div class="bottom_right">
+	      <div class="bot_ribbon_right"></div>
+	      <div class="bot_ribbon_fill"</div>
+            </div>
+	</div>
+-->
 	</div>
 <!--end of showcase-->
