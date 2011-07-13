@@ -17,6 +17,7 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem 'activeadmin', :git=>"https://github.com/gregbell/active_admin/", :branch=>"rails-3-1"
 
 # Asset template engines
+gem 'sass-rails', "~> 3.1.0.rc"
 gem 'nested_form', :git=>"https://github.com/ryanb/nested_form.git"
 
 gem 'sprockets', ">=2.0.0.beta10"
