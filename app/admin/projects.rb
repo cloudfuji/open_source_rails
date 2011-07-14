@@ -14,6 +14,29 @@ ActiveAdmin.register Project do
     end
   end
 
+  form do |f|
+    f.inputs "Details" do
+      f.input :title
+      f.input :approved
+      f.input :short_desc
+      f.input :about
+      f.input :homepage_url
+      f.input :source_url
+      f.input :license
+    end
+
+    f.has_many :authors do |a|
+      if !a.object.id.nil?
+        a.input :_destroy, :as=>:boolean, :label=>"delete"
+      end
+      a.inputs :name, :url
+    end
+    
+    f.has_many :screenshots do |s|
+      s.inputs :image
+    end
+  end
+
   show do
     div do 
       "Title: " + project.title
@@ -40,7 +63,7 @@ ActiveAdmin.register Project do
     end
     
     div do
-      raw("Homepage: " + link_to(project.homepage_url, ("http://" + project.homepage_url)))
+      raw("Homepage: " + link_to(project.homepage_url, project.homepage_url))
     end
     
     div do
