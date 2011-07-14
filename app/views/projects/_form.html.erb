@@ -42,6 +42,11 @@
     <%= f.link_to_add "Add author", :authors %>
   </div>
 
+  <div class="field">
+    <%= f.label :thumbnail %>: 
+    <%= f.file_field :thumbnail %>
+  </div>
+
   <h3>Screenshots</h3>
 
   <%=f.fields_for :screenshots do |sh_form| %>
