@@ -37,10 +37,12 @@ ActiveAdmin.register Project do
    
     f.inputs do
       f.has_many :screenshots do |s|
-        if !s.object.id.nil?
+        unless s.object.id.nil?
           s.input :_destroy, :as=>:boolean, :label=>"delete"
+          s.form_buffers.last << "<image src='#{s.object.image.url(:full)}'/>"
+        else
+          s.input :image
         end
-        s.inputs :image
       end
     end
 
