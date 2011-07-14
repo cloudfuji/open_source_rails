@@ -19,6 +19,8 @@ TODO
 
 * 404
 
+* style the comma seperated author list on projects#show
+
 * How do we select featured apps?
 Have apps in a list (FeaturedApp model) called Featured apps and edit the list manualy every week by adding/deleting apps to it?
 
