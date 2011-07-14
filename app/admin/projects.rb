@@ -15,26 +15,49 @@ ActiveAdmin.register Project do
   end
 
   show do
-    div do
-      project.id
-    end
     div do 
-      project.title
+      "Title: " + project.title
+    end
+
+    div do
+      if project.approved?
+        "Approved"
+      else
+        "Not approved"
+      end
+    end
+
+    div do
+      "Short description: " + project.short_desc
+    end
+
+    div do 
+      "About: " + project.about
+    end
+
+    div do
+      "License: " + project.license
+    end
+    
+    div do
+      raw("Homepage: " + link_to(project.homepage_url, ("http://" + project.homepage_url)))
+    end
+    
+    div do
+      "Source: "+ project.source_url
+    end
+
+    div do
+      hr
+      h2 do
+        "Authors"
+      end
     end
     div do
-      project.approved
-    end
-    div do
-      project.short_desc
-    end
-    div do
-      project.license
-    end
-    div do
-      project.homepage_url
-    end
-    div do
-      project.source_url
+      hr
+      h2 do
+        "Screenshots"
+      end
     end
   end
 end
