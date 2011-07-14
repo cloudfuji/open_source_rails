@@ -1,6 +1,13 @@
 opensourcerails
 ================
 
+Local setup
+------------
+
+1.) clone the repo and cd into it
+2.) rake db:migrate
+3.) ./setup.sh
+
 TODO
 -----
 
