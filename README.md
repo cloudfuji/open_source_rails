@@ -21,6 +21,8 @@ TODO
 
 * JSON requests for the landing page's slider. The one on /projects
 
+* margin below the slider's navigation on projects#show
+
 * style the comma seperated author list on projects#show
 
 * How do we select featured apps?
