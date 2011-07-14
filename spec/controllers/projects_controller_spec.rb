@@ -18,15 +18,6 @@ describe ProjectsController do
     end
   end
 
-  describe "GET 'edit'" do
-    it "assigns the requested project as @project" do
-      project = Fabricate(:project)
-       
-      get 'edit', :id => project.id.to_s 
-      assigns(:project).should eq(project)
-    end
-  end
-
   describe "GET 'show'" do
     it "assigns the requested project as @project" do
       project = Fabricate(:project)
@@ -71,58 +62,5 @@ describe ProjectsController do
       end
     end
   end
-
-  describe "PUT 'update'" do
-    describe "with valid params" do
-      it "finds and assigns the project to @project" do
-        project = Fabricate :project
-        put :update, :id=>project.id, :project=>project.attributes
-        assigns(:project).should eq(project)
-      end
-
-      it "should update attributes" do
-        project = Fabricate :project
-        Project.any_instance.should_receive(:update_attributes).with(project.attributes)
-        put :update, :id=>project.id, :project=>project.attributes
-      end
-
-      it "redirects to the project page once updated" do
-        project = Fabricate :project
-        put :update, :id=>project.id, :project=>project.attributes
-        response.should redirect_to(project)
-      end
-    end
   
-    describe "with invalid params" do
-      it "assigns project to @project" do
-        project = Fabricate :project
-        Project.any_instance.stub(:save).and_return(false)
-        put :update, :id=>project.id, :project=>{}
-        assigns(:project).should eq(project)
-      end
-
-      it "renders the 'edit' template" do
-        project = Fabricate :project
-        Project.any_instance.stub(:save).and_return(false)
-        put :update, :id=>project.id, :project=>{}
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroy the requested project" do
-      project = Fabricate :project
-      expect {
-        delete :destroy, :id=>project.id
-      }.to change(Project, :count).by(-1)
-    end
-    
-    it "redirects to the list of projects once deleted" do
-      project = Fabricate :project
-      delete :destroy, :id => project.id
-      response.should redirect_to(projects_url)
-    end
-  end
-
 end

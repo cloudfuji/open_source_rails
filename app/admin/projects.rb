@@ -21,6 +21,7 @@ ActiveAdmin.register Project do
       f.input :approved
       f.input :short_desc
       f.input :about
+      f.input :thumbnail
     end
 
     f.inputs  do
@@ -31,7 +32,7 @@ ActiveAdmin.register Project do
         a.inputs :name, :url
       end
     end
-   
+  
     f.inputs do
       f.has_many :screenshots do |s|
         unless s.object.id.nil?
@@ -91,6 +92,16 @@ ActiveAdmin.register Project do
         end
       end
     end
+
+    div do
+      h3 do
+        "Thumbnail"
+      end
+      div do
+        image_tag project.thumbnail.url(:large)
+      end
+    end
+
     div do
       hr
       h2 do

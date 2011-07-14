@@ -1,10 +1,9 @@
 class Project < ActiveRecord::Base
 
   has_many :authors, :dependent => :destroy
-
   has_many :screenshots, :dependent => :destroy
-  
-  acts_as_taggable
+ 
+  has_attached_file :thumbnail, :styles=>{:medium=>"100x100", :large=>"150x150"}
 
   validates :title,
             :presence => true,
