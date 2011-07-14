@@ -48,12 +48,26 @@
 		<div class="info_holder">
           <p class="info_brown">License: <%= @project.license %></p>
           <p class="info_brown">
-          <%- if @project.authors.count==1 %>
-            Author:
-          <%- else %>
-            Authors:
-          <% end %>
-          <%= @project.authors.join "," %>
+            <%- if @project.authors.count==1 %>
+              Author: 
+            <%- else %>
+              Authors: 
+            <%- end %>
+
+            <%- @last_author_id = @project.authors.last.id %>
+            <%- @project.authors.each do |a| %>
+              
+              <%- if a.url.nil? %>
+                <%= a.name %>
+              <%- else %>
+                <%= link_to a.name, a.url %>
+              <%- end %>
+
+              <%- unless @last_author_id == a.id %>
+                ,
+              <%- end %>
+
+            <%- end %>
           </p>
 		</div>
 		<div class="line_break">
