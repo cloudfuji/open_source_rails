@@ -8,6 +8,12 @@ Local setup
 2.) rake db:migrate
 3.) ./setup.sh
 
+Admin panel is at /admin
+username: admin@example.com
+password: password
+
+Those are default activeadmin credentials.
+
 TODO
 -----
 
