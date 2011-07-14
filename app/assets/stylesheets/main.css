@@ -287,13 +287,13 @@ p.info_blue {
         Tabs
 */
 #bottom_ribbon {
+    margin:0 0 0 -21px;
     z-index:-200;
     top:842px;
-    right:217px;
-    width:998px;
+    width:996px;
     height:57px;
     position:absolute;
-    background:url("../images/bottom-ribbon.png");
+    background:url("../images/bottom-ribbon.png") no-repeat;
 }
 #tab_ribbon {
     width:956px;

@@ -56,21 +56,23 @@ return false;
 	  if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
 
 	  var $next =  $active.next().length ? $active.next()
-          : $('#slideshow IMG:first');
+	  : $('#slideshow IMG:first');
 
 	  $active.addClass('last-active');
 
 	  $next.css({opacity: 0.0})
-          .addClass('active')
-          .animate({opacity: 1.0}, 1000, function() {
-          $active.removeClass('active last-active');
-          });
+	  .addClass('active')
+	  .animate({opacity: 1.0}, 1000, function() {
+	  $active.removeClass('active last-active');
+	  });
 	  }
 
 	  $(function() {
-	  window.setInterval( slideSwitch, 5000 );
-	  });
-	</script>
+	  if($('#slideshow img').length > 1){
+          window.setInterval( slideSwitch, 5000 );
+           }
+          });
+       </script>
   </head>
   <body>
     <div id="wrap">
