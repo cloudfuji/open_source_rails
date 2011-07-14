@@ -256,7 +256,8 @@ p.discription {
     padding:0 0 0 0;
     position:relative;
     width:995px;
-    height:535px;
+    height:580px;
+    background:url("../images/background-showcase.png") no-repeat;
 }
 .showcase_row {
     padding:0 0 25px 0;
@@ -287,45 +288,12 @@ p.info_blue {
 */
 #bottom_ribbon {
     z-index:-200;
-    top:475px;
-    width:956px;
-    height:48px;
+    top:842px;
+    right:217px;
+    width:998px;
+    height:57px;
     position:absolute;
-
-}
-.bottom_left {
-    float:left;
-    width:500px
-    height:48px;
-}
-.bottom_right {
-    float:right;
-    width:500px;
-    height:48px;
-}
-.bot_ribbon_left {
-    float:left;
-    width:25px;
-    height:48px;
-    background:url("../images/bottom-ribbon-left.png") no-repeat;;
-}
-.bot_ribbon_right {
-    float:right;
-    width:25px
-    height:48px;
-    background:url("../images/bottom-ribbon-right.png") no-repeat;
-}
-#bot_ribbon_mid {
-    width:175px;
-    height:48px;
-    margin:0 auto;
-    background:url("../images/bottom-ribbon.png") no-repeat;
-}
-.bot_ribbon_fill {
-    float:left;
-    width:365px;
-    height:50px;
-    background:url("../images/tab.png");
+    background:url("../images/bottom-ribbon.png");
 }
 #tab_ribbon {
     width:956px;
@@ -414,7 +382,6 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
     height:535px;
     padding:0 0 0 0;
     font-size: 1.2em;
-    background:url("../images/background-showcase.png") no-repeat;
 }
 /*
 	Slideshow
@@ -531,7 +498,7 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
     width:920px;
     height:400px;
     top:80px;
-    left:18px;
+    left:17px;
     z-index:8;
 }
 
