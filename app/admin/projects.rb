@@ -15,6 +15,7 @@ ActiveAdmin.register Project do
   end
 
   form do |f|
+    f.buttons
     f.inputs "Details" do
       f.input :title
       f.input :approved
@@ -25,15 +26,23 @@ ActiveAdmin.register Project do
       f.input :license
     end
 
-    f.has_many :authors do |a|
-      if !a.object.id.nil?
-        a.input :_destroy, :as=>:boolean, :label=>"delete"
+    f.inputs  do
+      f.has_many :authors do |a|
+        if !a.object.id.nil?
+          a.input :_destroy, :as=>:boolean, :label=>"delete"
+        end
+        a.inputs :name, :url
       end
-      a.inputs :name, :url
     end
-    
-    f.has_many :screenshots do |s|
-      s.inputs :image
+   
+    f.inputs do
+      f.has_many :screenshots do |s|
+        s.inputs :image
+      end
+    end
+
+    f.inputs do
+      f.buttons
     end
   end
 
@@ -80,6 +89,11 @@ ActiveAdmin.register Project do
       hr
       h2 do
         "Screenshots"
+      end
+      project.screenshots.each do |s|
+        div do
+          image_tag s.image.url(:full)
+        end
       end
     end
   end
