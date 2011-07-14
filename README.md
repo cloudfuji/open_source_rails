@@ -17,6 +17,8 @@ Those are default activeadmin credentials.
 TODO
 -----
 
+* 404
+
 * How do we select featured apps?
 Have apps in a list (FeaturedApp model) called Featured apps and edit the list manualy every week by adding/deleting apps to it?
 
