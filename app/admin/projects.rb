@@ -37,6 +37,9 @@ ActiveAdmin.register Project do
    
     f.inputs do
       f.has_many :screenshots do |s|
+        if !s.object.id.nil?
+          s.input :_destroy, :as=>:boolean, :label=>"delete"
+        end
         s.inputs :image
       end
     end
@@ -83,6 +86,11 @@ ActiveAdmin.register Project do
       hr
       h2 do
         "Authors"
+      end
+      project.authors.each do |a|
+        div do
+          a.name + ", " + a.url
+        end
       end
     end
     div do
