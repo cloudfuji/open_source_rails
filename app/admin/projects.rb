@@ -37,7 +37,7 @@ ActiveAdmin.register Project do
       f.has_many :screenshots do |s|
         unless s.object.id.nil?
           s.input :_destroy, :as=>:boolean, :label=>"delete"
-          s.form_buffers.last << "<image src='#{s.object.image.url(:full)}'/>"
+          s.form_buffers.last << "<image src='#{s.object.image.url(:large)}'/>"
         else
           s.input :image
         end
@@ -110,7 +110,7 @@ ActiveAdmin.register Project do
       end
       project.screenshots.each do |s|
         div do
-          image_tag s.image.url(:full)
+          image_tag s.image.url(:large)
         end
       end
     end
