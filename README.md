@@ -1,9 +1,15 @@
 opensourcerails
 ================
 
-* Uses jQuery and Rails jQuery-UJS  from asset pipeline. Check app/assets/javascripts/application.js
+TODO
+-----
 
-* Moved jquery.easing and jquery.slides to app/assets/javascripts
+* How do we select featured apps?
+Have apps in a list (FeaturedApp model) called Featured apps and edit the list manualy every week by adding/deleting apps to it?
 
-* Moved stylesheets (main and reset_styles) to app/assets/stylesheets
+* Similar apps section on project#show page
 
+* move images from public/images to app/assets/images. And also fix image paths in CSS.
+* validate attachment size, type, presence,
+* fix attachment upload field in projects#edit in the activeadmin panel
+* change all image tags to use rails image helpers
