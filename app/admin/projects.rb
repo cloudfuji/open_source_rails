@@ -94,7 +94,8 @@ ActiveAdmin.register Project do
     end
 
     div do
-      h3 do
+      hr
+      h2 do
         "Thumbnail"
       end
       div do

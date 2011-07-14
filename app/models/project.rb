@@ -3,7 +3,10 @@ class Project < ActiveRecord::Base
   has_many :authors, :dependent => :destroy
   has_many :screenshots, :dependent => :destroy
  
-  has_attached_file :thumbnail, :styles=>{:medium=>"100x100", :large=>"150x150"}
+  has_attached_file :thumbnail,
+                    :styles=>{:medium=>"100x100", :large=>"150x150"},
+                    :url => "/store/:attachment/:id/:style/:basename.:extension",  
+                    :path => ":rails_root/permanent/store/:attachment/:id/:style/:basename.:extension"
 
   validates :title,
             :presence => true,
