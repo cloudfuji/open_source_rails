@@ -21,9 +21,6 @@ ActiveAdmin.register Project do
       f.input :approved
       f.input :short_desc
       f.input :about
-      f.input :homepage_url
-      f.input :source_url
-      f.input :license
     end
 
     f.inputs  do
@@ -46,9 +43,8 @@ ActiveAdmin.register Project do
       end
     end
 
-    f.inputs do
-      f.buttons
-    end
+    f.inputs :homepage_url, :source_url, :license
+    f.buttons
   end
 
   show do
