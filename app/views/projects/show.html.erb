@@ -61,7 +61,7 @@
               <%- if a.url.nil? %>
                 <%= a.name %>
               <%- else %>
-                <%= link_to a.name, a.url %>
+                <%= link_to a.name, a.url, :style => "text-decoration:none;color:#003366" %>
               <%- end %>
 
               <%- unless @last_author_id == a.id %>

@@ -42,6 +42,13 @@ body {
     width:100%;
     background:#f9f8de url("../images/texture-beige.png");
 }
+.logo_link {
+    position: absolute;
+    display:block;
+    background:transparent;
+    height: 80px;
+    width:270px;
+}
 #header {
     padding-top:3px;
     width: 950px;
@@ -493,7 +500,6 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 }
 
 #slideshow IMG {
-    border: 1px solid #000;
     border-radius: 10px;
     moz-border-radius: 10px;
     webkit-border-radius: 10px;

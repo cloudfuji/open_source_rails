@@ -43,8 +43,6 @@ return false;
 			$('#slides').slides({
 				preload: true,
 				preloadImage: 'images/loading.gif',
-				play: 5000,
-				pause: 2500,
 				hoverPause: true
 			});
 		});
@@ -80,6 +78,7 @@ return false;
 	<div id="header_stripe"></div>
 <!--dont put shit in this div^ -->
 	<div id="header">
+<%= link_to "",  root_url, :class => "logo_link" %>
 <!--start of nav-->
         <ul id="list-nav"> 
 	  <li><a href="#">Sign Up</a></li> 
@@ -87,7 +86,7 @@ return false;
 	  <li><a href="/projects/new">Submit</a></li> 
 	</ul> 
 <!--end of nav--> 
-	  <p class="header">Only the best</p>
+         <p class="header">Only the best</p>
 	</div>
       </div>      
       <div id="main">
@@ -96,7 +95,7 @@ return false;
     </div>
     <div id="footer_stripe">
       <div id="footer">
-	<p>Powerd by Bushido | Special thanks to <a style="color:#f9f8de" href="http://twitter.com/#!/railsjedi">@railsjedi</a></p>
+	<p>Powered by Bushido | Special thanks to <a style="color:#f9f8de" href="http://twitter.com/#!/railsjedi">@railsjedi</a></p>
       </div>
     </div>
   </body>
