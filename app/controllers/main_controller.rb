@@ -1,5 +1,3 @@
 class MainController < ApplicationController
-  def index
-  end
-
+  # use this controller for everything static...
 end
