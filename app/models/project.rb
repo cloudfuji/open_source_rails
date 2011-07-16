@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
 
+  belongs_to :project_category
   has_many :authors, :dependent => :destroy
   has_many :screenshots, :dependent => :destroy
  
