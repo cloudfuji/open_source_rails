@@ -8,6 +8,8 @@ class Project < ActiveRecord::Base
                     :url => "/store/:attachment/:id/:style/:basename.:extension",  
                     :path => ":rails_root/permanent/store/:attachment/:id/:style/:basename.:extension"
 
+  acts_as_taggable_on
+
   validates :title,
             :presence => true,
             :length => {:within => 1..100}
