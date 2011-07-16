@@ -13,8 +13,8 @@ ActiveAdmin.register Project do
       project.project_category.name
     end
 
-    column "Git url" do |p|
-      p.source_url
+    column "Tags" do |p|
+      p.tag_list.join ", "
     end
   end
 
@@ -72,6 +72,10 @@ ActiveAdmin.register Project do
       else
         "Category: --nil--"
       end
+    end
+
+    div do
+      "Tags: " + project.tag_list.join ", "
     end
 
     div do
