@@ -9,6 +9,10 @@ ActiveAdmin.register Project do
       "Not approved"
     end
 
+    column "Category" do |p|
+      project.project_category.name
+    end
+
     column "Git url" do |p|
       p.source_url
     end
@@ -19,6 +23,7 @@ ActiveAdmin.register Project do
     f.inputs "Details" do
       f.input :title
       f.input :approved
+      f.input :project_category_id, :as=>:select, :collection => ProjectCategory.find(:all, :order=>"name ASC")
       f.input :short_desc
       f.input :about
       f.input :thumbnail
@@ -58,6 +63,14 @@ ActiveAdmin.register Project do
         "Approved"
       else
         "Not approved"
+      end
+    end
+
+    div do
+      unless project.project_category.nil? 
+        "Category: " + project.project_category.name
+      else
+        "Category: --nil--"
       end
     end
 
