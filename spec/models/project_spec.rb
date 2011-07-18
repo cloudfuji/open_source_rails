@@ -39,8 +39,8 @@ describe Project do
   end
 
   describe "associations" do
-    it "has many authors" do
-      should have_many(:authors).dependent(:destroy)
+    it "has one author" do
+      should have_one(:author).dependent(:destroy)
     end
 
     it "has many screenshots" do
