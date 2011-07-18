@@ -11,7 +11,9 @@ Devise.setup do |config|
   if Rails.env.production?
     config.cas_base_url = ""
   else
-    config.cas_base_url = "https://localhost:3001/cas"
+    config.cas_base_url = "https://auth.bushi.do/cas"
+    # use the below if you've a problem with above and setup Kagi - github.com/bushido/kagi
+    # config.cas_base_url = "https://localhost:3001/cas"
   end
 
   # Configure the class responsible to send e-mails.
