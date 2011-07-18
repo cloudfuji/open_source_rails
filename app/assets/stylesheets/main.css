@@ -129,9 +129,9 @@ ul#list-nav li.current a:link, ul#list-nav li.current a:visited{
 #feature_holder {
     margin-top:15px;
     padding:20px 0 20px 20px;
-    width:930px;
+    width:950px;
     height:175px;
-    background: url("../images/background-featured.png");
+    background: url("../images/background-featured.png") no-repeat;
 }
 #feature {
     padding:8px 0 0 8px;
@@ -183,19 +183,19 @@ p.feature_info {
 #app_holder {
     margin-top:15px;
     padding:20px 0 0 5px;
-    width:950px;
+    width:960px;
     height:175px;
  }
 #apps_holder {
-    padding:0 0 0 3px;
     width:960px;
     height:310px;
 }
 .app {
+    margin:0 -2px 0 0;
     float:left;
-    width:316px;
-    height:163px;
-    background: url("../images/app-background.png") no-repeat;
+    width:320px;
+    height:170px;
+    background: url("../images/applist-single-cell.png") no-repeat;
 }
 .app_logo {
     padding:7px 0 0 7px;
@@ -265,13 +265,13 @@ p.discription {
 #showcase_holder {
     padding:0 0 0 0;
     position:relative;
-    width:995px;
+    width:960px;
     height:580px;
     background:url("../images/background-showcase.png") no-repeat;
 }
 .showcase_row {
     padding:0 0 25px 0;
-    width:950px;
+    width:960px;
     height:140px;
 }
 .info_holder {
@@ -411,11 +411,11 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 */
 
 .slide_holder {
-    width:950px;
+    width:960px;
     height:360px;
 }
 .slides_container {
-    width:950px;
+    width:955px;
     overflow:hidden;
     position:relative;
     display:none;
@@ -430,7 +430,7 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 */
 
 .slides_container a {
-    width:950px;
+    width:960px;
     height:360px;
 
 }
