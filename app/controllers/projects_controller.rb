@@ -6,12 +6,12 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @project.authors.build
+    @project.build_author
     @project.screenshots.build
   end
 
   def show
-    @project = Project.includes(:screenshots, :authors).find(params[:id])
+    @project = Project.includes(:screenshots, :author).find(params[:id])
     unless @project.approved?
       redirect_to root_path, :notice=>"That project doesn't exist"
     end

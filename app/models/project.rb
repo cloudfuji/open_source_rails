@@ -23,7 +23,7 @@ class Project < ActiveRecord::Base
             :presence => true,
             :format => { :with =>/\A(https:\/\/).+\.git\Z/i }
 
-  accepts_nested_attributes_for :authors, :allow_destroy=>true
+  accepts_nested_attributes_for :author, :allow_destroy=>true
   accepts_nested_attributes_for :screenshots, :allow_destroy=>true
 
   # approved is a boolean field and approved? is made available by rails
