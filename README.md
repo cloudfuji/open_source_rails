@@ -12,7 +12,7 @@ Admin panel is at /admin
 username: admin@example.com
 password: password
 
-Those are default activeadmin credentials.
+Those are default activeadmin credentials for you local pleasure :) The online credentials are better.
 
 Tags are comma separated. Deleting a category will not delete the apps in the category. Did not add it just for safety.
 

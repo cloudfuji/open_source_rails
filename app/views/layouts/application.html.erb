@@ -75,27 +75,36 @@ return false;
   <body>
     <div id="wrap">
       <div id="header_container">
-	<div id="header_stripe"></div>
-<!--dont put shit in this div^ -->
-	<div id="header">
-<%= link_to "",  root_url, :class => "logo_link" %>
-<!--start of nav-->
-        <ul id="list-nav"> 
-	  <li><a href="#">Sign Up</a></li> 
-	  <li><a href="#">Sign In</a></li> 
-	  <li><a href="/projects/new">Submit</a></li> 
-	</ul> 
-<!--end of nav--> 
-         <p class="header">Only the best</p>
-	</div>
+	    <div id="header_stripe"></div>
+        <!--dont put shit in this div^ -->
+    
+        <div id="header">
+          <%= link_to "",  root_url, :class => "logo_link" %>
+          <!--start of nav-->
+          
+          <ul id="list-nav"> 
+            <li><a href="#">Sign Up</a></li>
+            <%- if user_signed_in? %>
+              <li><%= current_user.username %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path %></li>
+            <%- else %>
+              <li><%= link_to "Sign In", new_user_session_path %></li>
+            <%- end %>  
+            <li><a href="/projects/new">Submit</a></li> 
+	      </ul> 
+          <!--end of nav--> 
+          <p class="header">Only the best</p>
+  	    </div>
+
       </div>      
+      
       <div id="main">
-	<%= yield %>
+  	    <%= yield %>
       </div>
     </div>
     <div id="footer_stripe">
       <div id="footer">
-	<p>Powered by Bushido | Special thanks to <a style="color:#f9f8de" href="http://twitter.com/#!/railsjedi">@railsjedi</a></p>
+	    <p>Powered by Bushido | Special thanks to <a style="color:#f9f8de" href="http://twitter.com/#!/railsjedi">@railsjedi</a></p>
       </div>
     </div>
   </body>
