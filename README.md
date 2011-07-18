@@ -14,6 +14,8 @@ password: password
 
 Those are default activeadmin credentials.
 
+Tags are comma separated. Deleting a category will not delete the apps in the category. Did not add it just for safety.
+
 TODO
 -----
 
@@ -22,8 +24,6 @@ TODO
 * JSON requests for the landing page's slider. The one on /projects
 
 * margin below the slider's navigation on projects#show
-
-* style the comma seperated author list on projects#show
 
 * How do we select featured apps?
 Have apps in a list (FeaturedApp model) called Featured apps and edit the list manualy every week by adding/deleting apps to it?
