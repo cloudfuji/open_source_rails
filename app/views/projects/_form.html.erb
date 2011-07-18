@@ -24,23 +24,16 @@
     <%= f.text_field :license %>
   </div>
 
-  <h3>Authors</h3>
+  <h3>Author</h3>
 
-  <%= f.fields_for :authors do |author_form|%>
+  <%= f.fields_for :author do |author_form|%>
     <div class="author">
       <div class="field">
         <%= author_form.label :name %>:
         <%= author_form.text_field :name %>
       </div>
-      <div class="field">
-        <%= author_form.label :url %>:
-        <%= author_form.text_field :url %>
-      </div>
     </div>
   <% end %>
-  <div class="add_more">
-    <%= f.link_to_add "Add author", :authors %>
-  </div>
 
   <div class="field">
     <%= f.label :thumbnail %>: 

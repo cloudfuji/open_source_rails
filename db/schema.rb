@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110716104130) do
+ActiveRecord::Schema.define(:version => 20110718092556) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20110716104130) do
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
     t.integer  "project_category_id"
+    t.integer  "user_id"
   end
 
   create_table "screenshots", :force => true do |t|
