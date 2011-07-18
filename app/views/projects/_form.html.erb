@@ -2,7 +2,7 @@
   <%= javascript_include_tag "nested_form" %>
 <% end %>
 
-<%= nested_form_for @project do |f| %>
+<%= nested_form_for @project, :validate => true do |f| %>
 
   <div class="field">
     <%= f.label :title, "Name" %>:

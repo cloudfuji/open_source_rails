@@ -69,6 +69,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.1.9)
       ffi (~> 1.0.6)
+    client_side_validations (3.0.12)
     cocaine (0.1.0)
     coffee-script (2.2.0)
       coffee-script-source
@@ -229,6 +230,7 @@ DEPENDENCIES
   activeadmin!
   acts-as-taggable-on
   autotest
+  client_side_validations (= 3.0.12)
   coffee-script
   cucumber-rails
   devise

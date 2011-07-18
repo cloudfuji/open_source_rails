@@ -11,6 +11,7 @@ gem 'devise'
 gem 'devise_cas_authenticatable'
 gem 'acts-as-taggable-on'
 gem 'paperclip'
+gem 'client_side_validations', '3.0.12'
 
 # NOTES meta_search prerelease is required for activeadmin
 gem "meta_search",    '>= 1.1.0.pre'
