@@ -50,7 +50,7 @@ describe Project do
 
   describe "nested attributes" do
     it "authors" do
-      should accept_nested_attributes_for(:authors, :allow_destroy=>true)
+      should accept_nested_attributes_for(:author, :allow_destroy=>true)
     end
 
     it "screenshots" do
