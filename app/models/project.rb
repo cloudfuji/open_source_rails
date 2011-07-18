@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
                     :url => "/store/:attachment/:id/:style/:basename.:extension",  
                     :path => ":rails_root/permanent/store/:attachment/:id/:style/:basename.:extension"
 
-  acts_as_taggable_on
+  acts_as_taggable
 
   validates :title,
             :presence => true,

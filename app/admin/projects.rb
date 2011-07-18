@@ -24,6 +24,7 @@ ActiveAdmin.register Project do
       f.input :title
       f.input :approved
       f.input :project_category_id, :as=>:select, :collection => ProjectCategory.find(:all, :order=>"name ASC")
+      f.input :tag_list
       f.input :short_desc
       f.input :about
       f.input :thumbnail
@@ -75,7 +76,7 @@ ActiveAdmin.register Project do
     end
 
     div do
-      "Tags: " + project.tag_list.join ", "
+      "Tags: " + project.tag_list.join(", ")
     end
 
     div do
