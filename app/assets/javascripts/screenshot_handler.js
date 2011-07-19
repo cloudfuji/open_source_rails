@@ -1,11 +1,15 @@
 $(document).ready(function(){
-  $(".screenshot_input").change(function(e){
-    var file = e.target.files[0];
-    var objectURL=null;
-    console.log(file);
-    console.log(getObjectURL(file));
-
-  });  
+  $(".screenshot_input").live('change', function(e){
+    var self = $(this)
+       ,file = e.target.files[0];
+    
+    var objectURL = getObjectURL(file);
+    if(objectURL!=null)
+    {
+      self.parent().append('<div class="cropper"><img class="cropped_image" src="'+objectURL+'"/></div>');
+      // use jQmodal and add the ^ to that div, crop and display only cropped version 
+    }
+  });
 });
 
 function getObjectURL(obj) {
