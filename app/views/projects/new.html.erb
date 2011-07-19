@@ -16,7 +16,7 @@ $(function(){
 	<div id="app_holder">
       <div id="feature">
 	<div class="field">
-	  <%= f.file_field :thumbnail %>
+	  <%= f.file_field :thumbnail, :class=>"thumbnail" %>
 	</div>
 	  </div>
 	  <div id="submit_holder">
@@ -25,12 +25,12 @@ $(function(){
 	  <div id="feature_description">
 
 	    <div class="field">
-	      <%= f.text_field :title, :size=>"20", :class=>"autobox new_form new_title", :style=>"margin: 0 13px 0 0", :value => "App name" %>
-	      <%= f.text_field :short_desc, :size=>"25", :class=>"autobox new_form", :value=>"Tagline (a super short description)" %>	      
-	    </div><br/>
+	      <%= f.text_field :title, :size=>"20", :class=>"l autobox new_form new_title", :value => "App name" %>
+	      <%= f.text_field :short_desc, :size=>"30", :class=>"l autobox new_form new_tagline", :value=>"Tagline (a super short description)" %>	      
+	    </div>
 
 	    <div class="field">
-	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form", :value=>"Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
+	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form new_description", :value=>"Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
 	    </div>
 
 
@@ -68,8 +68,8 @@ $(function(){
 		<div class="info_holder">
 		  <div class="info_form">
 		    <div class="field">
-		      <%= f.text_field :homepage_url, :class=>"autobox new_form", :size=>"44", :value=>"Project homepage" %>
-		      <%= f.text_field :source_url, :class=>"source_url autobox new_form", :size=>"44", :value=>"Source (git repository URL)" %>
+		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info", :size=>"44", :value=>"Project homepage" %>
+		      <%= f.text_field :source_url, :class=>"source_url autobox new_form new_info", :size=>"44", :value=>"Source (git repository URL)" %>
 		    </div>
 		      <div class="l">
 		      <select name="Categorys" class="new_form dropdown">
@@ -103,8 +103,8 @@ $(function(){
               <%= author_form.hidden_field :name, :class=>"app_author" %>
               <%= author_form.hidden_field :url, :class=>"app_author_url" %>
               <div id="new_author">
-		        <img src="" class="l new_author_img">
-		        <p class="l info_brown">Author</p>
+		<img src="/images/github-icon.png" class="l git_img" />
+		<p class="l info_brown">Author</p>
                 <p class="l info_new_blue app_author_link"></p>
               </div>		     
             <%- end %>

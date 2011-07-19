@@ -84,7 +84,7 @@ p.header {
 }
 ul#list-nav {
     list-style:none;
-    padding: 27px 9px 0 0;
+    padding: 30px 9px 0 0;
     margin:0 auto;
     width:386px;
     color: #f9f8de;
@@ -98,10 +98,10 @@ ul#list-nav li span {
     text-decoration:none;
     font-family: helvetica;
     font-size: 10pt;
-    height:23px;
+    height:21px;
     color:#f9f8de;
     float:left;
-    padding:7px 0 0 20px;
+    padding:4px 0 0 20px;
     text-align:center;
     margin: 0 auto;
 }
@@ -110,16 +110,24 @@ ul#list-nav li a {
     font-family: helvetica;
     font-size: 10pt;
     width:70px;
-    height:23px;
+    height:21px;
     color:#f9f8de;
     float:right;
-    padding:7px 0 0 0;
+    padding:4px 0 0 0;
     text-align:center;
     margin: 0 auto;
 }
 
 ul#list-nav li a:hover {
-    background:#f49032;
+    border: solid #f9f8de;
+    border-bottom:none;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background:#f9f8de url("../images/texture-beige.png");
     color:#4c2d00;
 }
 
@@ -560,7 +568,7 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 }
 /*Submit page*/
 .new_form {
-    border:1px solid black;
+    border:none;
     font-family:helvetica,sans-serif;
     font-size:14pt;
     background:transparent;
@@ -584,14 +592,44 @@ textarea {
     margin:0 auto;
 }
 .git_img {
+    border:none;
     margin:4px 20px 0 0;
     width:67px;
     height:67px;
-    background:url("../images/github-icon.png");
 }
 .new_title {
-    width:227px;
+    margin-right:12px;
+    padding-right:10px;
+    padding-left:10px;
+    width:207px;
     height:35px;
     background:url("../images/tfield-title.png") no-repeat;
+}
+.new_tagline {
+    padding-right:10px;
+    padding-left:10px;
+    width:289px;
+    height:35px;
+    background:url("../images/tfield-tagline.png") no-repeat;
+}
+.new_description {
+    margin-top:12px;
+    padding-right:10px;
+    padding-left:10px;
+    width:528px;
+    height:115px;
+    background:url("../images/tfield-description.png") no-repeat;
+}
+.new_info {
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-right:10px;
+    padding-left:10px;
+    width:370px;
+    height:35px;
+    background:url("../images/tfield-info.png") no-repeat;
+}
+.thumbnail {
+    visibility:hidden;
 }
 
