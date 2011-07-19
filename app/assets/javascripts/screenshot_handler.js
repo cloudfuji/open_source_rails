@@ -1,3 +1,5 @@
+var crop_id;
+
 $(document).ready(function(){
   $(".screenshot_input").live('change', function(e){
     var self = $(this)
@@ -6,8 +8,22 @@ $(document).ready(function(){
     var objectURL = getObjectURL(file);
     if(objectURL!=null)
     {
-      self.parent().append('<div class="crop_preview"><img class="cropped_image" src="'+objectURL+'"/></div>');
-      // use jQmodal and add the ^ to that div, crop and display only cropped version 
+      //self.parent().append('<div class="crop_preview"><img class="cropped_image" src="'+objectURL+'"/></div>');
+      // use jQmodal and add the ^ to that div, crop and display only cropped version
+      $('.cropwrap').html('<img class="cropbox" src="'+objectURL+'"/>');
+
+      crop_id = self.parent().prevAll().length;
+      $('.cropbox').Jcrop({
+          minSize: [ 938, 455 ],
+          maxSize: [ 938, 455 ],
+          onSelect: function(coords) {
+              $(".screenshot_input").eq(crop_id).parent().find('#crop_x').val(coords.x);
+              $(".screenshot_input").eq(crop_id).parent().find('#crop_y').val(coords.y);
+              $(".screenshot_input").eq(crop_id).parent().find('#crop_w').val(coords.w);
+              $(".screenshot_input").eq(crop_id).parent().find('#crop_h').val(coords.h);
+          }
+      });
+      //self.parent().find('.cropbox').jqmShow();
     }
   });
 
@@ -44,12 +60,10 @@ $(document).ready(function(){
     if((typeof window.URL!=="undefined") && (typeof window.URL.createObjectURL=="function"))
     {
       //Firefox 3.6+ and Opera
-      console.log("FF", obj);
       return window.URL.createObjectURL(obj);
     }
     else if((typeof window.webkitURL != "undefined") && (typeof window.webkitURL.createObjectURL=="function"))  //Chrome 10+
     {
-      console.log("Chrome", obj);
       return window.webkitURL.createObjectURL(obj);
     }
     return null;

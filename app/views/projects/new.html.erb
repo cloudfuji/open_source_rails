@@ -1,8 +1,8 @@
 <%- content_for :head do %>
-  <%= javascript_include_tag "nested_form" %>
-  <%= javascript_include_tag "jqModal" %>
-  <%= javascript_include_tag "screenshot_handler" %>
-  <%= stylesheet_link_tag "jqModal" %>
+  <%= javascript_include_tag "nested_form.js" %>
+  <%= javascript_include_tag "jqModal.js", "jquery.Jcrop.js" %>
+  <%= javascript_include_tag "screenshot_handler.js" %>  
+  <%= stylesheet_link_tag "jqModal.css", "jquery.Jcrop.css" %>
 <% end %>
 
 
@@ -14,6 +14,9 @@ $(function(){
  });
 });
 </script>
+
+<div class="cropwrap"></div>
+
 <%= nested_form_for @project, :validate => true do |f| %>
 	<div id="app_holder">
       <div id="feature">
@@ -61,7 +64,10 @@ $(function(){
 	    <div id="tab1" class="tab_content">
 	      <div id="slideshow">
             <%=f.fields_for :screenshots do |sh_form| %>
-                           <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
+              <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+                <%= sh_form.hidden_field attribute, :id => attribute %>  
+              <% end %>
+              <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
             <%- end %>
 	      </div>
 	    </div>
