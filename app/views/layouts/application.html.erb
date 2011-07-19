@@ -12,13 +12,15 @@
     <%= stylesheet_link_tag :main %>
     <%= javascript_include_tag :application %>
     <%= javascript_include_tag "jquery.easing.1.3.js" %>
-	<%= javascript_include_tag "jquery.slides.min.js" %>
+    <%= javascript_include_tag "jquery.slides.min.js" %>
+    <%= javascript_include_tag "jquery.autobox.js" %>
 
     <%= yield(:head) %>
     
     <script type="text/javascript">
 $(document).ready(function() {
 
+$(".autobox").autobox();
 //When page loads...
 $(".tab_content").hide(); //Hide all content
 $("ul.tabs li:first").addClass("active").show(); //Activate first tab
@@ -85,7 +87,7 @@ return false;
           <ul id="list-nav"> 
             <li><a href="#">Sign Up</a></li>
             <%- if user_signed_in? %>
-              <li><%= current_user.username %></li>
+              <li><span><%= current_user.username %></span></li>
               <li><%= link_to "Sign out", destroy_user_session_path %></li>
             <%- else %>
               <li><%= link_to "Sign In", new_user_session_path %></li>

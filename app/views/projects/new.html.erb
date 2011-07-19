@@ -1,4 +1,123 @@
-<h2> Enter the details below to submit a new applicaiton </h2>
+<%- content_for :head do %>
+<%= javascript_include_tag "nested_form" %>
+<% end %>
 
-<%= render "form" %>
+
+<script type="text/javascript">
+$(function(){
+ console.log('moving ribbon');
+ $('#bottom_ribbon').css({
+  top: ($('#showcase_holder').offset().top + $('#showcase_holder').height() - 34) + "px"
+ });
+});
+</script>
+<%= nested_form_for @project, :validate => true do |f| %>
+	<div id="app_holder">
+      <div id="feature">
+	<div class="field">
+	  <%= f.file_field :thumbnail %>
+	</div>
+	  </div>
+	  <div id="launch_holder">
+	    <%= f.submit "Submit", :id=>"submit" %>
+	  </div>
+	  <div id="feature_description">
+
+	    <div class="field">
+	      <%= f.text_field :title, :size=>"20", :class=>"autobox new_form", :style=>"margin: 0 13px 0 0", :value => "App name" %>
+	      <%= f.text_field :short_desc, :size=>"32", :class=>"autobox new_form", :value=>"Tagline (a super short description)" %>	      
+	    </div><br/>
+
+	    <div class="field">
+	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form", :value=>"Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
+	    </div>
+
+
+	  </div>
+	</div>
+	<div class="line_break">
+	</div>
+	<!--start of showcase-->
+	<div id="showcase_holder">
+	  <div id="tab_ribbon">
+	    <div class="ribbon_left">
+	      <div class="ribbon_fill"></div>
+	      <div class="ribbon_triangle"></div>
+	    </div>
+	    <div class="ribbon_right">
+	      <div class="ribbon_fill"></div>
+	      <div class="ribbon_triangle"></div>
+	    </div>
+	  </div>
+	  <ul class="tabs">
+	    <li><a href="#tab1">Screenshots</a></li>
+	    <li><a href="#tab2" class="tab_border">Info</a></li>
+	    <li></li>
+	  </ul>
+	  <div class="tab_container">
+	    <div id="tab1" class="tab_content">
+	      <div id="slideshow">
+            <%-#assuming here that there's atleast one screenshot %>
+            <%- @first_id = @project.screenshots.first.id %>
+            <%- @project.screenshots.each do |s| %>
+              <%- if s.id == @first_id %>
+                <%= image_tag s.image.url(:large), :class=>"active" %>
+              <%- else %>
+                <%= image_tag s.image.url(:large) %>
+              <% end %>
+            <% end %>
+	      </div>
+	    </div>
+	    <div id="tab2" class="tab_content">
+	      <div id="showcase_padd">
+		<div class="info_holder">
+		  <div class="info_form">
+		    <div class="field">
+		      <%= f.text_field :homepage_url, :class=>"autobox new_form", :size=>"44", :value=>"Project homepage" %>
+		      <%= f.text_field :source_url, :class=>"autobox new_form", :size=>"44", :value=>"Source (git repository URL)" %>
+		    </div>
+		    <% end %>
+		    <form action="">
+		      <div class="l">
+		      <select name="Categorys" class="new_form dropdown">
+			<option value="Category" selected="selected">Category</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		      </select>
+		      </div>
+		      <div class="r">
+		      <select name="License" class="new_form dropdown">
+			<option value="license" selected="selected">License</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		      </select>
+		      </div><br/>
+		     Are you an author on this?
+		      <div class="r">
+		     Yes<input type="radio" name="answer" value="yes" />
+		      No<input type="radio" name="answer" value="no" />
+		      </div><br/>
+		     Is this updated actively?
+		      <div class="r">
+		     Yes<input type="radio" name="answer" value="yes" />
+		      No<input type="radio" name="answer" value="no" />
+		      </div>
+		    </form>
+		    <div id="new_author">
+		      <img src="" class="l new_author_img">
+		      <p class="l info_brown">Author</p>
+		      <p class="l info_new_blue">From the source URL above</p>
+		    </div>		     
+		  </div>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div id="bottom_ribbon">
+	</div>
+<!--end of showcase-->
+
 

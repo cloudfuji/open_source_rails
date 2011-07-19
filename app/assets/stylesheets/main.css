@@ -1,3 +1,4 @@
+
 /*  
 Sticky Footer Solution
 by Steve Hatcher 
@@ -85,24 +86,34 @@ ul#list-nav {
     list-style:none;
     padding: 27px 9px 0 0;
     margin:0 auto;
-    width:301px;
+    width:386px;
     color: #f9f8de;
     float:right;
 }
 
 ul#list-nav li {
     display:inline;
+} 
+ul#list-nav li span {
+    text-decoration:none;
+    font-family: helvetica;
+    font-size: 10pt;
+    height:23px;
+    color:#f9f8de;
+    float:left;
+    padding:7px 0 0 20px;
+    text-align:center;
+    margin: 0 auto;
 }
-
 ul#list-nav li a {
     text-decoration:none;
     font-family: helvetica;
     font-size: 10pt;
     width:70px;
-    height:16px;
+    height:23px;
     color:#f9f8de;
     float:right;
-    padding: 7px 0px;
+    padding:7px 0 0 0;
     text-align:center;
     margin: 0 auto;
 }
@@ -246,6 +257,12 @@ p.discription {
 #launch:hover {
     background:url("../images/launch-active.png") no-repeat;
 }
+#submit {
+    display:block;
+    margin:54px 0 0 0;
+    width:166px;
+    height:57px;
+}
 .line_break {
     display:block;
     width:930px;
@@ -266,7 +283,7 @@ p.discription {
     padding:0 0 0 0;
     position:relative;
     width:960px;
-    height:580px;
+    height:508px;
     background:url("../images/background-showcase.png") no-repeat;
 }
 .showcase_row {
@@ -278,6 +295,11 @@ p.discription {
     padding:40px 0 25px 0;
     width:960px;
     line-height:200%;
+}
+.info_form {
+    width:400px;
+    height:340px;
+    margin:0 auto;
 }
 p.info_brown {
     text-align:center;
@@ -291,6 +313,13 @@ p.info_blue {
     font-family:helvetica,sans-serif;
     color:#003366;
     font-size:22pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+p.info_new_blue {
+    text-align:center;
+    font-family:helvetica,sans-serif;
+    color:#003366;
+    font-size:16pt;
     text-shadow: 1px 1px 0px #FFFFFF;
 }
 /*
@@ -518,8 +547,38 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 #slideshow IMG.last-active {
     z-index:9;
 }
-
-
+/*Submit page*/
+.new_form {
+    font-family:helvetica,sans-serif;
+    font-size:14pt;
+    background:transparent;
+    border:2px solid black;
+}
+textarea {
+    resize:none;
+}
+.r {
+    float:right;
+}
+.l {
+    float:left;
+}
+.dropdown {
+    width:180px;
+}
+#new_author {
+    padding:40px 0 0 0;
+    width:400px;
+    height:160px;
+    margin:0 auto;
+}
+.new_author_img {
+    margin:0 20px 0 0;
+    width:80px;
+    height:80px;
+    border:1px solid black;
+    background:transparent;
+}
 
 
 
