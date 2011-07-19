@@ -1,5 +1,6 @@
 <%- content_for :head do %>
   <%= javascript_include_tag "nested_form" %>
+  <%= javascript_include_tag "screenshot_handler" %>
 <% end %>
 
 <%= nested_form_for @project, :validate => true do |f| %>
@@ -45,7 +46,7 @@
   <%=f.fields_for :screenshots do |sh_form| %>
     <div class="screenshot">
       <div class="field">
-        <%= sh_form.file_field :image %>
+        <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
       </div>
     </div>
   <% end %>

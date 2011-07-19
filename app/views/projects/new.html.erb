@@ -1,5 +1,6 @@
 <%- content_for :head do %>
-<%= javascript_include_tag "nested_form" %>
+  <%= javascript_include_tag "nested_form" %>
+  <%= javascript_include_tag "screenshot_handler" %>
 <% end %>
 
 
@@ -57,15 +58,9 @@ $(function(){
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
 	      <div id="slideshow">
-            <%-#assuming here that there's atleast one screenshot %>
-            <%- @first_id = @project.screenshots.first.id %>
-            <%- @project.screenshots.each do |s| %>
-              <%- if s.id == @first_id %>
-                <%= image_tag s.image.url(:large), :class=>"active" %>
-              <%- else %>
-                <%= image_tag s.image.url(:large) %>
-              <% end %>
-            <% end %>
+             <%=f.fields_for :screenshots do |sh_form| %>
+               <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
+             <%- end %>
 	      </div>
 	    </div>
 	    <div id="tab2" class="tab_content">
@@ -74,10 +69,8 @@ $(function(){
 		  <div class="info_form">
 		    <div class="field">
 		      <%= f.text_field :homepage_url, :class=>"autobox new_form", :size=>"44", :value=>"Project homepage" %>
-		      <%= f.text_field :source_url, :class=>"autobox new_form", :size=>"44", :value=>"Source (git repository URL)" %>
+		      <%= f.text_field :source_url, :class=>"source_url autobox new_form", :size=>"44", :value=>"Source (git repository URL)" %>
 		    </div>
-		    <% end %>
-		    <form action="">
 		      <div class="l">
 		      <select name="Categorys" class="new_form dropdown">
 			<option value="Category" selected="selected">Category</option>
@@ -103,13 +96,18 @@ $(function(){
 		      <div class="r">
 		     Yes<input type="radio" name="update" value="yes" />
 		      No<input type="radio" name="update" value="no" />
-		      </div>
-		    </form>
-		    <div id="new_author">
-		      <img src="/images/github-icon.png" class="l git_img"/>
-		      <p class="l info_brown">Author</p>
-		      <p class="l info_new_blue">From the source URL above</p>
-		    </div>		     
+
+            </div>
+            
+            <%= f.fields_for :author do |author_form|%>
+              <%= author_form.hidden_field :name, :class=>"app_author" %>
+              <%= author_form.hidden_field :url, :class=>"app_author_url" %>
+              <div id="new_author">
+		        <img src="" class="l new_author_img">
+		        <p class="l info_brown">Author</p>
+                <p class="l info_new_blue app_author_link"></p>
+              </div>		     
+            <%- end %>
 		  </div>
 		</div>
 	      </div>
@@ -117,7 +115,8 @@ $(function(){
 	  </div>
 	</div>
 	<div id="bottom_ribbon">
-	</div>
+    </div>
+<%- end %>
 <!--end of showcase-->
 
 
