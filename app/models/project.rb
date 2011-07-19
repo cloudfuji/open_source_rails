@@ -7,8 +7,11 @@ class Project < ActiveRecord::Base
  
   has_attached_file :thumbnail,
                     :styles=>{:medium=>"100x100", :large=>"150x150"},
-                    :url => "/store/:attachment/:id/:style/:basename.:extension",  
-                    :path => ":rails_root/permanent/store/:attachment/:id/:style/:basename.:extension"
+                    :url => "/store/:attachment/:id/:style/:basename.:extension",
+                    :path => ":rails_root/permanent/store/:attachment/:id/:style/:basename.:extension",
+                    :processors => [:cropper]
+
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   acts_as_taggable
 
