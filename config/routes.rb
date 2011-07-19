@@ -7,6 +7,7 @@ Osrails::Application.routes.draw do
   devise_for :users
 
   root :to => "projects#index"
+  match '/projects/github_info/:user/:repo' => 'projects#github_info'
 
   resources :projects
 

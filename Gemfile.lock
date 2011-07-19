@@ -131,6 +131,8 @@ GEM
       activesupport (~> 3.1.0.alpha)
     mime-types (1.16)
     multi_json (1.0.3)
+    nestful (0.0.6)
+      activesupport (>= 3.0.0.beta)
     nokogiri (1.4.6)
     paperclip (2.3.15)
       activerecord (>= 2.3.0)
@@ -240,6 +242,7 @@ DEPENDENCIES
   jquery-rails
   meta_search (>= 1.1.0.pre)
   nested_form!
+  nestful
   paperclip
   rails (= 3.1.0.rc4)
   remarkable_activerecord (>= 4.0.0.alpha)

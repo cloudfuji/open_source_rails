@@ -29,4 +29,16 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def github_info
+    base_url = 'https://github.com/api/v2/json/repos/show/'
+    unless params[:user].nil? or params[:repo].nil?
+      result = Nestful.get(base_url+params[:user]+"/"+params[:repo])
+      respond_to do |format|
+        format.json do
+          render :json => JSON.parse(result)
+        end
+      end
+    end
+  end
+
 end
