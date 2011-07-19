@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @project.build_author
-    @project.screenshots.build
+    5.times {@project.screenshots.build}
   end
 
   def show
