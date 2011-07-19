@@ -18,14 +18,14 @@ $(function(){
 	  <%= f.file_field :thumbnail %>
 	</div>
 	  </div>
-	  <div id="launch_holder">
-	    <%= f.submit "Submit", :id=>"submit" %>
+	  <div id="submit_holder">
+	    <%= f.submit "", :id=>"submit" %>
 	  </div>
 	  <div id="feature_description">
 
 	    <div class="field">
-	      <%= f.text_field :title, :size=>"20", :class=>"autobox new_form", :style=>"margin: 0 13px 0 0", :value => "App name" %>
-	      <%= f.text_field :short_desc, :size=>"32", :class=>"autobox new_form", :value=>"Tagline (a super short description)" %>	      
+	      <%= f.text_field :title, :size=>"20", :class=>"autobox new_form new_title", :style=>"margin: 0 13px 0 0", :value => "App name" %>
+	      <%= f.text_field :short_desc, :size=>"25", :class=>"autobox new_form", :value=>"Tagline (a super short description)" %>	      
 	    </div><br/>
 
 	    <div class="field">
@@ -106,7 +106,7 @@ $(function(){
 		      </div>
 		    </form>
 		    <div id="new_author">
-		      <img src="" class="l new_author_img">
+		      <img src="/images/github-icon.png" class="l git_img"/>
 		      <p class="l info_brown">Author</p>
 		      <p class="l info_new_blue">From the source URL above</p>
 		    </div>		     

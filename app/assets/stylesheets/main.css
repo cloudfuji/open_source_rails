@@ -249,7 +249,7 @@ p.discription {
 }
 #launch {
     display:block;
-    margin:54px 0 0 0;
+    margin:54px 0 0 -1px;
     width:166px;
     height:57px;
     background:url("../images/launch-inactive.png") no-repeat;
@@ -257,11 +257,22 @@ p.discription {
 #launch:hover {
     background:url("../images/launch-active.png") no-repeat;
 }
+#submit_holder {
+    width:175px;
+    height:165px;
+    float:right;
+    background:url("../images/launch-background.png") no-repeat;
+}
 #submit {
+    border:none;
     display:block;
-    margin:54px 0 0 0;
+    margin:54px 0 0 -1px;
     width:166px;
     height:57px;
+    background:url("../images/submit-inactive.png") no-repeat;
+}
+#submit:hover {
+    background:url("../images/submit-active.png") no-repeat;
 }
 .line_break {
     display:block;
@@ -549,10 +560,10 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 }
 /*Submit page*/
 .new_form {
+    border:1px solid black;
     font-family:helvetica,sans-serif;
     font-size:14pt;
     background:transparent;
-    border:2px solid black;
 }
 textarea {
     resize:none;
@@ -572,25 +583,15 @@ textarea {
     height:160px;
     margin:0 auto;
 }
-.new_author_img {
-    margin:0 20px 0 0;
-    width:80px;
-    height:80px;
-    border:1px solid black;
-    background:transparent;
+.git_img {
+    margin:4px 20px 0 0;
+    width:67px;
+    height:67px;
+    background:url("../images/github-icon.png");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.new_title {
+    width:227px;
+    height:35px;
+    background:url("../images/tfield-title.png") no-repeat;
+}
 
