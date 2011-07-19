@@ -6,7 +6,7 @@ $(document).ready(function(){
     var objectURL = getObjectURL(file);
     if(objectURL!=null)
     {
-      self.parent().append('<div class="cropper"><img class="cropped_image" src="'+objectURL+'"/></div>');
+      self.parent().append('<div class="crop_preview"><img class="cropped_image" src="'+objectURL+'"/></div>');
       // use jQmodal and add the ^ to that div, crop and display only cropped version 
     }
   });

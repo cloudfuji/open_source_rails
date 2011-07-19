@@ -2,7 +2,7 @@
   <%= javascript_include_tag "nested_form" %>
   <%= javascript_include_tag "jqModal" %>
   <%= javascript_include_tag "screenshot_handler" %>
-  <%= stylesheet_link_tag "jqModal.css" %>
+  <%= stylesheet_link_tag "jqModal" %>
 <% end %>
 
 
@@ -60,9 +60,9 @@ $(function(){
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
 	      <div id="slideshow">
-             <%=f.fields_for :screenshots do |sh_form| %>
-               <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
-             <%- end %>
+            <%=f.fields_for :screenshots do |sh_form| %>
+                           <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
+            <%- end %>
 	      </div>
 	    </div>
 	    <div id="tab2" class="tab_content">

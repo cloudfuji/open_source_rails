@@ -580,6 +580,10 @@ textarea {
     background:transparent;
 }
 
+.crop_preview {
+  width: 938px;
+  height: 455px;
+}
 
 
 
