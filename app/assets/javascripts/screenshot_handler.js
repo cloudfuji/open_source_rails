@@ -16,6 +16,7 @@ $(document).ready(function(){
       $('.cropbox').Jcrop({
           minSize: [ 938, 455 ],
           maxSize: [ 938, 455 ],
+          setSelect: [0, 0, 938, 455],
           onSelect: function(coords) {
               $(".screenshot_input").eq(crop_id).parent().find('#crop_x').val(coords.x);
               $(".screenshot_input").eq(crop_id).parent().find('#crop_y').val(coords.y);
