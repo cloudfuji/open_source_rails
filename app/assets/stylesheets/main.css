@@ -317,7 +317,7 @@ p.discription {
     line-height:200%;
 }
 .info_form {
-    width:400px;
+    width:389px;
     height:340px;
     margin:0 auto;
 }
@@ -571,7 +571,7 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 .new_form {
     border:none;
     font-family:helvetica,sans-serif;
-    font-size:14pt;
+    font-size:13pt;
     background:transparent;
 }
 textarea {
@@ -583,8 +583,32 @@ textarea {
 .l {
     float:left;
 }
-.dropdown {
-    width:180px;
+.drop {
+    background:#efd58c;
+}
+.styled-select select {
+    -webkit-appearance: none;
+    border:none;
+    font-family:helvetica,sans-serif;
+    background:url("../images/drop-down.png") no-repeat;
+    width: 200px;
+    padding-left:10px;
+    height: 33px;
+    color:#4c2d00;
+    position:absolute;
+}
+.styled-select {
+    -webkit-appearance: none;
+    width:178px;
+    height:33px;
+    border:none;
+    overflow: hidden;
+    background: url("../images/drop-down-button.png") no-repeat right;
+    position:relative;
+}
+.new_radio {
+    height:74px;
+    padding-top:50px;
 }
 #new_author {
     padding:40px 0 0 0;
@@ -593,7 +617,6 @@ textarea {
     margin:0 auto;
 }
 .git_img {
-    border:none;
     margin:4px 20px 0 0;
     width:67px;
     height:67px;

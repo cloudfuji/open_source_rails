@@ -96,34 +96,35 @@ $(function(){
 		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info", :size=>"44", :value=>"Project homepage" %>
 		      <%= f.text_field :source_url, :class=>"source_url autobox new_form new_info", :size=>"44", :value=>"Source (git repository URL)" %>
 		    </div>
-		      <div class="l">
-		      <select name="Categorys" class="new_form dropdown">
-			<option value="Category" selected="selected">Category</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
+		      <div class="l styled-select">
+		      <select name="Categorys" class="new_form">
+			<option class="drop" value="category" selected="selected">Category</option>
+			<option class="drop" value="1">1</option>
+			<option class="drop" value="2">2</option>
+			<option class="drop" value="3">3</option>
 		      </select>
 		      </div>
-		      <div class="r">
-		      <select name="License" class="new_form dropdown">
-			<option value="license" selected="selected">License</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
+		      <div class="r styled-select">
+		      <select name="License" class="new_form">
+			<option class="drop" value="license" selected="selected">License</option>
+			<option class="drop" value="1">1</option>
+			<option class="drop" value="2">2</option>
+			<option class="drop" value="3">3</option>
 		      </select>
-		      </div><br/>
-		     Are you an author on this?
-		      <div class="r">
-		     Yes<input type="radio" name="author" value="yes" />
-		      No<input type="radio" name="author" value="no" />
-		      </div><br/>
-		     Is this updated actively?
-		      <div class="r">
-		     Yes<input type="radio" name="update" value="yes" />
-		      No<input type="radio" name="update" value="no" />
-
-            </div>
-            
+		      </div>
+		      <div class="new_radio">
+			Are you an author on this?
+			<div class="r">
+			  Yes<input type="radio" name="author" value="yes" />
+			  No<input type="radio" name="author" value="no" />
+			</div><br/>
+			Is this updated actively?
+			<div class="r">
+			  Yes<input type="radio" name="update" value="yes" />
+			  No<input type="radio" name="update" value="no" />
+			</div>
+		      </div>
+		  
             <%= f.fields_for :author do |author_form|%>
               <%= author_form.hidden_field :name, :class=>"app_author" %>
               <%= author_form.hidden_field :url, :class=>"app_author_url" %>
