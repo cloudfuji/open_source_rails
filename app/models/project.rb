@@ -31,6 +31,8 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :screenshots, :allow_destroy=>true,
                                 :reject_if => proc { |attrs| attrs['image'].blank? }
 
+  after_save :reprocess_thumbnail, :if => :cropping?
+
   # approved is a boolean field and approved? is made available by rails
   # returns true if the project is not approved
   def not_approved?
@@ -45,6 +47,16 @@ class Project < ActiveRecord::Base
   # unapprove a project in-place
   def unapprove!
     self.update_attribute :approved, false
+  end
+
+  def cropping?
+    !crop_x.blank? && !crop_y.blank?
+  end
+
+  private
+  
+  def reprocess_thumbnail
+    thumbnail.reprocess!
   end
 
 end
