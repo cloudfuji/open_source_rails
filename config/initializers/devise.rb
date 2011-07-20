@@ -9,7 +9,7 @@ Devise.setup do |config|
   config.encryptor = :bcrypt
 
   if Rails.env.production?
-    config.cas_base_url = ""
+    config.cas_base_url = "https://auth.bushi.do/cas"
   else
     config.cas_base_url = "https://auth.bushi.do/cas"
     # use the below if you've a problem with above and setup Kagi - github.com/bushido/kagi

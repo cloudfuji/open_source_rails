@@ -85,7 +85,6 @@ return false;
           <!--start of nav-->
           
           <ul id="list-nav"> 
-            <li><a href="#">Sign Up</a></li>
             <%- if user_signed_in? %>
               <li><span><%= current_user.username %></span></li>
               <li><%= link_to "Sign out", destroy_user_session_path %></li>
