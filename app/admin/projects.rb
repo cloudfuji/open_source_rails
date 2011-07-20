@@ -95,7 +95,7 @@ ActiveAdmin.register Project do
     end
 
     div do
-      "License: " + project.license
+      ("License: " + project.license) unless project.license.nil?
     end
     
     div do
