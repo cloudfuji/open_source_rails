@@ -1,6 +1,8 @@
 <%- content_for :head do %>
-  <%= javascript_include_tag "nested_form" %>
-  <%= javascript_include_tag "screenshot_handler" %>
+  <%= javascript_include_tag "nested_form.js" %>
+  <%= javascript_include_tag "jqModal.js", "jquery.Jcrop.js" %>
+  <%= javascript_include_tag "screenshot_handler.js" %>  
+  <%= stylesheet_link_tag "jqModal.css", "jquery.Jcrop.css" %>
 <% end %>
 
 
@@ -12,12 +14,32 @@ $(function(){
  });
 });
 </script>
-<%= nested_form_for @project, :validate => true do |f| %>
+
+<div class="cropwrap"></div>
+
+<%= nested_form_for @project do |f| %>
+
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 	<div id="app_holder">
       <div id="feature">
-	<div class="field">
-	  <%= f.file_field :thumbnail, :class=>"thumbnail" %>
-	</div>
+        <div class="field">
+          <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+            <%= f.hidden_field attribute, :id => attribute %>  
+          <% end %>
+
+          <%= f.file_field :thumbnail, :class=>"logo_input" %>
+	    </div>
 	  </div>
 	  <div id="submit_holder">
 	    <%= f.submit "", :id=>"submit" %>
@@ -58,9 +80,12 @@ $(function(){
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
 	      <div id="slideshow">
-             <%=f.fields_for :screenshots do |sh_form| %>
-               <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
-             <%- end %>
+            <%=f.fields_for :screenshots do |sh_form| %>
+              <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+                <%= sh_form.hidden_field attribute, :id => attribute %>  
+              <% end %>
+              <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
+            <%- end %>
 	      </div>
 	    </div>
 	    <div id="tab2" class="tab_content">

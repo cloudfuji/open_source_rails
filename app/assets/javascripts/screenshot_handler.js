@@ -1,15 +1,56 @@
+var crop_id="logo";
+
 $(document).ready(function(){
-  $(".screenshot_input").live('change', function(e){
+  $(".screenshot_input, .logo_input").live('change', function(e){
     var self = $(this)
        ,file = e.target.files[0];
     
     var objectURL = getObjectURL(file);
     if(objectURL!=null)
     {
-      self.parent().append('<div class="cropper"><img class="cropped_image" src="'+objectURL+'"/></div>');
-      // use jQmodal and add the ^ to that div, crop and display only cropped version 
+      //self.parent().append('<div class="crop_preview"><img class="cropped_image" src="'+objectURL+'"/></div>');
+      // use jQmodal and add the ^ to that div, crop and display only cropped version
+      $('.cropwrap').html('<img class="cropbox" src="'+objectURL+'"/>');
+
+      var size_x, size_y;
+      if (self.attr('class')=="logo_input")
+      {
+        crop_id = "logo";
+        size_x = 150;
+        size_y = 150;
+      }
+      else
+      {
+        crop_id = self.parent().prevAll().length;
+        size_x = 938;
+        size_y = 455;
+      }
+
+      $('.cropbox').Jcrop({
+          minSize: [ size_x, size_y ],
+          maxSize: [ size_x, size_y ],
+          setSelect: [0, 0, size_x, size_y],
+          onSelect: function(coords) {
+            if(crop_id=="logo")
+            {
+              $(".logo_input").parent().find('#crop_x').val(coords.x);
+              $(".logo_input").parent().find('#crop_y').val(coords.y);
+              $(".logo_input").parent().find('#crop_w').val(coords.w);
+              $(".logo_input").parent().find('#crop_h').val(coords.h);
+            }
+            else
+            {
+              $(".screenshot_input").eq(crop_id).parent().find('#crop_x').val(coords.x);
+              $(".screenshot_input").eq(crop_id).parent().find('#crop_y').val(coords.y);
+              $(".screenshot_input").eq(crop_id).parent().find('#crop_w').val(coords.w);
+              $(".screenshot_input").eq(crop_id).parent().find('#crop_h').val(coords.h);
+            }
+          }
+      });
     }
   });
+
+
 
   $('.source_url').change(function(e) {
     var pattern = /^(http(s)?:\/\/github\.com\/).+(\/).+(\.git)$/
@@ -44,12 +85,10 @@ $(document).ready(function(){
     if((typeof window.URL!=="undefined") && (typeof window.URL.createObjectURL=="function"))
     {
       //Firefox 3.6+ and Opera
-      console.log("FF", obj);
       return window.URL.createObjectURL(obj);
     }
     else if((typeof window.webkitURL != "undefined") && (typeof window.webkitURL.createObjectURL=="function"))  //Chrome 10+
     {
-      console.log("Chrome", obj);
       return window.webkitURL.createObjectURL(obj);
     }
     return null;

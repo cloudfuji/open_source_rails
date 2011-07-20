@@ -5,12 +5,15 @@ ActiveAdmin.register Project do
     end
     
     column "Status", :sortable=>:approved do |p|
-      return "Approved" if p.approved
-      "Not approved"
+      if p.approved
+        "Approved"
+      else
+        "Not approved"
+      end
     end
 
     column "Category" do |p|
-      project.project_category.name
+      #project.project_category.name unless project.project_category.nil?
     end
 
     column "Tags" do |p|
