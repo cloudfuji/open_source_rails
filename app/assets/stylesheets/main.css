@@ -119,20 +119,21 @@ ul#list-nav li a {
 }
 
 ul#list-nav li a:hover {
-    border: solid #f9f8de;
-    border-bottom:none;
-    -webkit-border-top-left-radius: 10px;
-    -webkit-border-top-right-radius: 10px;
-    -moz-border-radius-topleft: 10px;
-    -moz-border-radius-topright: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background:#f9f8de url("../images/texture-beige.png");
-    color:#4c2d00;
+    color:#f49032;
 }
 
-ul#list-nav li.current a:link, ul#list-nav li.current a:visited{
-    background:#f49032;
+ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
+    height:24px;
+    border:1px solid #f9f8de;
+    border-bottom:none;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background:#f9f8de url("../images/texture-beige.png");
+    color:#4c2d00;
 }
 #footer {
     padding-top:6px;
@@ -552,10 +553,10 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
     moz-border-radius: 10px;
     webkit-border-radius: 10px;
     position:absolute;
-    width:920px;
-    height:400px;
-    top:80px;
-    left:17px;
+    width:938px;
+    height:455px;
+    top:44px;
+    left:9px;
     z-index:8;
 }
 
