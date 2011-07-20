@@ -91,7 +91,7 @@ return false;
             <%- else %>
               <li><%= link_to "Sign In", new_user_session_path %></li>
             <%- end %>  
-            <li><a href="/projects/new">Submit</a></li> 
+            <li <% if current_page?(new_project_url) %>class="active"<% end %>><a href="/projects/new">Submit</a></li> 
 	      </ul> 
           <!--end of nav--> 
           <p class="header">Only the best</p>
