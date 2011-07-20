@@ -5,7 +5,7 @@ ActiveAdmin.register Project do
     end
     
     column "Status", :sortable=>:approved do |p|
-      if p.approved
+      if p.approved?
         "Approved"
       else
         "Not approved"
@@ -13,7 +13,11 @@ ActiveAdmin.register Project do
     end
 
     column "Category" do |p|
-      #project.project_category.name unless project.project_category.nil?
+      unless p.project_category.nil?
+        p.project_category.name
+      else
+        "--nil--"
+      end
     end
 
     column "Tags" do |p|
@@ -91,7 +95,7 @@ ActiveAdmin.register Project do
     end
 
     div do
-      "License: " + project.license
+      ("License: " + project.license) unless project.license.nil?
     end
     
     div do
@@ -105,12 +109,10 @@ ActiveAdmin.register Project do
     div do
       hr
       h2 do
-        "Authors"
+        "Author"
       end
-      project.authors.each do |a|
-        div do
-          a.name + ", " + a.url
-        end
+      div do
+        project.author.name + ", " + project.author.url
       end
     end
 
