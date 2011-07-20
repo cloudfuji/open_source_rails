@@ -33,9 +33,13 @@ $(function(){
 
 	<div id="app_holder">
       <div id="feature">
-	<div class="field">
-	  <%= f.file_field :thumbnail %>
-	</div>
+        <div class="field">
+          <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+            <%= f.hidden_field attribute, :id => attribute %>  
+          <% end %>
+
+	      <%= f.file_field :thumbnail %>
+	    </div>
 	  </div>
 	  <div id="launch_holder">
 	    <%= f.submit "Submit", :id=>"submit" %>
