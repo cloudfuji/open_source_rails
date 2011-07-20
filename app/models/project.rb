@@ -28,7 +28,8 @@ class Project < ActiveRecord::Base
             :format => { :with =>/\A(https:\/\/).+\.git\Z/i }
 
   accepts_nested_attributes_for :author, :allow_destroy=>true
-  accepts_nested_attributes_for :screenshots, :allow_destroy=>true
+  accepts_nested_attributes_for :screenshots, :allow_destroy=>true,
+                                :reject_if => proc { |attrs| attrs['image'].blank? }
 
   # approved is a boolean field and approved? is made available by rails
   # returns true if the project is not approved
