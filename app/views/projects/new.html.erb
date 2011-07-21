@@ -4,23 +4,6 @@
   <%= stylesheet_link_tag "bushido.jcrop.css" %>
 <% end %>
 
-<script type="text/javascript">
-  $(function(){
-    $('.info_thumb_blue a').click(function(){
-      $('.logo_input').click();
-      return false;
-    });
-  });
-</script>
-<script type="text/javascript">
-  $(function(){
-    console.log('moving ribbon');
-    $('#bottom_ribbon').css({
-      top: ($('#showcase_holder').offset().top + $('#showcase_holder').height() - 34) + "px"
-    });
-  });
-</script>
-
 <%= nested_form_for @project do |f| %>
 
   <% if @project.errors.any? %>
