@@ -37,13 +37,8 @@ ActiveAdmin.register Project do
       f.input :thumbnail
     end
 
-    f.inputs  do
-      f.has_many :authors do |a|
-        if !a.object.id.nil?
-          a.input :_destroy, :as=>:boolean, :label=>"delete"
-        end
-        a.inputs :name, :url
-      end
+    f.inputs :as=>"Author", :for=>:author do |a|
+      a.inputs :name, :url
     end
   
     f.inputs do
