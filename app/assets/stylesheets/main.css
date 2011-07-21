@@ -95,12 +95,14 @@ ul#list-nav li {
     display:inline;
 } 
 ul#list-nav li span {
+    position:absolute;
+    top:5px;
+    right:16px;
     text-decoration:none;
     font-family: helvetica;
     font-size: 10pt;
     height:21px;
-    color:#f9f8de;
-    float:left;
+    color:#4c2d00;
     padding:4px 0 0 20px;
     text-align:center;
     margin: 0 auto;
