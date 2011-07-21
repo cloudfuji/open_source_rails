@@ -56,7 +56,7 @@ body {
     height: 80px;
     margin: 0 auto;
     position: relative;
-    z-index: 9000;
+    z-index: 9001;
     color: #FFF;
     background: url("../images/logo.png") no-repeat bottom left;
 }
@@ -422,7 +422,7 @@ ul.tabs {
     list-style: none;
     height: 50px; /*--Set height of tabs--*/
     width:950px;
-    z-index:90000;
+    z-index:9002;
 }
 ul.tabs li {
     width:314px;
@@ -685,5 +685,11 @@ textarea {
     visibility:hidden;
 }
 
-#simplemodal-overlay {background-color:#000;}
-#simplemodal-container {margin: auto;}
+#simplemodal-overlay {
+    background-color:#000;
+    z-index:9003 !important;
+}
+#simplemodal-container {
+    margin: auto;
+    z-index:9004 !important;
+}
