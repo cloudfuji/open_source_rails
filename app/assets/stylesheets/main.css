@@ -344,12 +344,14 @@ p.info_blue {
     font-size:22pt;
     text-shadow: 1px 1px 0px #FFFFFF;
 }
-
 .info_thumb_blue a{
  text-decoration: none;
  color: #003366;
 }
-
+.info_thumb_blue a:hover{
+ text-decoration: none;
+ color: #f49032;
+}
 .info_thumb_blue {
     padding:8px 18px 0 0;
     text-align:center;
