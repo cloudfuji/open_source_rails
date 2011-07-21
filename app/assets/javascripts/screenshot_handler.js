@@ -11,23 +11,21 @@ $(document).ready(function(){
        ,file = e.target.files[0];
     
     var objectURL = getObjectURL(file);
-    if(objectURL!=null)
-    {
+    
+    if(objectURL!=null){
       $.modal('<img class="cropbox" src="'+objectURL+'"/>'
               , {
                   escClose: true
                  ,overlayClose: true
-                 ,position: ["1%", "1%"]});
+                 ,position: ["50%", "1%"]});
 
       var size_x, size_y;
-      if (self.attr('class')=="screenshot_input")
-      {
+      
+      if (self.attr('class')=="screenshot_input"){
         crop_id = self.parent().prevAll().length;
         size_x = 938;
         size_y = 455;
-      }
-      else
-      {
+      }else{
         crop_id = "logo";
         size_x = 150;
         size_y = 150;
@@ -38,19 +36,18 @@ $(document).ready(function(){
           maxSize: [ size_x, size_y ],
           setSelect: [0, 0, size_x, size_y],
           onSelect: function(coords) {
-            if(crop_id=="logo")
-            {
-              $(".logo_input").parent().find('#crop_x').val(coords.x);
-              $(".logo_input").parent().find('#crop_y').val(coords.y);
-              $(".logo_input").parent().find('#crop_w').val(coords.w);
-              $(".logo_input").parent().find('#crop_h').val(coords.h);
-            }
-            else
-            {
-              $(".screenshot_input").eq(crop_id).parent().find('#crop_x').val(coords.x);
-              $(".screenshot_input").eq(crop_id).parent().find('#crop_y').val(coords.y);
-              $(".screenshot_input").eq(crop_id).parent().find('#crop_w').val(coords.w);
-              $(".screenshot_input").eq(crop_id).parent().find('#crop_h').val(coords.h);
+            if(crop_id=="logo"){
+              var $logo_input = $(".logo_input");
+              $logo_input.parent().find('#crop_x').val(coords.x);
+              $logo_input.parent().find('#crop_y').val(coords.y);
+              $logo_input.parent().find('#crop_w').val(coords.w);
+              $logo_input.parent().find('#crop_h').val(coords.h);
+            }else{
+              var $screenshot_input = $(".screenshot_input");
+              $screenshot_input.eq(crop_id).parent().find('#crop_x').val(coords.x);
+              $screenshot_input.eq(crop_id).parent().find('#crop_y').val(coords.y);
+              $screenshot_input.eq(crop_id).parent().find('#crop_w').val(coords.w);
+              $screenshot_input.eq(crop_id).parent().find('#crop_h').val(coords.h);
             }
           }
       });
@@ -64,8 +61,7 @@ $(document).ready(function(){
     var pattern = /^(http(s)?:\/\/github\.com\/).+(\/).+(\.git)$/
        ,repo_url = $(this).val();
     
-    if(pattern.test(repo_url))
-    {
+    if(pattern.test(repo_url)){
       var repoString = repo_url.replace(/^http(s)?:\/\/github\.com\//i, "").replace(/\.git$/i, "");
       console.log(repoString);
       setRepoInfo(repoString);
@@ -76,8 +72,7 @@ $(document).ready(function(){
     $.get('/projects/github_info/'+repoString+'.json'
           ,data = {}
           ,success = function(data, textStatus, xhr) {
-            if(data['repository']!=undefined)
-            {
+            if(data['repository']!=undefined){
               var repo = data['repository']
                  ,author = repo['owner']
                  ,authorURL = "https://github/"+author;
@@ -90,13 +85,10 @@ $(document).ready(function(){
   }
 
   function getObjectURL(obj) {
-    if((typeof window.URL!=="undefined") && (typeof window.URL.createObjectURL=="function"))
-    {
+    if((typeof window.URL!=="undefined") && (typeof window.URL.createObjectURL=="function")){
       //Firefox 3.6+ and Opera
       return window.URL.createObjectURL(obj);
-    }
-    else if((typeof window.webkitURL != "undefined") && (typeof window.webkitURL.createObjectURL=="function"))  //Chrome 10+
-    {
+    }else if((typeof window.webkitURL != "undefined") && (typeof window.webkitURL.createObjectURL=="function")){//Chrome 10
       return window.webkitURL.createObjectURL(obj);
     }
     return null;
