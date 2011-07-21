@@ -90,9 +90,9 @@ return false;
               <li><%= link_to "Sign out", destroy_user_session_path %></li>
             <%- else %>
               <li><%= link_to "Sign In", new_user_session_path %></li>
-              <li <% if current_page?(new_project_url) %>class="active"<% end %>> <a href="/projects/new">Submit</a></li> 
             <%- end %>  
-           	      </ul> 
+              <li <% if current_page?(new_project_url) %>class="active"<% end %>> <a href="/projects/new">Submit</a></li>
+          </ul> 
           <!--end of nav--> 
           <p class="header">Only the best</p>
   	    </div>

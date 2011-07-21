@@ -335,6 +335,20 @@ p.info_blue {
     font-size:22pt;
     text-shadow: 1px 1px 0px #FFFFFF;
 }
+
+.info_thumb_blue a{
+ text-decoration: none;
+ color: #003366;
+}
+
+.info_thumb_blue {
+    padding:8px 18px 0 0;
+    text-align:center;
+    font-family:helvetica,sans-serif;
+    color:#003366;
+    font-size:22pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
 p.info_new_blue {
     text-align:center;
     font-family:helvetica,sans-serif;
@@ -656,4 +670,5 @@ textarea {
 .thumbnail {
     visibility:hidden;
 }
+
 
