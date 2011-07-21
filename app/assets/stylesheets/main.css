@@ -257,14 +257,18 @@ p.discription {
     background:url("../images/launch-background.png") no-repeat;
 }
 #launch {
+    border:none;
     display:block;
     margin:54px 0 0 -1px;
     width:166px;
-    height:57px;
-    background:url("../images/launch-inactive.png") no-repeat;
+    height:0;
+    padding-top:57px;
+    background:url("../images/launch.png") no-repeat;
+    background-position:0 0;
+    overflow:hidden;
 }
 #launch:hover {
-    background:url("../images/launch-active.png") no-repeat;
+    background-position:0 -57px;
 }
 #submit_holder {
     width:175px;
@@ -277,11 +281,14 @@ p.discription {
     display:block;
     margin:54px 0 0 -1px;
     width:166px;
-    height:57px;
-    background:url("../images/submit-inactive.png") no-repeat;
+    height:0;
+    padding-top:58px;
+    background:url("../images/submit.png") no-repeat;
+    background-position:0 0;
+    overflow:hidden;
 }
 #submit:hover {
-    background:url("../images/submit-active.png") no-repeat;
+     background-position:0 -58px;
 }
 .line_break {
     display:block;
@@ -561,7 +568,10 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
     position:relative;
     height:250px;
 }
-
+.screenshot_holder {
+    width: 180px;
+    margin:0 auto;
+}
 #slideshow IMG {
     border-radius: 10px;
     moz-border-radius: 10px;

@@ -84,12 +84,18 @@
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
 	      <div id="slideshow">
+		<div id="showcase_padd">
+		  <div class="info_holder">
+		    <div class="screenshot_holder">
             <%=f.fields_for :screenshots do |sh_form| %>
               <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
                 <%= sh_form.hidden_field attribute, :id => attribute %>  
               <% end %>
               <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
             <%- end %>
+		    </div>
+		  </div>
+		</div>
 	      </div>
 	    </div>
 	    <div id="tab2" class="tab_content">
