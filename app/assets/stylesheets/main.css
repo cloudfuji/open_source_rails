@@ -671,4 +671,5 @@ textarea {
     visibility:hidden;
 }
 
-
+#simplemodal-overlay {background-color:#000;}
+#simplemodal-container {margin: auto;}

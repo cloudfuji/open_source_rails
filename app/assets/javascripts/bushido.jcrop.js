@@ -1201,8 +1201,8 @@
         case 40:
           doNudge(e, 0, nudge);
           break;
-        case 27:
-          Selection.release();
+        case 27: 
+          $.modal.close();  // close the modal window if escape is pressed 
           break;
         case 9:
           return true;

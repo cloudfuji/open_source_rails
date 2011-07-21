@@ -4,7 +4,7 @@ var crop_id="logo";
 $(document).ready(function(){
   
   $('body').prepend('<div class="cropwrap"></div>');
-  $(".cropwrap").jqm({modal: true});
+  //$(".cropwrap").jqm({modal: true});
   
   $(".screenshot_input, .logo_input").live('change', function(e){
     var self = $(this)
@@ -13,7 +13,11 @@ $(document).ready(function(){
     var objectURL = getObjectURL(file);
     if(objectURL!=null)
     {
-      $('.cropwrap').html('<img class="cropbox" src="'+objectURL+'"/>');
+      $.modal('<img class="cropbox" src="'+objectURL+'"/>'
+              , {
+                  escClose: true
+                 ,overlayClose: true
+                 ,position: ["1%", "1%"]});
 
       var size_x, size_y;
       if (self.attr('class')=="screenshot_input")
@@ -50,7 +54,7 @@ $(document).ready(function(){
             }
           }
       });
-      $('.cropwrap').jqmShow();
+      //$('.cropwrap').jqmShow();
     }
   });
 
