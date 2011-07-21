@@ -1,0 +1,691 @@
+
+/*  
+Sticky Footer Solution
+by Steve Hatcher 
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+
+* {margin:0;
+padding:0;
+} 
+
+/* must declare 0 margins on everything, also for main layout components use padding, not 
+vertical margins (top and bottom) to add spacing, else those margins get added to total height 
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+
+html, body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    width:963px;
+    margin:0 auto 0 auto;
+    overflow:hidden;
+    padding-bottom: 50px;
+}  /* must be same height as the footer */
+
+#footer {
+    padding-top:6px;
+    width:950px;
+    margin:0 auto;
+}
+#footer p {
+    color:#f9f8de;
+    float:right;
+    font-family:helvetica,sans-serif;
+    font-weight:bold;
+}
+
+#footer_stripe {
+    position: relative;
+    margin-top: -30px; /* negative value of footer height */
+    height: 30px;
+    background: #4c2d00;
+}
+/* end of sticky footer */
+/* start of main css */
+body {
+    font-family:sans-serif;
+    height:100%;
+    width:100%;
+    background:#f9f8de url("../images/texture-beige.png");
+}
+.logo_link {
+    position: absolute;
+    display:block;
+    background:transparent;
+    height: 80px;
+    width:270px;
+}
+#header {
+    padding-top:3px;
+    width: 950px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 9000;
+    color: #FFF;
+    background: url("../images/logo.png") no-repeat bottom left;
+}
+
+#header_stripe {
+    width: 100%;
+    height: 30px;
+    background: #4c2d00;
+    position: absolute;
+    top: 30px;
+}
+
+#header_container {
+    width:100%;
+    position: relative;
+    height: 80px;
+}
+p.header {
+    margin:30px 0 0 282px;
+    color:#f9f8de;
+    font-family:helvetica,sans-serif;
+    font-weight:bold;
+    border-left:2px solid #a1916f;
+    padding:4px 0 4px 20px;
+}
+ul#list-nav {
+    list-style:none;
+    padding: 30px 9px 0 0;
+    margin:0 auto;
+    width:386px;
+    color: #f9f8de;
+    float:right;
+}
+
+ul#list-nav li {
+    display:inline;
+} 
+ul#list-nav li span {
+    position:absolute;
+    top:5px;
+    right:16px;
+    text-decoration:none;
+    font-family: helvetica;
+    font-size: 10pt;
+    height:21px;
+    color:#4c2d00;
+    padding:4px 0 0 20px;
+    text-align:center;
+    margin: 0 auto;
+}
+ul#list-nav li a {
+    text-decoration:none;
+    font-family: helvetica;
+    font-size: 10pt;
+    width:70px;
+    height:21px;
+    color:#f9f8de;
+    float:right;
+    padding:4px 0 0 0;
+    text-align:center;
+    margin: 0 auto;
+}
+
+ul#list-nav li a:hover {
+    color:#f49032;
+}
+
+ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
+    height:24px;
+    border:1px solid #f9f8de;
+    border-bottom:none;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background:#f9f8de url("../images/texture-beige.png");
+    color:#4c2d00;
+}
+
+#feature_holder {
+    margin-top:15px;
+    padding:20px 0 20px 20px;
+    width:950px;
+    height:175px;
+    background: url("../images/background-featured.png") no-repeat;
+}
+#feature {
+    padding:8px 0 0 8px;
+    float:left;
+    width:166px;
+    height:166px;
+    background: url("../images/border-large.png") no-repeat;
+}
+
+#feature_description {
+    padding:5px 0 0 25px;
+    float:left;
+    width:560px;
+    height:166px;
+}
+#feature_ribbon {
+    margin:11px 4px 0 0;
+    float:right;
+    width:175px;
+    height:176px;
+    background: url("../images/featured-app-ribbon.png") no-repeat;
+}
+p.feature_title {
+    font-family:helvetica,sans-serif;
+    color:#4c2d00;
+    font-size:26pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+p.feature_subtitle {
+    font-family:helvetica,sans-serif;
+    color:#4c2d00;
+    font-size:14pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+p.feature_discription {
+    font-family:helvetica,sans-serif;
+    color:#4c2d00;
+    font-size:18pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    line-height:120%;
+}
+p.feature_info {
+    font-family:helvetica,sans-serif;
+    color:#4c2d00;
+    font-size:10pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    width:470px;
+}
+#app_holder {
+    margin-top:15px;
+    padding:20px 0 0 5px;
+    width:960px;
+    height:175px;
+ }
+#apps_holder {
+    width:960px;
+    height:310px;
+}
+.app {
+    margin:0 -2px 0 0;
+    float:left;
+    width:320px;
+    height:170px;
+    background: url("../images/applist-single-cell.png") no-repeat;
+}
+.app_logo {
+    padding:7px 0 0 7px;
+    margin:25px 0 0 25px;
+    float:left;
+    width:117px;
+    height:114px;
+    background: url("../images/border-small.png") no-repeat;
+    
+}
+.app_discription {
+    padding:25px 0 0 16px;
+    float:left;
+    width:150px;
+    height:110px;
+}
+p.title {
+    font-family:helvetica,sans-serif;
+    color:#003366;
+    font-size:16pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+p.subtitle {
+    font-family:helvetica,sans-serif;
+    color:#4c2d00;
+    font-size:10pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+p.discription {
+    font-family:helvetica,sans-serif;
+    color:#4c2d00;
+    font-size:12pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+#launch_holder {
+    width:175px;
+    height:165px;
+    float:right;
+    background:url("../images/launch-background.png") no-repeat;
+}
+#launch {
+    border:none;
+    display:block;
+    margin:54px 0 0 -1px;
+    width:166px;
+    height:0;
+    padding-top:57px;
+    background:url("../images/launch.png") no-repeat;
+    background-position:0 0;
+    overflow:hidden;
+}
+#launch:hover {
+    background-position:0 -57px;
+}
+#submit_holder {
+    width:175px;
+    height:165px;
+    float:right;
+    background:url("../images/launch-background.png") no-repeat;
+}
+#submit {
+    border:none;
+    display:block;
+    margin:54px 0 0 -1px;
+    width:166px;
+    height:0;
+    padding-top:58px;
+    background:url("../images/submit.png") no-repeat;
+    background-position:0 0;
+    overflow:hidden;
+}
+#submit:hover {
+     background-position:0 -58px;
+}
+.line_break {
+    display:block;
+    width:930px;
+    height:2px;
+    margin:0 auto;
+    margin-bottom:40px;
+    margin-top:35px;
+    background:url("../images/line-break.png") no-repeat;
+
+}
+/*
+        Showcase
+*/
+#showcase_padd {
+    padding-top:80px;
+}
+#showcase_holder {
+    padding:0 0 0 0;
+    position:relative;
+    width:960px;
+    height:508px;
+    background:url("../images/background-showcase.png") no-repeat;
+}
+.showcase_row {
+    padding:0 0 25px 0;
+    width:960px;
+    height:140px;
+}
+.info_holder {
+    padding:40px 0 25px 0;
+    width:960px;
+    line-height:200%;
+}
+.info_form {
+    width:389px;
+    height:340px;
+    margin:0 auto;
+}
+p.info_brown {
+    text-align:center;
+    font-family:helvetica,sans-serif;
+    color:#4c2d00;
+    font-size:22pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+p.info_blue {
+    text-align:center;
+    font-family:helvetica,sans-serif;
+    color:#003366;
+    font-size:22pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+.info_thumb_blue a{
+ text-decoration: none;
+ color: #003366;
+}
+.info_thumb_blue a:hover{
+ text-decoration: none;
+ color: #f49032;
+}
+.info_thumb_blue {
+    padding:8px 18px 0 0;
+    text-align:center;
+    font-family:helvetica,sans-serif;
+    color:#003366;
+    font-size:22pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+p.info_new_blue {
+    text-align:center;
+    font-family:helvetica,sans-serif;
+    color:#003366;
+    font-size:16pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+/*
+        Tabs
+*/
+#bottom_ribbon {
+    margin:0 0 0 -21px;
+    z-index:-200;
+    top:842px;
+    width:996px;
+    height:57px;
+    position:absolute;
+    background:url("../images/bottom-ribbon.png") no-repeat;
+}
+#tab_ribbon {
+    width:956px;
+    height:50px;
+    position:absolute;
+    overflow:hidden;
+}
+.ribbon_left {
+    float:left;
+    width:8px;
+    height:8px;
+}
+.ribbon_fill {
+    background:url("../images/tab.png");
+    width:8px;
+    height:40px;
+}
+.ribbon_left .ribbon_triangle {
+    background:url("../images/tab-ribbon-effect-left.png") no-repeat;
+}
+.ribbon_right .ribbon_triangle {
+    background:url("../images/tab-ribbon-effect-right.png") no-repeat;
+}
+.ribbon_right {
+    float:right;
+    width:8px;
+    height:8px;
+}
+.ribbon_triangle {
+    width:8px;
+    height:8px;
+}
+.tab_border {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    height:40px;
+}
+ul.tabs {
+    margin-left: 7px;
+    position:absolute;
+    display:block;
+    list-style: none;
+    height: 50px; /*--Set height of tabs--*/
+    width:950px;
+    z-index:90000;
+}
+ul.tabs li {
+    width:314px;
+    text-align:center;
+    float:left;
+    margin:0 0 0 0;
+    padding:0 0 0 0;
+    height: 70px; /*--Subtract 1px from the height of the unordered list--*/
+    line-height: 40px; /*--Vertically aligns the text within the tab--*/
+    margin-bottom: -1px; /*--Pull the list item down 1px--*/
+    overflow: hidden;
+    position: relative;
+    background: #003366;
+    background: url("../images/tab.png") repeat-x;
+}
+ul.tabs li a {
+    text-decoration: none;
+    color: #448db2;
+    display: block;
+    font-size: 1.4em;
+    padding: 0 20px;
+    outline: none;
+    text-shadow: 1px 1px 0px #000;
+}
+ul.tabs li.active {
+    background:url("../images/tab-active.png") no-repeat bottom center;
+}
+ul.tabs li a:hover {
+    background:transparent;
+}
+html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+    color:#fff;
+}
+.tab_container {
+    overflow: hidden;
+    clear: both;
+    float: left; width: 100%;
+    background:transparent;
+}
+.tab_content {
+    height:535px;
+    padding:0 0 0 0;
+    font-size: 1.2em;
+}
+/*
+	Slideshow
+*/
+
+#slides {
+    top:15px;
+    left:4px;
+    z-index:100;
+}
+
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+.slide_holder {
+    width:960px;
+    height:360px;
+}
+.slides_container {
+    width:955px;
+    overflow:hidden;
+    position:relative;
+    display:none;
+}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.slides_container a {
+    width:960px;
+    height:360px;
+
+}
+
+.slides_container a img {
+    display:block;
+}
+
+/*
+	Next/prev buttons
+*/
+#arrow_holder {
+    width:332px;
+    height:20px;
+    margin:0 auto;
+}
+.next {
+    float:right;
+    width:25px;
+    height:20px;
+    display:inline;
+    z-index:101;
+}
+
+.prev {
+
+    width:25px;
+    height:20px;
+    display:inline;
+    z-index:101;
+}
+
+/*
+	Pagination
+*/
+
+.pagination {
+    padding:0 0 0 0;
+    margin:-17px auto 0;
+    width:250px;
+}
+
+.pagination li {
+    float:left;
+    margin:0 10px;
+    list-style:none;
+}
+
+.pagination li a {
+    display:block;
+    width:21px;
+    height:0;
+    padding-top:21px;
+    background-image:url("../images/pagination.png");
+    background-position:0 0;
+    float:left;
+    overflow:hidden;
+}
+
+.pagination li.current a {
+    background-position:0 -21px;
+}
+/*Screenshots slideshow*/
+#slideshow {
+    position:relative;
+    height:250px;
+}
+.screenshot_holder {
+    width: 180px;
+    margin:0 auto;
+}
+#slideshow IMG {
+    border-radius: 10px;
+    moz-border-radius: 10px;
+    webkit-border-radius: 10px;
+    position:absolute;
+    width:938px;
+    height:455px;
+    top:44px;
+    left:9px;
+    z-index:8;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
+}
+/*Submit page*/
+.new_form {
+    border:none;
+    font-family:helvetica,sans-serif;
+    font-size:13pt;
+    background:transparent;
+}
+textarea {
+    resize:none;
+}
+.r {
+    float:right;
+}
+.l {
+    float:left;
+}
+.drop {
+    background:#efd58c;
+}
+.styled-select select {
+    -webkit-appearance: none;
+    border:none;
+    font-family:helvetica,sans-serif;
+    background:url("../images/drop-down.png") no-repeat;
+    width: 200px;
+    padding-left:10px;
+    height: 33px;
+    color:#4c2d00;
+    position:absolute;
+}
+.styled-select {
+    -webkit-appearance: none;
+    width:178px;
+    height:33px;
+    border:none;
+    overflow: hidden;
+    background: url("../images/drop-down-button.png") no-repeat right;
+    position:relative;
+}
+.new_radio {
+    height:74px;
+    padding-top:50px;
+}
+#new_author {
+    padding:40px 0 0 0;
+    width:400px;
+    height:160px;
+    margin:0 auto;
+}
+.git_img {
+    margin:4px 20px 0 0;
+    width:67px;
+    height:67px;
+}
+.new_title {
+    margin-right:12px;
+    padding-right:10px;
+    padding-left:10px;
+    width:207px;
+    height:35px;
+    background:url("../images/tfield-title.png") no-repeat;
+}
+.new_tagline {
+    padding-right:10px;
+    padding-left:10px;
+    width:289px;
+    height:35px;
+    background:url("../images/tfield-tagline.png") no-repeat;
+}
+.new_description {
+    margin-top:12px;
+    padding-right:10px;
+    padding-left:10px;
+    width:528px;
+    height:115px;
+    background:url("../images/tfield-description.png") no-repeat;
+}
+.new_info {
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-right:10px;
+    padding-left:10px;
+    width:370px;
+    height:35px;
+    background:url("../images/tfield-info.png") no-repeat;
+}
+.thumbnail {
+    visibility:hidden;
+}
+
+#simplemodal-overlay {background-color:#000;}
+#simplemodal-container {margin: auto;}

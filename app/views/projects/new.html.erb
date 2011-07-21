@@ -1,0 +1,116 @@
+<%- content_for :head do %>
+  <%= javascript_include_tag "nested_form.js", "jquery.simplemodal.1.4.1.js", "bushido.jcrop.js" %>
+  <%= javascript_include_tag "screenshot_handler.js" %>  
+  <%= stylesheet_link_tag "bushido.jcrop.css" %>
+<% end %>
+
+<%= nested_form_for @project do |f| %>
+
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div id="app_holder">
+      <div id="feature">
+        <div class="field">
+          <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+            <%= f.hidden_field attribute, :id => attribute %>  
+          <% end %>
+
+          <%= f.file_field :thumbnail, :class=>"logo_input thumbnail" %>
+	    </div>
+	<p class="info_thumb_blue"><a href="#">Click to add logo 150x150</a></p>
+	  </div>
+	  <div id="submit_holder">
+	    <%= f.submit "", :id=>"submit" %>
+	  </div>
+	  <div id="feature_description">
+
+	    <div class="field">
+	      <%= f.text_field :title, :size=>"20", :class=>"l autobox new_form new_title", :value => "App name" %>
+	      <%= f.text_field :short_desc, :size=>"30", :class=>"l autobox new_form new_tagline", :value=>"Tagline (a super short description)" %>	      
+	    </div>
+
+	    <div class="field">
+	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form new_description", :value=>"Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
+	    </div>
+
+
+	  </div>
+	</div>
+	<div class="line_break">
+	</div>
+	<!--start of showcase-->
+	<div id="showcase_holder">
+	  <div id="tab_ribbon">
+	    <div class="ribbon_left">
+	      <div class="ribbon_fill"></div>
+	      <div class="ribbon_triangle"></div>
+	    </div>
+	    <div class="ribbon_right">
+	      <div class="ribbon_fill"></div>
+	      <div class="ribbon_triangle"></div>
+	    </div>
+	  </div>
+	  <ul class="tabs">
+	    <li><a href="#tab1">Screenshots</a></li>
+	    <li><a href="#tab2" class="tab_border">Info</a></li>
+	    <li></li>
+	  </ul>
+	  <div class="tab_container">
+	    <div id="tab1" class="tab_content">
+	      <div id="slideshow">
+		<div id="showcase_padd">
+		  <div class="info_holder">
+		    <div class="screenshot_holder">
+            <%=f.fields_for :screenshots do |sh_form| %>
+              <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+                <%= sh_form.hidden_field attribute, :id => attribute %>  
+              <% end %>
+              <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
+            <%- end %>
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	    </div>
+	    <div id="tab2" class="tab_content">
+	      <div id="showcase_padd">
+		<div class="info_holder">
+		  <div class="info_form">
+		    <div class="field">
+		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info", :size=>"44", :value=>"Project homepage" %>
+		      <%= f.text_field :source_url, :class=>"source_url autobox new_form new_info", :size=>"44", :value=>"Source (git repository URL)" %>
+		      <%= f.text_field :license, :class=>"autobox new_form new_info", :size=>"44", :value=>"License" %>
+		      </div>
+
+		  
+            <%= f.fields_for :author do |author_form|%>
+              <%= author_form.hidden_field :name, :class=>"app_author" %>
+              <%= author_form.hidden_field :url, :class=>"app_author_url" %>
+              <div id="new_author">
+		<img src="/images/github-icon.png" class="l git_img" />
+		<p class="l info_brown">Author</p>
+                <p class="l info_new_blue app_author_link"></p>
+              </div>		     
+            <%- end %>
+		  </div>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div id="bottom_ribbon">
+    </div>
+<%- end %>
+<!--end of showcase-->
+
+

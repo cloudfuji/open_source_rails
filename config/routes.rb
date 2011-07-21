@@ -1,8 +1,13 @@
 Osrails::Application.routes.draw do
 
-  root :to => "main#index"
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   devise_for :users
+
+  root :to => "projects#index"
+  match '/projects/github_info/:user/:repo' => 'projects#github_info'
 
   resources :projects
 

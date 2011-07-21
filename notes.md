@@ -1,23 +1,94 @@
 NOTES
 ======
 
-* Add the devise_cas_authenticatable gem to the Gemfile. Do not try a manual install via the command line, it throws an error.
+Localhost development setup
+-----------------------------
+ 
+This section helps you simulate Bushido authentication on your localhost for your development purposes.
 
-    * It seems to have a cyclic dependency - https://gist.github.com/1013812
-    * And that's because the gemspec of the gem is messed up - https://github.com/nbudin/devise_cas_authenticatable/blob/master/devise_cas_authenticatable.gemspec (the current version is tagged 1.0.0.aplha9 but that has the same messed up gemspec)
-    * Filed an issue here https://github.com/nbudin/devise_cas_authenticatable/issues/13
+* Clone the rails app at <https://github.com/Bushido/kagi>
+
+* Update the git module rubycas-server
+
+        $ git submodule init
+        $ git submodule update
+
+* cd into the kagi/lib/rubycas-server directory. And install the dependencies by running bundle
+
+        $ bundle
+
+* Get back to the root directory of kagi.
+
+        $ cd ../../
+
+* To install dependencies and migrate the database, run the following
+
+        $ bundle install
+        $ rake db:migrate
+ 
+  in the application's directory.
+
+* Note the full path of the development database of that app above. The database is at db/development.sqlite3
+
+* Copy the file cas/config.yml.sample as /etc/rubycas-server/config.yml
+
+        cp kagi/cas/config.yml
+
+* Edit the paths in the config file at /etc/rubycas-server/config.yml. All paths refer to the directories within the cloned kagi
+
+* Start the rails development server for kagi by running
+
+        $ rails s -p 3001
+
+  in the cloned repo directory. This will run the CAS server in the port 3001 and therefore not disturbing any other rails dev servers you've started or will start later :)
+
+* Then signup for a user account at <https://localhost:3001/users/sign_up> and thats how you sign up for more accounts when you need them :)
+
+* Just leave this rails app running when you test your applications. And follow the next section to setup user authentication for your Bushido Rails app.
 
 
-Localhost development
------------------------
+Setting up devise with CAS auth (client) in third party Bushido Rails applications
+-----------------------------------------------------------
 
-The below steps are written with reference from http://code.google.com/p/rubycas-server/wiki/Downloads?tm=2
+* Add the gem "devise_cas_authenticatable" to your Gemfile and do a
 
-* Install the "rubycas-server". For now, we suggest using the Bushido fork of the gem if you are using Rails 3.1. The repo is at http://github.com/Bushido/rubycas-server. To use the gem from this repo, add this to your Gemfile.
+        $ bundle install
 
-    gem 'rubycas-server', :git => 'git://github.com/Bushido/rubycas-server.git'
+* Install devise
+    
+        $ rails g devise:install
 
-* To run rubycas-server you need to specify a config file to it. Unfortunately, rubycas-server will force you to create a config file in /etc, in order to avoid it, you can setup the environment variable CONFIG_FILE so that it's available to the rubycas-server. An easier way is to just set the env var before running the command. It can be done by the following.
+* Generate your devise model
+        $ rails g devise User
+      
+* Edit the migration in `db/migrate/XXXX_devise_create_users.rb` to use t.cas_authenticatable:
+    class DeviseCreateUsers < ActiveRecord::Migration
+      def self.up
+        create_table(:users) do |t|
+          t.cas_authenticatable
+    
+          t.string :username
+    
+        ...
 
-    $ CONFIG_FILE=/path/to/config.yml rubycas-server
+        add_index :users, :username, :unique=>true
 
+        ...
+
+* Edit the model file `app/models/user.rb`, remove :database_authenticatable and :recoverable from the _devise_ method. Add :cas_authenticatable.
+
+        devise :cas_authenticatable  # and other options
+
+
+* Now find the devise initializer at _config/initializers/devise.rb_ and set the CAS base url. For localhost testing, with default options for rubycas-server, the config would look like
+  
+        if Rails.env.production?
+            # TODO add bushido CAS url later
+        else
+            config.cas_base_url = "https://localhost:3001/cas"
+        end
+
+* Use the normal Devise url helpers, you are good to go. For login, use the usual devise path `new_user_session_path` and for logout, use the path `destroy_user_session_path`. For example in erb views,
+
+        <%= link_to "Login", new_user_session_path %>
+        <%= link_to "Logout", destroy_user_session_path %>

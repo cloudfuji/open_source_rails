@@ -1,52 +1,43 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc1'
+gem 'rails', '3.1.0.rc4'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 
-gem 'devise', ">=1.2.rc2"
-gem 'devise_cas_authenticatable' #, :git=>'https://github.com/nbudin/devise_cas_authenticatable.git'
-
+gem 'devise'
+gem 'devise_cas_authenticatable'
 gem 'acts-as-taggable-on'
+gem 'paperclip'
+gem 'client_side_validations', '3.0.12'
+
+gem 'nestful'
+
+# NOTES meta_search prerelease is required for activeadmin
+gem "meta_search",    '>= 1.1.0.pre'
+gem 'activeadmin', :git=>"https://github.com/gregbell/active_admin/", :branch=>"rails-3-1"
 
 # Asset template engines
-gem 'haml-rails'
-gem 'sass-rails', :git => 'git://github.com/rails/sass-rails.git'
-gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
-gem 'fancy-buttons'
+gem 'sass-rails', "~> 3.1.0.rc"
+gem 'nested_form', :git=>"https://github.com/ryanb/nested_form.git"
 
-# Asset template engines
+gem 'sprockets', ">=2.0.0.beta10"
 gem 'coffee-script'
 gem 'uglifier'
-
 gem 'jquery-rails'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test, :development do
-  
-  gem 'spork'
-
-  # rubycas-server from Bushido's fork
-  gem 'rubycas-server', :git => 'git://github.com/Bushido/rubycas-server.git'
-
-  # Pretty printed test output
   gem 'turn', :require => false
-
-  gem 'forgery'
-  gem 'machinist', '>= 2.0.0.beta2'
-
+  gem 'spork'
+  gem 'autotest'
   gem 'rspec-rails'
+  gem 'remarkable_activerecord', ">=4.0.0.alpha"
   gem 'cucumber-rails'
-  gem 'capybara'
+  gem 'fabrication'
+  gem 'forgery'
 end

@@ -1,3 +1,7 @@
+permanent/
+public/store
+public/system/
+.DS_Store
 .bundle
 *.swp
 db/*.sqlite3
