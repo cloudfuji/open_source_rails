@@ -6,7 +6,7 @@
 	
 .jqmWindow {
     display: none;
-    
+    z-index: 150; 
     position: fixed;
     top: 17%;
     left: 50%;

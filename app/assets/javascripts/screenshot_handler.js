@@ -1,6 +1,11 @@
+//NOTES: replace this to use document data
 var crop_id="logo";
 
 $(document).ready(function(){
+  
+  $('body').prepend('<div class="cropwrap"></div>');
+  $(".cropwrap").jqm({modal: true});
+  
   $(".screenshot_input, .logo_input").live('change', function(e){
     var self = $(this)
        ,file = e.target.files[0];
@@ -8,24 +13,22 @@ $(document).ready(function(){
     var objectURL = getObjectURL(file);
     if(objectURL!=null)
     {
-      //self.parent().append('<div class="crop_preview"><img class="cropped_image" src="'+objectURL+'"/></div>');
-      // use jQmodal and add the ^ to that div, crop and display only cropped version
       $('.cropwrap').html('<img class="cropbox" src="'+objectURL+'"/>');
 
       var size_x, size_y;
-      if (self.attr('class')=="logo_input")
-      {
-        crop_id = "logo";
-        size_x = 150;
-        size_y = 150;
-      }
-      else
+      if (self.attr('class')=="screenshot_input")
       {
         crop_id = self.parent().prevAll().length;
         size_x = 938;
         size_y = 455;
       }
-
+      else
+      {
+        crop_id = "logo";
+        size_x = 150;
+        size_y = 150;
+      }
+ 
       $('.cropbox').Jcrop({
           minSize: [ size_x, size_y ],
           maxSize: [ size_x, size_y ],
@@ -47,6 +50,7 @@ $(document).ready(function(){
             }
           }
       });
+      $('.cropwrap').jqmShow();
     }
   });
 

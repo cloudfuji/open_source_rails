@@ -6,22 +6,20 @@
 <% end %>
 
 <script type="text/javascript">
-$(function(){
-$('.info_thumb_blue a').click(function(){
-$('.logo_input').click();
-});
-});
+  $(function(){
+    $('.info_thumb_blue a').click(function(){
+      $('.logo_input').click();
+    });
+  });
 </script>
 <script type="text/javascript">
-$(function(){
- console.log('moving ribbon');
- $('#bottom_ribbon').css({
-  top: ($('#showcase_holder').offset().top + $('#showcase_holder').height() - 34) + "px"
- });
-});
+  $(function(){
+    console.log('moving ribbon');
+    $('#bottom_ribbon').css({
+      top: ($('#showcase_holder').offset().top + $('#showcase_holder').height() - 34) + "px"
+    });
+  });
 </script>
-
-<div class="cropwrap"></div>
 
 <%= nested_form_for @project do |f| %>
 
