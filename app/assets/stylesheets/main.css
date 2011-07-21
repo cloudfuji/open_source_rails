@@ -26,8 +26,20 @@ html, body {
     width:963px;
     margin:0 auto 0 auto;
     overflow:hidden;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }  /* must be same height as the footer */
+
+#footer {
+    padding-top:6px;
+    width:950px;
+    margin:0 auto;
+}
+#footer p {
+    color:#f9f8de;
+    float:right;
+    font-family:helvetica,sans-serif;
+    font-weight:bold;
+}
 
 #footer_stripe {
     position: relative;
@@ -137,17 +149,7 @@ ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
     background:#f9f8de url("../images/texture-beige.png");
     color:#4c2d00;
 }
-#footer {
-    padding-top:6px;
-    width:950px;
-    margin:0 auto;
-}
-#footer p {
-    color:#f9f8de;
-    float:right;
-    font-family:helvetica,sans-serif;
-    font-weight:bold;
-}
+
 #feature_holder {
     margin-top:15px;
     padding:20px 0 20px 20px;
