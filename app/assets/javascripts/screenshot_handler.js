@@ -48,7 +48,8 @@ $(document).ready(function(){
               size_y = 150;
             }
  
-            jcrop_api = $('.cboxPhoto').Jcrop({
+            jcrop_api = $.Jcrop('.cboxPhoto');
+            jcrop_api.setOptions({
                 minSize: [ size_x, size_y ],
                 maxSize: [ size_x, size_y ],
                 setSelect: [0, 0, size_x, size_y],
@@ -85,8 +86,8 @@ $(document).ready(function(){
             });
             
             //$('.cropwrap').jqmShow();
-            //jcrop_api.setOptions({allowResize: false});
-            //$.colorbox.resize();
+            jcrop_api.setOptions({allowResize: false});
+            window.setTimeout(function(){$.colorbox.resize();}, 1000);
       }});
     }
   });
