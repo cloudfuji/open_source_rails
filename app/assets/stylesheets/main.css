@@ -355,7 +355,7 @@ p.info_blue {
  color: #f49032;
 }
 .info_thumb_blue {
-    padding:8px 18px 0 0;
+    padding:30px 18px 0 0;
     text-align:center;
     font-family:helvetica,sans-serif;
     color:#003366;
@@ -685,6 +685,7 @@ textarea {
 }
 .thumbnail {
     visibility:hidden;
+    position: absolute;
 }
 
 #simplemodal-overlay {

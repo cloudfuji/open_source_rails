@@ -51,13 +51,16 @@ $(document).ready(function() {
     window.setInterval( slideSwitch, 5000 );
   }
   
-  $('.info_thumb_blue a').click(function(){
+  $('#feature a').live('click',function(){
     $('.logo_input').click();
     return false;
   });
-
-  $('#bottom_ribbon').css({
-    top: ($('#showcase_holder').offset().top + $('#showcase_holder').height() - 34) + "px"
-  });
+  
+  console.log($('#showcase_holder').length);
+  if($('#showcase_holder').length > 0){
+    $('#bottom_ribbon').css({
+      top: ($('#showcase_holder').offset().top + $('#showcase_holder').height() - 34) + "px"
+    });
+  }
 
 });
