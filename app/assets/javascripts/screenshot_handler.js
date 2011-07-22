@@ -3,7 +3,6 @@ $(document).ready(function(){
   // default crop size. We don't want to use a global var and dirty stuff
   $(document).data('crop_id', 'logo');
 
-  $('body').prepend('<div class="cropwrap"></div>');
   var $image_holder = $('body').append('<img class="cropbox" id="image_holder" src=""/>');
   
   $(".screenshot_input, .logo_input").live('change', function(e){
