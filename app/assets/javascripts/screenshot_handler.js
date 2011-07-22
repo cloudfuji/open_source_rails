@@ -1,19 +1,18 @@
-//NOTES: replace this to use document data
-var crop_id="logo";
-
 $(document).ready(function(){
-  
+
+  // default crop size. We don't want to use a global var and dirty stuff
+  $(document).data('crop_id', 'logo');
+
   $('body').prepend('<div class="cropwrap"></div>');
   var $image_holder = $('body').append('<img class="cropbox" id="image_holder" src=""/>');
-  
-  //$(".cropwrap").jqm({modal: true});
   
   $(".screenshot_input, .logo_input").live('change', function(e){
     var self = $(this)
        ,file = e.target.files[0];
     
     var objectURL = getObjectURL(file);
-    
+   
+    // if browser supports HTML5 FileAPI
     if(objectURL!=null){
       
       var jcrop_api;
@@ -28,7 +27,7 @@ $(document).ready(function(){
       
       $.colorbox({
         photo: true
-        ,title: "Please crop your image to this size. Close the window when finished"
+        ,title: "Please crop your image to this size. When finished, close the window or press the ESC key"
         ,overlayClose: false
         ,escKey: true
         ,href: objectURL
@@ -39,11 +38,11 @@ $(document).ready(function(){
             var size_x, size_y;
       
             if (self.attr('class')=="screenshot_input"){
-              crop_id = self.parent().prevAll().length;
+              $(document).data('crop_id', self.parent().prevAll().length);
               size_x = 938;
               size_y = 455;
             }else{
-              crop_id = "logo";
+              $(document).data('crop_id', "logo");
               size_x = 150;
               size_y = 150;
             }
@@ -55,6 +54,7 @@ $(document).ready(function(){
                 setSelect: [0, 0, size_x, size_y],
                 onSelect: function(coords) {
                   console.log("jcrop select");
+                  var crop_id = $(document).data('crop_id');
                   if(crop_id=="logo"){
                     var $logo_input = $(".logo_input:first");
                     $logo_input.parent().find('#crop_x').val(coords.x);
@@ -85,7 +85,6 @@ $(document).ready(function(){
                 }
             });
             
-            //$('.cropwrap').jqmShow();
             jcrop_api.setOptions({allowResize: false});
             window.setTimeout(function(){$.colorbox.resize();}, 1000);
       }});
