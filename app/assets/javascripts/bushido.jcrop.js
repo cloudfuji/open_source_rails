@@ -1202,7 +1202,7 @@
           doNudge(e, 0, nudge);
           break;
         case 27: 
-          $.modal.close();  // BUSHIDO NOTES: close the modal window if escape is pressed 
+          $.colorbox.close();  // BUSHIDO NOTES: close the modal window if escape is pressed 
           break;
         case 9:
           return true;

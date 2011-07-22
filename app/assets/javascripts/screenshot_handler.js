@@ -48,7 +48,7 @@ $(document).ready(function(){
                   
                   var crop_id = $(document).data('crop_id');
                   if(crop_id=="logo"){
-                    var $logo_input = $("#project_thumbnail:first");
+                    var $logo_input = $("#project_thumbnail");
                     $logo_input.parent().find('#crop_x').val(coords.x);
                     $logo_input.parent().find('#crop_y').val(coords.y);
                     $logo_input.parent().find('#crop_w').val(coords.w);
