@@ -16,14 +16,6 @@ $(document).ready(function(){
     if(objectURL!=null){
       
       var jcrop_api;
-      // $.modal('<img class="cropbox" src="'+objectURL+'"/>'
-      //               , {
-      //                   escClose: true
-      //                  ,overlayClose: true
-      //                  ,autoPosition: true
-      //                  ,autoResize: true
-      //                  //,position: ["1%", "1%"]
-      //                  });
       
       $.colorbox({
         photo: true
@@ -91,20 +83,20 @@ $(document).ready(function(){
     }
   });
 
-
-
-  $('.source_url').change(function(e) {
+  $('#project_source_url').change(checkRepoAuthorInfo);
+  
+  function checkRepoAuthorInfo() {
     var pattern = /^(http(s)?:\/\/github\.com\/).+(\/).+(\.git)$/
-       ,repo_url = $(this).val();
+       ,repo_url = $("#project_source_url").val();
     
     if(pattern.test(repo_url)){
       var repoString = repo_url.replace(/^http(s)?:\/\/github\.com\//i, "").replace(/\.git$/i, "");
       console.log(repoString);
-      setRepoInfo(repoString);
+      setAuthorRepoInfo(repoString);
     }
-  });
-
-  function setRepoInfo(repoString) {
+  }
+ 
+  function setAuthorRepoInfo(repoString) {
     $.get('/projects/github_info/'+repoString+'.json'
           ,data = {}
           ,success = function(data, textStatus, xhr) {
@@ -112,12 +104,11 @@ $(document).ready(function(){
               var repo = data['repository']
                  ,author = repo['owner']
                  ,authorURL = "https://github/"+author;
-              $('.app_author').val(author);
-              $('.app_author_url').val(authorURL);
+              $('#project_author_attributes_name').val(author);
+              $('#project_author_attributes_url').val(authorURL);
               $('.app_author_link').html("<a href='"+authorURL+"'>"+author+"</a>");
             }
-          }
-    );
+          });
   }
 
   function getObjectURL(obj) {
@@ -129,6 +120,9 @@ $(document).ready(function(){
     }
     return null;
   }
+
+  // init calls. Need a better way to write this. Will clean up later. Just work now!
+  checkRepoAuthorInfo();  // check author info on load; Useful for edit view
 
 });
 
