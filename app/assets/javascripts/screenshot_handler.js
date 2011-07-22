@@ -5,7 +5,7 @@ $(document).ready(function(){
 
   var $image_holder = $('body').append('<img class="cropbox" id="image_holder" src=""/>');
   
-  $(".screenshot_input, .logo_input").live('change', function(e){
+  $(".screenshot_input, #project_thumbnail").live('change', function(e){
     var self = $(this)
        ,file = e.target.files[0];
     
@@ -45,9 +45,10 @@ $(document).ready(function(){
                 setSelect: [0, 0, size_x, size_y],
                 onSelect: function(coords) {
                   console.log("jcrop select");
+                  
                   var crop_id = $(document).data('crop_id');
                   if(crop_id=="logo"){
-                    var $logo_input = $(".logo_input:first");
+                    var $logo_input = $("#project_thumbnail:first");
                     $logo_input.parent().find('#crop_x').val(coords.x);
                     $logo_input.parent().find('#crop_y').val(coords.y);
                     $logo_input.parent().find('#crop_w').val(coords.w);
@@ -120,7 +121,7 @@ $(document).ready(function(){
     return null;
   }
 
-  // init calls. Need a better way to write this. Will clean up later. Just work now!
+  // TODO init calls. Need a better way to write this. Will clean up later. Just work now!
   checkRepoAuthorInfo();  // check author info on load; Useful for edit view
 
 });

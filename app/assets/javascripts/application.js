@@ -52,7 +52,7 @@ $(document).ready(function() {
   }
   
   $('#feature a').live('click',function(){
-    $('.logo_input').click();
+    $('#project_thumbnail').click();
     return false;
   });
   
