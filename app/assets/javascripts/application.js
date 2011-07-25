@@ -27,12 +27,15 @@ $(document).ready(function() {
     $(activeTab).fadeIn(); //Fade in the active ID content
     return false;
   });
-
-	$('#slides').slides({
-		preload: true,
-		preloadImage: 'images/loading.gif',
-		hoverPause: true
-	});
+  
+  if($('#slides .slides_container div').length > 0){
+    console.log("omg slides in the slide container!");
+  	$('#slides').slides({
+  		preload: true,
+  		preloadImage: 'images/loading.gif',
+  		hoverPause: true
+  	});
+  }
 
   function slideSwitch() {
 	  var $active = $('#slideshow IMG.active');
