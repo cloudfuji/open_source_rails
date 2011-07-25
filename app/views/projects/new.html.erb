@@ -35,12 +35,12 @@
 	  <div id="feature_description">
 
 	    <div class="field">
-	      <%= f.text_field :title, :size=>"20", :class=>"l autobox new_form new_title", :value => (!@project.title.nil?)  ? @project.title : "App name"  %>
-	      <%= f.text_field :short_desc, :size=>"30", :class=>"l autobox new_form new_tagline", :value=> (!@project.short_desc.nil?) ? @project.short_desc : "Tagline (a super short description)" %>	      
+	      <%= f.text_field :title, :size=>"20", :class=>"l autobox new_form new_title", :value => "App name" %>
+	      <%= f.text_field :short_desc, :size=>"30", :class=>"l autobox new_form new_tagline", :value=>"Tagline (a super short description)" %>	      
 	    </div>
 
 	    <div class="field">
-	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form new_description", :value=> (!@project.about.nil?) ? @project.about : "Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
+	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form new_description", :value=>"Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
 	    </div>
 
 
@@ -67,27 +67,67 @@
 	  </ul>
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
-		<div id="showcase_padd">
-		  <div class="info_holder">
-		    <div class="screenshot_holder">
-            <%=f.fields_for :screenshots do |sh_form| %>
-              <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
-                <%= sh_form.hidden_field attribute, :id => attribute %>  
-              <% end %>
-              <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
-            <%- end %>
-		  </div>
-		</div>
+      		  <div class="info_holder">
+      		    <div class="screenshot_holder">
+      		        <div id="slides">
+        		        <div class="slides_container">
+                      <div class="fields"> 
+                          <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
+                          <input id="crop_x" name="project[screenshots_attributes][0][crop_x]" type="hidden" />  
+                          <input id="crop_y" name="project[screenshots_attributes][0][crop_y]" type="hidden" />  
+                          <input id="crop_w" name="project[screenshots_attributes][0][crop_w]" type="hidden" />  
+                          <input id="crop_h" name="project[screenshots_attributes][0][crop_h]" type="hidden" />  
+                          <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_0_image" name="project[screenshots_attributes][0][image]" type="file" /> 
+                      </div>
+                      <div class="fields"> 
+                          <a href="#" class="info_thumb_blue ">Click Here To Upload A Screenshot</a>
+                          <input id="crop_x" name="project[screenshots_attributes][1][crop_x]" type="hidden" />  
+                          <input id="crop_y" name="project[screenshots_attributes][1][crop_y]" type="hidden" />  
+                          <input id="crop_w" name="project[screenshots_attributes][1][crop_w]" type="hidden" />  
+                          <input id="crop_h" name="project[screenshots_attributes][1][crop_h]" type="hidden" />  
+                        <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_1_image" name="project[screenshots_attributes][1][image]" type="file" /> 
+                      </div>
+                      <div class="fields"> 
+                          <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
+                          <input id="crop_x" name="project[screenshots_attributes][2][crop_x]" type="hidden" />  
+                          <input id="crop_y" name="project[screenshots_attributes][2][crop_y]" type="hidden" />  
+                          <input id="crop_w" name="project[screenshots_attributes][2][crop_w]" type="hidden" />  
+                          <input id="crop_h" name="project[screenshots_attributes][2][crop_h]" type="hidden" />  
+                        <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_2_image" name="project[screenshots_attributes][2][image]" type="file" /> 
+                      </div>
+                      <div class="fields"> 
+                          <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
+                          <input id="crop_x" name="project[screenshots_attributes][3][crop_x]" type="hidden" />  
+                          <input id="crop_y" name="project[screenshots_attributes][3][crop_y]" type="hidden" />  
+                          <input id="crop_w" name="project[screenshots_attributes][3][crop_w]" type="hidden" />  
+                          <input id="crop_h" name="project[screenshots_attributes][3][crop_h]" type="hidden" />  
+                        <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_3_image" name="project[screenshots_attributes][3][image]" type="file" /> 
+                      </div>
+                      <div class="fields"> 
+                          <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
+                          <input id="crop_x" name="project[screenshots_attributes][4][crop_x]" type="hidden" />  
+                          <input id="crop_y" name="project[screenshots_attributes][4][crop_y]" type="hidden" />  
+                          <input id="crop_w" name="project[screenshots_attributes][4][crop_w]" type="hidden" />  
+                          <input id="crop_h" name="project[screenshots_attributes][4][crop_h]" type="hidden" />  
+                        <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_4_image" name="project[screenshots_attributes][4][image]" type="file" /> 
+                      </div>
+                    </div><!-- slides_container -->
+                    <div id="arrow_holder" >
+                      <a href="#" class="prev"><img src="/images/arrow-prev.png" alt="Arrow Prev"></a>
+                      <a href="#" class="next"><img src="/images/arrow-next.png" alt="Arrow Next"></a>
+                    </div>
+                  </div><!-- slides -->
+      		    </div><!-- screenshot_holder -->
+      		  </div><!-- info_holder -->
 	      </div>
-	    </div>
 	    <div id="tab2" class="tab_content">
 	      <div id="showcase_padd">
 		<div class="info_holder">
 		  <div class="info_form">
 		    <div class="field">
-		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.homepage_url.nil?) ? @project.homepage_url : "Project homepage" %>
-		      <%= f.text_field :source_url, :class=>"source_url autobox new_form new_info", :size=>"44", :value=> (!@project.source_url.nil?) ? @project.source_url : "Source (git repository URL)" %>
-		      <%= f.text_field :license, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.license.nil?) ? @project.license : "License" %>
+		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info", :size=>"44", :value=>"Project homepage" %>
+		      <%= f.text_field :source_url, :class=>"source_url autobox new_form new_info", :size=>"44", :value=>"Source (git repository URL)" %>
+		      <%= f.text_field :license, :class=>"autobox new_form new_info", :size=>"44", :value=>"License" %>
 		      </div>
 
 		  

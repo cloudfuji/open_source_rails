@@ -2,6 +2,10 @@
 //= require jquery_ujs
 //= require rails.validations
 
+if(typeof window.console === 'undefined'){
+   window.console = {log: function(){return false;}};
+}
+
 $(document).ready(function() {
   
   //create auto boxes
@@ -56,7 +60,6 @@ $(document).ready(function() {
     return false;
   });
   
-  console.log($('#showcase_holder').length);
   if($('#showcase_holder').length > 0){
     $('#bottom_ribbon').css({
       top: ($('#showcase_holder').offset().top + $('#showcase_holder').height() - 34) + "px"

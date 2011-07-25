@@ -6,6 +6,12 @@ $(document).ready(function(){
   $('body').prepend('<div class="cropwrap"></div>');
   var $image_holder = $('body').append('<img class="cropbox" id="image_holder" src=""/>');
   
+  $('.fields a').click(function(){
+    console.log("upload click");
+    $(this).parent('.fields').find('input[type="file"]').click();
+    return false;
+  });
+  
   //$(".cropwrap").jqm({modal: true});
   
   $(".screenshot_input, .logo_input").live('change', function(e){
@@ -100,7 +106,6 @@ $(document).ready(function(){
     
     if(pattern.test(repo_url)){
       var repoString = repo_url.replace(/^http(s)?:\/\/github\.com\//i, "").replace(/\.git$/i, "");
-      console.log(repoString);
       setRepoInfo(repoString);
     }
   });
