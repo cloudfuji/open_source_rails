@@ -3,7 +3,8 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!, :only=>[:new, :create]
 
   def index
-    @projects = Project.all
+    @projects = Project.includes(:project_category).all
+    @featured_project = FeaturedProject.includes(:project=>[:project_category]).first.project
   end
 
   def new
@@ -13,7 +14,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.includes(:screenshots, :author).find(params[:id])
+    @project = Project.includes(:project_category, :screenshots, :author).find(params[:id])
     unless @project.approved?
       redirect_to root_path, :notice=>"That project doesn't exist"
     end
