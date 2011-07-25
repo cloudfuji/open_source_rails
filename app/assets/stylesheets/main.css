@@ -729,6 +729,10 @@ textarea {
   z-index: 9000;
 }
 
+.screenshot_holder .slides_container a img{
+  display: inline !important;
+}
+
 .screenshot_holder .slides_control{
   text-align: center;
 }
@@ -742,6 +746,7 @@ textarea {
 }
 
 .fields input{
-  display: none;
+  visibility: hidden;
+  position: absolute;
 }
 
