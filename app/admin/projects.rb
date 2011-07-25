@@ -37,10 +37,10 @@ ActiveAdmin.register Project do
       f.input :thumbnail
     end
 
-    f.inputs :as=>"Author", :for=>:author do |a|
-      a.inputs :name, :url
+    f.semantic_fields_for :author do |author_form|
+      author_form.inputs :name, :url
     end
-  
+    
     f.inputs do
       f.has_many :screenshots do |s|
         unless s.object.id.nil?

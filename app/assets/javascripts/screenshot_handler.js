@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  
   $('.fields a').click(function(){
     $(this).parent().find('input[type="file"]').click();
     return false;
