@@ -90,7 +90,7 @@
 		      <%= f.text_field :license, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.license.nil?) ? @project.license : "License" %>
 		      </div>
 
-		  
+
             <%= f.fields_for :author do |author_form|%>
               <%= author_form.hidden_field :name %>
               <%= author_form.hidden_field :url %>
@@ -110,5 +110,3 @@
     </div>
 <%- end %>
 <!--end of showcase-->
-
-
