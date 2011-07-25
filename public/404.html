@@ -1,26 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
-
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
-  </div>
-</body>
-</html>
+<!doctype html>  
+ 
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]--> 
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]--> 
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]--> 
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]--> 
+  <head>  
+    <title>Open Source Rails</title> 
+    <link href="/assets/reset_styles.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <link href="/assets/main.css" media="screen" rel="stylesheet" type="text/css" /> 
+  </head> 
+  <body> 
+    <div id="wrap"> 
+      <div id="header_container"> 
+	<div id="header_stripe"></div> 
+        <!--dont put shit in this div^ --> 
+	
+        <div id="header"> 
+          <a href="http://beta.opensourcerails.com/" class="logo_link"></a> 
+          <p class="header">Only the best</p> 
+	</div> 
+      </div>      
+      <div id="main"> 
+	<div id="fourofour_holder"> 
+	  <div class="fourofour">
+	    <p class="bb">404</p>
+	  </div>
+	</div> 
+	    <p class="bs">We couldn't find that page... Perhaps it's on holiday?</p>
+	<div class="line_break"> 
+	</div> 
+      </div>	
+    </div> 
+    <div id="footer_stripe"> 
+  <div id="footer"> 
+    <p>Powered by Bushido | Special thanks to <a style="color:#f9f8de" href="http://twitter.com/#!/railsjedi">@railsjedi</a></p> 
+  </div> 
+    </div> 
+  </body> 
+</html> 

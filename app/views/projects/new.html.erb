@@ -125,15 +125,15 @@
 		<div class="info_holder">
 		  <div class="info_form">
 		    <div class="field">
-		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info", :size=>"44", :value=>"Project homepage" %>
-		      <%= f.text_field :source_url, :class=>"source_url autobox new_form new_info", :size=>"44", :value=>"Source (git repository URL)" %>
-		      <%= f.text_field :license, :class=>"autobox new_form new_info", :size=>"44", :value=>"License" %>
+		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.homepage_url.nil?) ? @project.homepage_url : "Project homepage" %>
+		      <%= f.text_field :source_url, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.source_url.nil?) ? @project.source_url : "Source (git repository URL)" %>
+		      <%= f.text_field :license, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.license.nil?) ? @project.license : "License" %>
 		      </div>
 
-		  
+
             <%= f.fields_for :author do |author_form|%>
-              <%= author_form.hidden_field :name, :class=>"app_author" %>
-              <%= author_form.hidden_field :url, :class=>"app_author_url" %>
+              <%= author_form.hidden_field :name %>
+              <%= author_form.hidden_field :url %>
               <div id="new_author">
 		<img src="/images/github-icon.png" class="l git_img" />
 		<p class="l info_brown">Author</p>
@@ -150,5 +150,3 @@
     </div>
 <%- end %>
 <!--end of showcase-->
-
-

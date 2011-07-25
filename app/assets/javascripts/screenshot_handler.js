@@ -1,39 +1,28 @@
-//NOTES: replace this to use document data
-var crop_id="logo";
-
 $(document).ready(function(){
-  
-  //$('body').prepend('<div class="cropwrap"></div>');
-  //var $image_holder = $('body').append('<img class="cropbox" id="image_holder" src=""/>');
-  
   $('.fields a').click(function(){
     $(this).parent().find('input[type="file"]').click();
     return false;
   });
+
+  // default crop size. We don't want to use a global var and dirty stuff
+  $(document).data('crop_id', 'logo');
+
+  // $image_holder = $('body').append('<img class="cropbox" id="image_holder" src=""/>');
   
-  //$(".cropwrap").jqm({modal: true});
-  
-  $(".screenshot_input, .logo_input").live('change', function(e){
+  $(".screenshot_input, #project_thumbnail").live('change', function(e){
     var self = $(this)
        ,file = e.target.files[0];
     
     var objectURL = getObjectURL(file);
-    
+   
+    // if browser supports HTML5 FileAPI
     if(objectURL!=null){
       
       var jcrop_api;
-      // $.modal('<img class="cropbox" src="'+objectURL+'"/>'
-      //               , {
-      //                   escClose: true
-      //                  ,overlayClose: true
-      //                  ,autoPosition: true
-      //                  ,autoResize: true
-      //                  //,position: ["1%", "1%"]
-      //                  });
       
       $.colorbox({
         photo: true
-        ,title: "Please crop your image to this size. Close the window when finished"
+        ,title: "Please crop your image to this size. When finished, close the window or press the ESC key"
         ,overlayClose: false
         ,escKey: true
         ,href: objectURL
@@ -51,18 +40,15 @@ $(document).ready(function(){
             var size_x, size_y;
       
             if (self.attr('class')=="screenshot_input"){
-              console.log("alert screenshot_input class");
-              console.log(self.parent(), self.parent().prevAll(), self.parent().prevAll().length);
-              crop_id = self.parent().prevAll().length;
+              $(document).data('crop_id', self.parent().prevAll().length);
               size_x = 938;
               size_y = 455;
             }else{
-              crop_id = "logo";
+              $(document).data('crop_id', "logo");
               size_x = 150;
               size_y = 150;
             }
             
-            console.log("alert crop_id?", crop_id);
  
             jcrop_api = $.Jcrop('.cboxPhoto');
             jcrop_api.setOptions({
@@ -71,9 +57,9 @@ $(document).ready(function(){
                 setSelect: [0, 0, size_x, size_y],
                 onSelect: function(coords) {
                   console.log("jcrop select");
-                  console.log(crop_id);
-                  if(crop_id =="logo"){
-                    var $logo_input = $(".logo_input:first");
+                  var crop_id = $(document).data('crop_id');
+                  if(crop_id=="logo"){
+                    var $logo_input = $("#project_thumbnail");
                     $logo_input.parent().find('#crop_x').val(coords.x);
                     $logo_input.parent().find('#crop_y').val(coords.y);
                     $logo_input.parent().find('#crop_w').val(coords.w);
@@ -125,26 +111,26 @@ $(document).ready(function(){
                 }
             });
             
-            //$('.cropwrap').jqmShow();
             jcrop_api.setOptions({allowResize: false});
             window.setTimeout(function(){$.colorbox.resize();}, 1000);
       }});
     }
   });
 
-
-
-  $('.source_url').change(function(e) {
+  $('#project_source_url').change(checkRepoAuthorInfo);
+  
+  function checkRepoAuthorInfo() {
     var pattern = /^(http(s)?:\/\/github\.com\/).+(\/).+(\.git)$/
-       ,repo_url = $(this).val();
+       ,repo_url = $("#project_source_url").val();
     
     if(pattern.test(repo_url)){
       var repoString = repo_url.replace(/^http(s)?:\/\/github\.com\//i, "").replace(/\.git$/i, "");
-      setRepoInfo(repoString);
+      console.log(repoString);
+      setAuthorRepoInfo(repoString);
     }
-  });
-
-  function setRepoInfo(repoString) {
+  }
+ 
+  function setAuthorRepoInfo(repoString) {
     $.get('/projects/github_info/'+repoString+'.json'
           ,data = {}
           ,success = function(data, textStatus, xhr) {
@@ -152,12 +138,11 @@ $(document).ready(function(){
               var repo = data['repository']
                  ,author = repo['owner']
                  ,authorURL = "https://github/"+author;
-              $('.app_author').val(author);
-              $('.app_author_url').val(authorURL);
+              $('#project_author_attributes_name').val(author);
+              $('#project_author_attributes_url').val(authorURL);
               $('.app_author_link').html("<a href='"+authorURL+"'>"+author+"</a>");
             }
-          }
-    );
+          });
   }
 
   function getObjectURL(obj) {
@@ -169,6 +154,9 @@ $(document).ready(function(){
     }
     return null;
   }
+
+  // TODO init calls. Need a better way to write this. Will clean up later. Just work now!
+  checkRepoAuthorInfo();  // check author info on load; Useful for edit view
 
 });
 
