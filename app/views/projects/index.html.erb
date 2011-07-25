@@ -3,11 +3,11 @@
 
 <div id="feature_holder">
   <div id="feature">
-    <%= link_to image_tag(@featured_project.thumbnail.url(:large)), p %>
+    <%= link_to image_tag(@featured_project.thumbnail.url(:large)), @featured_project %>
   </div>
   <div id="feature_description">
     <p class="feature_title">
-      <%= @featured_project.title %>
+      <%= link_to @featured_project.title, @featured_project %>
     </p>
     <p class="feature_subtitle">
       <%= @featured_project.project_category.name %>
