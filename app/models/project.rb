@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :project_category
+  has_one :featured_project, :dependent=>:destroy
   has_one :author, :dependent => :destroy
   has_many :screenshots, :dependent => :destroy
  
