@@ -70,7 +70,7 @@
             <%- @projects_count = @similar_projects.count %>
             <%- @counter = 0 %>
             
-            <%- if @projects_count == 0 %>
+            <%- if @projects_count > 0 %>
 
               <%- @similar_projects.each do |p| %>
                 <%- if @counter == 0 or (@counter % 3)==0 %>
