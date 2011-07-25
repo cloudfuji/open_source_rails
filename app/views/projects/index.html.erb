@@ -20,6 +20,7 @@
 </div>
 
 <div id="apps_holder">
+  <% unless @projects.nil? or @projects.length == 0%>
   <div id="slides">
     <div class="slides_container">
       <%- @counter = 0 %>
@@ -36,7 +37,6 @@
               </div>
               <div class="app_discription">
                 <p class="title"><%= link_to p.title, p %></p>
-                <p class="subtitle"><%= p.project_category.name %></p><br/>
                 <p class="discription"><%= p.short_desc %></p>
               </div>
             </div>
@@ -45,8 +45,7 @@
           </div>
         <%- end %>
         <%- @counter = @counter.next %>
-      <%- end %>
-      
+      <%- end %>      
     </div>
 
     <div id="arrow_holder">
@@ -58,4 +57,5 @@
       </a>
     </div>
   </div>
+  <% end %>
 </div>

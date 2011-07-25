@@ -33,13 +33,15 @@
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
 	      <div id="slideshow">
-            <%-#assuming here that there's atleast one screenshot %>
-            <%- @first_id = @project.screenshots.first.id %>
-            <%- @project.screenshots.each do |s| %>
-              <%- if s.id == @first_id %>
-                <%= image_tag s.image.url(:large), :class=>"active" %>
-              <%- else %>
-                <%= image_tag s.image.url(:large) %>
+	          <% unless @project.screenshots.nil? or @project.screenshots.blank? %>
+              <%-#assuming here that there's atleast one screenshot %>
+              <%- @first_id = @project.screenshots.first.id %>
+              <%- @project.screenshots.each do |s| %>
+                <%- if s.id == @first_id %>
+                  <%= image_tag s.image.url(:large), :class=>"active" %>
+                <%- else %>
+                  <%= image_tag s.image.url(:large) %>
+                <% end %>
               <% end %>
             <% end %>
 	      </div>
