@@ -21,10 +21,8 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.includes(:project_category, :screenshots, :author).
                        find(params[:id])
-
-    @similar_projects = ProjectCategory.limit(6).includes(:projects=>[:project_category]).
-                                        find(@project.project_category_id).
-                                        projects
+    
+    @similar_projects = Project.includes(:project_category).where("project_category_id = ? AND ID != ?", @project.project_category_id, @project.id)
 
     unless @project.approved?
       redirect_to root_path, :notice=>"That project doesn't exist"
