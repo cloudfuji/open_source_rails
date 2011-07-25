@@ -55,10 +55,12 @@ $(document).ready(function() {
     window.setInterval( slideSwitch, 5000 );
   }
   
-  $('#feature a').live('click',function(){
-    $('#project_thumbnail').click();
-    return false;
-  });
+  if($('.screenshot_input').length > 0){
+    $('#feature a').live('click',function(){
+      $('#project_thumbnail').click();
+      return false;
+    });
+  }
   
   if($('#showcase_holder').length > 0){
     $('#bottom_ribbon').css({
