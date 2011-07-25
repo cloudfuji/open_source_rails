@@ -215,7 +215,6 @@ p.feature_info {
 }
 #apps_holder {
     width:960px;
-    height:310px;
 }
 .app {
     margin:0 -2px 0 0;
@@ -504,6 +503,7 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 }
 .slides_container {
     width:955px;
+    height:360px;
     overflow:hidden;
     position:relative;
     display:block;
