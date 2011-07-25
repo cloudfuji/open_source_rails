@@ -1,9 +1,13 @@
 $(document).ready(function(){
+  $('.fields a').click(function(){
+    $(this).parent().find('input[type="file"]').click();
+    return false;
+  });
 
   // default crop size. We don't want to use a global var and dirty stuff
   $(document).data('crop_id', 'logo');
 
-  var $image_holder = $('body').append('<img class="cropbox" id="image_holder" src=""/>');
+  // $image_holder = $('body').append('<img class="cropbox" id="image_holder" src=""/>');
   
   $(".screenshot_input, #project_thumbnail").live('change', function(e){
     var self = $(this)
@@ -23,7 +27,14 @@ $(document).ready(function(){
         ,escKey: true
         ,href: objectURL
         ,onClosed: function(){
-          jcrop_api.tellSelect();
+          /*
+          *
+          * we need to trigger jcrops select event here but there dosen't appear to be a default way to do it
+          *
+          */
+          console.log("modal box closing", jcrop_api.tellSelect(), jcrop_api);
+          //jcrop_api.select();
+
         }
         ,onComplete: function(){
             var size_x, size_y;
@@ -37,6 +48,7 @@ $(document).ready(function(){
               size_x = 150;
               size_y = 150;
             }
+            
  
             jcrop_api = $.Jcrop('.cboxPhoto');
             jcrop_api.setOptions({
@@ -45,7 +57,6 @@ $(document).ready(function(){
                 setSelect: [0, 0, size_x, size_y],
                 onSelect: function(coords) {
                   console.log("jcrop select");
-                  
                   var crop_id = $(document).data('crop_id');
                   if(crop_id=="logo"){
                     var $logo_input = $("#project_thumbnail");
@@ -58,8 +69,8 @@ $(document).ready(function(){
                       $('#feature').append('<a style="display:block;width:150px;height:150px;overflow:hidden;"><img id="logo_thumbnail" src="'+objectURL+'"/></a>');
                     }
                     $('#logo_thumbnail').attr('src', objectURL);
-                      var rx = 150 / coords.w;
-                    	var ry = 150 / coords.h;
+                      var rx = size_x / coords.w;
+                    	var ry = size_y / coords.h;
 
                     	$('#logo_thumbnail').css({
                     		width: Math.round(rx * $('.cboxPhoto').width()) + 'px',
@@ -68,11 +79,34 @@ $(document).ready(function(){
                     		marginTop: '-' + Math.round(ry * coords.y) + 'px'
                     	});
                   }else{
-                    var $screenshot_input = $(".screenshot_input");
+                    console.log("omg croppan a screenshot");
+                    var $screenshot_input = $(".screenshot_input")
+                        ,$container = $screenshot_input.eq(crop_id).parent()
+                        ,$link = $container.find('a');
+                        
+                    console.log("What are we working with? container =",$container, "link", $link, $link.find('.screener'));
+                    
+                    if($link.find('.screener').length < 1){
+                      $link.html('<img class="screener" src="'+objectURL+'"/>');
+                    }
+                    
+                    console.log("settinf values for crop_Id", crop_id);
+                    
                     $screenshot_input.eq(crop_id).parent().find('#crop_x').val(coords.x);
                     $screenshot_input.eq(crop_id).parent().find('#crop_y').val(coords.y);
                     $screenshot_input.eq(crop_id).parent().find('#crop_w').val(coords.w);
                     $screenshot_input.eq(crop_id).parent().find('#crop_h').val(coords.h);
+                    
+                    $link.find('.screener').attr('src', objectURL);
+                    var rx = size_x / coords.w;
+                  	var ry = size_y / coords.h;
+
+                  	$link.find('.screener').css({
+                  		width: Math.round(rx * $('.cboxPhoto').width()) + 'px',
+                  		height: Math.round(ry * $('.cboxPhoto').height()) + 'px',
+                  		marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                  		marginTop: '-' + Math.round(ry * coords.y) + 'px'
+                  	});
                   }
                 }
             });
