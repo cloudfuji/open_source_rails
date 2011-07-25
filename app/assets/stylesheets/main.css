@@ -163,7 +163,7 @@ ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
     height:166px;
     background: url("../images/border-large.png") no-repeat;
 }
-#feature a {
+#feature a, #feature img {
     -webkit-border-radius: 5px !important;
     -moz-border-radius: 5px !important;
     border-radius: 5px !important;
@@ -311,7 +311,7 @@ p.discription {
         Showcase
 */
 #showcase_padd {
-    padding-top:40px;
+    padding-top:80px;
 }
 #showcase_holder {
     padding:0 0 0 0;
