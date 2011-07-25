@@ -13,14 +13,18 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @project.build_author
-    5.times {
+    5.times do
       @project.screenshots.build
-    }
+    end
   end
 
   def show
     @project = Project.includes(:project_category, :screenshots, :author).
                        find(params[:id])
+
+    @similar_projects = ProjectCategory.limit(6).includes(:projects=>[:project_category]).
+                                        find(@project.project_category_id).
+                                        projects
 
     unless @project.approved?
       redirect_to root_path, :notice=>"That project doesn't exist"
