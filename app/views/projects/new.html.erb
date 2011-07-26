@@ -35,14 +35,13 @@
 	  <div id="feature_description">
 
 	    <div class="field">
-	      <%= f.text_field :title, :size=>"20", :class=>"l autobox new_form new_title", :value => "App name" %>
-	      <%= f.text_field :short_desc, :size=>"30", :class=>"l autobox new_form new_tagline", :value=>"Tagline (a super short description)" %>	      
+	      <%= f.text_field :title, :size=>"20", :class=>"l autobox new_form new_title", :value => (!@project.title.nil?)  ? @project.title : "App name"  %>
+	      <%= f.text_field :short_desc, :size=>"30", :class=>"l autobox new_form new_tagline", :value=> (!@project.short_desc.nil?) ? @project.short_desc : "Tagline (a super short description)" %>	      
 	    </div>
 
 	    <div class="field">
-	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form new_description", :value=>"Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
+	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form new_description", :value=> (!@project.about.nil?) ? @project.about : "Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
 	    </div>
-
 
 	  </div>
 	</div>
