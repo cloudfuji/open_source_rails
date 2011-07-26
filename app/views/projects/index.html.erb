@@ -35,7 +35,6 @@
 		  <div class="app_discription">
 		    <p class="title"><%= link_to p.title, p %></p>
 		    <p class="subtitle"><%= p.project_category.name %></p><br/>
-		    <p class="discription"><%= p.short_desc %></p>
 		  </div>
 		</div>
 		<%- if (@projects_count == @counter + 1) or (@counter+1)%6 == 0 %>
