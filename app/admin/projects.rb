@@ -108,9 +108,9 @@ ActiveAdmin.register Project do
       end
       div do
         unless project.author.nil?
-          "--nil-- [ENTER ONE SOON]"
-        else
           project.author.name + ", " + project.author.url
+        else
+          "--nil-- [ENTER ONE SOON]"
         end
       end
     end
