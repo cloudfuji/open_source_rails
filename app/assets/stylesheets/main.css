@@ -380,12 +380,13 @@ p.info_blue {
     font-size:22pt;
     text-shadow: 1px 1px 0px #FFFFFF;
 }
-p.info_new_blue {
+p.info_new_blue, p.info_new_blue a {
     text-align:center;
     font-family:helvetica,sans-serif;
     color:#003366;
     font-size:16pt;
     text-shadow: 1px 1px 0px #FFFFFF;
+    text-decoration:none;
 }
 /*
         Tabs

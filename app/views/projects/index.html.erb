@@ -1,12 +1,11 @@
-<div id="feature_ribbon">
-</div>
-
-<div id="feature_holder">
-  <div id="feature">
+	  <div id="feature_ribbon">
+	  </div>
+	<div id="feature_holder">
+	  <div id="feature">
     <%= link_to image_tag(@featured_project.thumbnail.url(:large)), @featured_project %>
-  </div>
-  <div id="feature_description">
-    <p class="feature_title">
+	  </div>
+	    <div id="feature_description">
+<p class="feature_title">
       <%= link_to @featured_project.title, @featured_project %>
     </p>
     <p class="feature_subtitle">
@@ -16,48 +15,41 @@
       <%= @featured_project.short_desc %>
       <%= link_to "Find out more!",@featured_project, :style=>"text-decoration:none;color:#003366" %>
     </p>
-  </div>
-</div>
+	  </div>
+	</div>
+	<div id="apps_holder">
+	  <% unless @projects.nil? or @projects.length == 0%>
+	  <div id="slides">
+	    <div class="slides_container">
+	      <%- @counter = 0 %>
+	      <%- @projects_count = @projects.count %>
+	      <%- @projects.each do |p| %>
+	      
+              <%- if @counter == 0 or (@counter % 6)==0 %>
+	      <div class="slide_holder">
+	      <%- end %>
+		<div class="app">
+		  <div class="app_logo">
+                    <%= link_to image_tag(p.thumbnail.url(:medium)), p %>
+		  </div>
+		  <div class="app_discription">
+		    <p class="title"><%= link_to p.title, p %></p>
+		    <p class="subtitle"><%= p.project_category.name %></p><br/>
+		  </div>
+		</div>
+		<%- if (@projects_count == @counter + 1) or (@counter+1)%6 == 0 %>
+	      </div><!--closes slide holder -->
+              <%- end %>
+              <%- @counter = @counter.next %>
+	      <%- end %>      
+	    </div><!--closes slides container -->
+	    <% unless @projects.count < 7 %>
+	    <div id="arrow_holder">
+	    <a href="#" class="prev"><img src="/images/arrow-prev.png" alt="Arrow Prev"></a>
+	    <a href="#" class="next"><img src="/images/arrow-next.png" alt="Arrow Next"></a>
+	    </div>
+	    <% end %>
+	  </div>
+	  <% end %>
+	</div>
 
-<div id="apps_holder">
-  <% unless @projects.nil? or @projects.length == 0%>
-  <div id="slides">
-    <div class="slides_container">
-      <%- @counter = 0 %>
-      <%- @projects_count = @projects.count %>
-      <%- @projects.each do |p| %>
-
-        <%- if @counter == 0 or (@counter % 6)==0 %>
-          <div class="slide_holder">
-        <%- end %>
-        
-            <div class="app">
-              <div class="app_logo">
-                <%= link_to image_tag(p.thumbnail.url(:medium)), p %>
-              </div>
-              <div class="app_discription">
-                <p class="title"><%= link_to p.title, p %></p>
-                <p class="discription"><%= p.project_category.name %></p>
-              </div>
-            </div>
-
-        <%- if (@projects_count == @counter + 1) or (@counter+1)%6 == 0 %>
-          </div>
-        <%- end %>
-        <%- @counter = @counter.next %>
-      <%- end %>      
-    </div>
-    
-    <% unless @projects.count < 7 %>
-    <div id="arrow_holder">
-      <a href="#" class="prev">
-        <img src="/images/arrow-prev.png" alt="Arrow Prev">
-      </a>
-      <a href="#" class="next">
-        <img src="/images/arrow-next.png" alt="Arrow Next">
-      </a>
-    </div>
-    <% end %>
-  </div>
-  <% end %>
-</div>

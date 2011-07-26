@@ -31,7 +31,7 @@ $(document).ready(function() {
   if($('#slides .slides_container div').length > 0){
     console.log("omg slides in the slide container!");
   	$('#slides').slides({
-  		preload: true,
+  		preload: false,
   		preloadImage: 'images/loading.gif',
   		hoverPause: true
   	});
