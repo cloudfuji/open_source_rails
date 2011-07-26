@@ -40,6 +40,11 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to @project
     else
+      @screenshot_count = @project.screenshots.count
+      if @screenshot_count!=5
+        (5-@screenshot_count).times {@project.screenshots.build}
+      end
+
       render :new
     end
   end

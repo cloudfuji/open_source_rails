@@ -70,46 +70,17 @@
       		    <div class="screenshot_holder">
       		        <div id="slides">
         		        <div class="slides_container">
-                      <div class="fields"> 
-                          <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
-                          <input id="crop_x" name="project[screenshots_attributes][0][crop_x]" type="hidden" />  
-                          <input id="crop_y" name="project[screenshots_attributes][0][crop_y]" type="hidden" />  
-                          <input id="crop_w" name="project[screenshots_attributes][0][crop_w]" type="hidden" />  
-                          <input id="crop_h" name="project[screenshots_attributes][0][crop_h]" type="hidden" />  
-                          <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_0_image" name="project[screenshots_attributes][0][image]" type="file" /> 
-                      </div>
-                      <div class="fields"> 
-                          <a href="#" class="info_thumb_blue ">Click Here To Upload A Screenshot</a>
-                          <input id="crop_x" name="project[screenshots_attributes][1][crop_x]" type="hidden" />  
-                          <input id="crop_y" name="project[screenshots_attributes][1][crop_y]" type="hidden" />  
-                          <input id="crop_w" name="project[screenshots_attributes][1][crop_w]" type="hidden" />  
-                          <input id="crop_h" name="project[screenshots_attributes][1][crop_h]" type="hidden" />  
-                        <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_1_image" name="project[screenshots_attributes][1][image]" type="file" /> 
-                      </div>
-                      <div class="fields"> 
-                          <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
-                          <input id="crop_x" name="project[screenshots_attributes][2][crop_x]" type="hidden" />  
-                          <input id="crop_y" name="project[screenshots_attributes][2][crop_y]" type="hidden" />  
-                          <input id="crop_w" name="project[screenshots_attributes][2][crop_w]" type="hidden" />  
-                          <input id="crop_h" name="project[screenshots_attributes][2][crop_h]" type="hidden" />  
-                        <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_2_image" name="project[screenshots_attributes][2][image]" type="file" /> 
-                      </div>
-                      <div class="fields"> 
-                          <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
-                          <input id="crop_x" name="project[screenshots_attributes][3][crop_x]" type="hidden" />  
-                          <input id="crop_y" name="project[screenshots_attributes][3][crop_y]" type="hidden" />  
-                          <input id="crop_w" name="project[screenshots_attributes][3][crop_w]" type="hidden" />  
-                          <input id="crop_h" name="project[screenshots_attributes][3][crop_h]" type="hidden" />  
-                        <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_3_image" name="project[screenshots_attributes][3][image]" type="file" /> 
-                      </div>
-                      <div class="fields"> 
-                          <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
-                          <input id="crop_x" name="project[screenshots_attributes][4][crop_x]" type="hidden" />  
-                          <input id="crop_y" name="project[screenshots_attributes][4][crop_y]" type="hidden" />  
-                          <input id="crop_w" name="project[screenshots_attributes][4][crop_w]" type="hidden" />  
-                          <input id="crop_h" name="project[screenshots_attributes][4][crop_h]" type="hidden" />  
-                        <input accept="image/*" class="screenshot_input" id="project_screenshots_attributes_4_image" name="project[screenshots_attributes][4][image]" type="file" /> 
-                      </div>
+        		        
+        		          <%=f.fields_for :screenshots do |sh_form| %>
+        		            <div class="fields"> 
+        		              <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
+                          <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+                            <%= sh_form.hidden_field attribute, :id => attribute %>  
+                          <% end %>
+                          <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
+                        </div>
+                      <%- end %>
+
                     </div><!-- slides_container -->
                     <div id="arrow_holder" >
                       <a href="#" class="prev"><img src="/images/arrow-prev.png" alt="Arrow Prev"></a>
