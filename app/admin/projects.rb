@@ -107,7 +107,11 @@ ActiveAdmin.register Project do
         "Author"
       end
       div do
-        project.author.name + ", " + project.author.url
+        unless project.author.nil?
+          "--nil-- [ENTER ONE SOON]"
+        else
+          project.author.name + ", " + project.author.url
+        end
       end
     end
 
