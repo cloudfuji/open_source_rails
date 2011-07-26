@@ -47,7 +47,8 @@
         <%- @counter = @counter.next %>
       <%- end %>      
     </div>
-
+    
+    <% unless @projects.count < 7 %>
     <div id="arrow_holder">
       <a href="#" class="prev">
         <img src="/images/arrow-prev.png" alt="Arrow Prev">
@@ -56,6 +57,7 @@
         <img src="/images/arrow-next.png" alt="Arrow Next">
       </a>
     </div>
+    <% end %>
   </div>
   <% end %>
 </div>
