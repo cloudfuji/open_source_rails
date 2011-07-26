@@ -181,11 +181,12 @@ ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
     height:176px;
     background: url("../images/featured-app-ribbon.png") no-repeat;
 }
-p.feature_title {
+p.feature_title, p.feature_title a {
     font-family:helvetica,sans-serif;
     color:#4c2d00;
     font-size:26pt;
     text-shadow: 1px 1px 0px #FFFFFF;
+    text-decoration:none;
 }
 p.feature_subtitle {
     font-family:helvetica,sans-serif;
@@ -232,17 +233,23 @@ p.feature_info {
     background: url("../images/border-small.png") no-repeat;
     
 }
+.app_logo a, .app_logo img {
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+}
 .app_discription {
     padding:25px 0 0 16px;
     float:left;
     width:140px;
     height:110px;
 }
-p.title {
+p.title, p.title a {
     font-family:helvetica,sans-serif;
     color:#003366;
     font-size:16pt;
     text-shadow: 1px 1px 0px #FFFFFF;
+    text-decoration:none;
 }
 p.subtitle {
     font-family:helvetica,sans-serif;
