@@ -1,3 +1,4 @@
+	<% unless @featured_project.nil? %>
 	  <div id="feature_ribbon">
 	  </div>
 	<div id="feature_holder">
@@ -17,6 +18,7 @@
     </p>
 	  </div>
 	</div>
+	<% end %>
 	<div id="apps_holder">
 	  <% unless @projects.nil? or @projects.length == 0%>
 	  <div id="slides">

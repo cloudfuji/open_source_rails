@@ -3,11 +3,16 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!, :only=>[:new, :create]
 
   def index
-    @featured_project = FeaturedProject.includes(:project=>[:project_category]).
-                                        first.project
+    begin
+      @featured_project = FeaturedProject.includes(:project=>[:project_category]).
+                                        first.project                           
 
-    @projects = Project.includes(:project_category).
+      @projects = Project.includes(:project_category).
                         where("id != ? AND approved = ?", @featured_project, true)
+    rescue Exception => e
+      puts "No projects #{e}"
+    end
+    
   end
 
   def new
