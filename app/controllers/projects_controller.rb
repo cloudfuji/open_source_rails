@@ -22,7 +22,11 @@ class ProjectsController < ApplicationController
     @project = Project.includes(:project_category, :screenshots, :author).
                        find(params[:id])
     
-    @similar_projects = Project.includes(:project_category).where("project_category_id = ? AND ID != ?", @project.project_category_id, @project.id)
+    @similar_projects = Project.includes(:project_category).
+                                where("approved = ? AND project_category_id = ? AND ID != ?",
+                                       true,
+                                       @project.project_category_id,
+                                       @project.id)
 
     unless @project.approved?
       redirect_to root_path, :notice=>"That project doesn't exist"
