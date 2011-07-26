@@ -138,7 +138,7 @@ $(document).ready(function(){
             if(data['repository']!=undefined){
               var repo = data['repository']
                  ,author = repo['owner']
-                 ,authorURL = "https://github/"+author;
+                 ,authorURL = "https://github.com/"+author;
               $('#project_author_attributes_name').val(author);
               $('#project_author_attributes_url').val(authorURL);
               $('.app_author_link').html("<a href='"+authorURL+"'>"+author+"</a>");
