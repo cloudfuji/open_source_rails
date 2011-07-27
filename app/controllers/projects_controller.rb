@@ -53,6 +53,16 @@ class ProjectsController < ApplicationController
       render :new
     end
   end
+  
+  def icon
+    unless params[:repo].nil?
+      @project = Project.find_by_source_url(params[:repo])
+      
+      response.headers['Content-Type'] = @project.thumbnail_content_type
+      response.headers['Content-Disposition'] = 'inline'
+      render :text => open(@project.thumbnail.path, "rb").read
+    end
+  end
 
   def github_info
     base_url = 'https://github.com/api/v2/json/repos/show/'

@@ -8,6 +8,8 @@ Osrails::Application.routes.draw do
 
   root :to => "projects#index"
   match '/projects/github_info/:user/:repo' => 'projects#github_info'
+  
+  match '/projects/icon' => 'projects#icon'
 
   resources :projects
 
