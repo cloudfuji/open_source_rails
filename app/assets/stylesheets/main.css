@@ -641,6 +641,8 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
     height:34px;
     padding-top:5px;
     border-radius:5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 .new_form {
     border:none;
