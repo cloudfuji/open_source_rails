@@ -624,6 +624,12 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
     z-index:9;
 }
 /*Submit page*/
+.message {
+    font-family:helvetica,sans-serif;
+    font-size:46pt;
+    color:black;
+    z-index:9999999999999999;
+}
 .new_form {
     border:none;
     font-family:helvetica,sans-serif;

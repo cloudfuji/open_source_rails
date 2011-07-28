@@ -43,11 +43,11 @@ class ProjectsController < ApplicationController
     
     @project.user_id = current_user.id
     if @project.save
-      redirect_to @project
+      redirect_to root_path, :notice => "Your submission has been succsesful and is awaiting approval."
     else
       @screenshot_count = @project.screenshots.count
-      if @screenshot_count!=5
-        (5-@screenshot_count).times {@project.screenshots.build}
+      if @screenshot_count!=6
+        (6-@screenshot_count).times {@project.screenshots.build}
       end
 
       render :new
