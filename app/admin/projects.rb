@@ -3,7 +3,15 @@ ActiveAdmin.register Project do
     column "Name" do |p|
       link_to p.title, admin_project_path(p)
     end
-    
+
+    column "Slug" do |p|
+      unless p.slug.nil?
+        p.slug
+      else
+        "--nil--"
+      end
+    end
+
     column "Status", :sortable=>:approved do |p|
       if p.approved?
         "Approved"
@@ -29,6 +37,7 @@ ActiveAdmin.register Project do
     f.buttons
     f.inputs "Details" do
       f.input :title
+      f.input :slug
       f.input :approved
       f.input :project_category_id, :as=>:select, :collection => ProjectCategory.find(:all, :order=>"name ASC")
       f.input :tag_list
@@ -59,6 +68,14 @@ ActiveAdmin.register Project do
   show do
     div do 
       "Title: " + project.title
+    end
+  
+    div do
+      unless project.slug.nil?
+        "Slug: " +
+      else
+        "Slub: --nil--"
+      end
     end
 
     div do
