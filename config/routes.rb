@@ -11,7 +11,6 @@ Osrails::Application.routes.draw do
   
   match '/projects/icon' => 'projects#icon'
 
-  # match 'projects/:slug' => 'projects#show'
   resources :projects
 
   # The priority is based upon order of creation:

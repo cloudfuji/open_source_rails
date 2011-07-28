@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.includes(:project_category, :screenshots, :author).
-                       find(params[:id])
+                       find_by_slug(params[:id])
     
     @similar_projects = Project.includes(:project_category).
                                 where("approved = ? AND project_category_id = ? AND ID != ?",
