@@ -24,16 +24,20 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    begin
     @project = Project.includes(:project_category, :screenshots, :author).
                        find_by_slug(params[:id])
-    
+   
+    if @project.not_approved?
+        raise ActionController::RoutingError.new('Not Found')
+    end
+
     @similar_projects = Project.includes(:project_category).
                                 where("approved = ? AND project_category_id = ? AND ID != ?",
                                        true,
                                        @project.project_category_id,
                                        @project.id)
-
-    if @project.not_approved?
+    rescue Exception => e
       raise ActionController::RoutingError.new('Not Found')
     end
   end
