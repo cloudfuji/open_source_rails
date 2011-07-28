@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
                                        @project.id)
 
     unless @project.approved?
-      redirect_to root_path, :notice=>"That project doesn't exist"
+      render :status=>404
     end
   end
 

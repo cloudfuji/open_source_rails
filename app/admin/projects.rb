@@ -1,4 +1,9 @@
 ActiveAdmin.register Project do
+
+  before_filter :only => [:show, :edit, :update] do
+    @project = Project.find_by_slug(params[:id])
+  end
+  
   index do
     column "Name" do |p|
       link_to p.title, admin_project_path(p)
