@@ -1,7 +1,7 @@
 <%- content_for :head do %>
-  <%= javascript_include_tag "nested_form.js", "jquery.simplemodal.1.4.1.js", "bushido.jcrop.js" %>
+  <%= javascript_include_tag "nested_form.js", "jquery.simplemodal.1.4.1.js", "bushido.jcrop.js", "jquery.validationEngine-en.js", "jquery.validationEngine.js" %>
   <%= javascript_include_tag "screenshot_handler.js" %>  
-  <%= stylesheet_link_tag "bushido.jcrop.css" %>
+  <%= stylesheet_link_tag "bushido.jcrop.css", "validationEngine.jquery.css" %>
 <% end %>
 
 <%= nested_form_for @project do |f| %>
@@ -25,7 +25,7 @@
             <%= f.hidden_field attribute, :id => attribute %>  
           <% end %>
 
-          <%= f.file_field :thumbnail, :class=>"logo_input thumbnail" %>
+          <%= f.file_field :thumbnail, :class=>"logo_input thumbnail validate[required]" %>
 	    </div>
 	<p class="info_thumb_blue"><a href="#">Click to add logo 150x150</a></p>
 	  </div>
@@ -35,12 +35,12 @@
 	  <div id="feature_description">
 
 	    <div class="field">
-	      <%= f.text_field :title, :size=>"20", :class=>"l autobox new_form new_title", :value => (!@project.title.nil?)  ? @project.title : "App name"  %>
-	      <%= f.text_field :short_desc, :size=>"30", :class=>"l autobox new_form new_tagline", :value=> (!@project.short_desc.nil?) ? @project.short_desc : "Tagline (a super short description)" %>	      
+	      <%= f.text_field :title, :size=>"20", :class=>"l autobox new_form new_title validate[required,funcCall[checkDefault]]", :value => (!@project.title.nil?)  ? @project.title : "App name"  %>
+	      <%= f.text_field :short_desc, :size=>"30", :class=>"l autobox new_form new_tagline validate[required,funcCall[checkDefault]]", :value=> (!@project.short_desc.nil?) ? @project.short_desc : "Tagline (a super short description)" %>	      
 	    </div>
 
 	    <div class="field">
-	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form new_description", :value=> (!@project.about.nil?) ? @project.about : "Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
+	      <%= f.text_area :about, :size=>"64x5", :length=>"500", :class=>"autobox new_form new_description validate[required,funcCall[checkDefault]]", :value=> (!@project.about.nil?) ? @project.about : "Detailed description. Cut loose, don't hold back! Unless you exceed 500 characters, then maybe hold back a little." %>
 	    </div>
 
 	  </div>
@@ -95,9 +95,9 @@
 		<div class="info_holder">
 		  <div class="info_form">
 		    <div class="field">
-		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.homepage_url.nil?) ? @project.homepage_url : "Project homepage" %>
-		      <%= f.text_field :source_url, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.source_url.nil?) ? @project.source_url : "Source (git repository URL)" %>
-		      <%= f.text_field :license, :class=>"autobox new_form new_info", :size=>"44", :value=> (!@project.license.nil?) ? @project.license : "License" %>
+		      <%= f.text_field :homepage_url, :class=>"autobox new_form new_info validate[required,custom[url]]", :size=>"44", :value=> (!@project.homepage_url.nil?) ? @project.homepage_url : "Project homepage" %>
+		      <%= f.text_field :source_url, :class=>"autobox new_form new_info validate[required,custom[url]]", :size=>"44", :value=> (!@project.source_url.nil?) ? @project.source_url : "Source (git repository URL)" %>
+		      <%= f.text_field :license, :class=>"autobox new_form new_info validate[required,funcCall[checkDefault]]", :size=>"44", :value=> (!@project.license.nil?) ? @project.license : "License" %>
 		      </div>
 
 

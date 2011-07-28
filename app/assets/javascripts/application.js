@@ -6,7 +6,15 @@ if(typeof window.console === 'undefined'){
    window.console = {log: function(){return false;}};
 }
 
+function checkDefault(field, rules, i, options){
+    if(field.get(0).defaultValue == field.val()){
+	return "* Field is required";
+    }
+}
+
 $(document).ready(function() {
+  //validation
+  $("#new_project").validationEngine('attach');
   
   //create auto boxes
   $(".autobox").autobox();

@@ -110,7 +110,7 @@ ul#list-nav li span {
     top:5px;
     right:16px;
     text-decoration:none;
-    font-family: helvetica;
+    font-family:helvetica,sans-serif;
     font-size: 10pt;
     height:21px;
     color:#4c2d00;
@@ -120,7 +120,7 @@ ul#list-nav li span {
 }
 ul#list-nav li a {
     text-decoration:none;
-    font-family: helvetica;
+    font-family:helvetica,sans-serif;
     font-size: 10pt;
     width:70px;
     height:21px;
@@ -712,6 +712,7 @@ textarea {
 .thumbnail {
     visibility:hidden;
     position: absolute;
+    width:150px;
 }
 
 #simplemodal-overlay {
