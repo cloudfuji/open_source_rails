@@ -38,6 +38,10 @@ class Project < ActiveRecord::Base
 
   after_save :reprocess_thumbnail, :if => :cropping?
 
+  def to_param
+    slug
+  end
+
   # approved is a boolean field and approved? is made available by rails
   # returns true if the project is not approved
   def not_approved?

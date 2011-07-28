@@ -72,7 +72,7 @@ ActiveAdmin.register Project do
   
     div do
       unless project.slug.nil?
-        "Slug: " +
+        "Slug: " + project.slug
       else
         "Slub: --nil--"
       end
