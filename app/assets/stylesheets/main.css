@@ -387,6 +387,11 @@ p.info_new_blue, p.info_new_blue a {
     font-size:16pt;
     text-shadow: 1px 1px 0px #FFFFFF;
     text-decoration:none;
+    height:0px !important;
+    width:0px !important;
+    line-height:0px !important;
+    margin-top:26px;
+    margin-left:-43px;
 }
 /*
         Tabs
@@ -624,11 +629,18 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
     z-index:9;
 }
 /*Submit page*/
-.message {
+.notice {
     font-family:helvetica,sans-serif;
-    font-size:46pt;
-    color:black;
-    z-index:9999999999999999;
+    color:#4c2d00;
+    font-size:19pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    width:388px;
+    margin:0 auto;
+    text-align:center;
+    background:#F49032;
+    height:34px;
+    padding-top:5px;
+    border-radius:5px;
 }
 .new_form {
     border:none;
@@ -733,6 +745,7 @@ textarea {
 .screenshot_holder .slides_container{
   width: 938px !important;
   height: 455px !important;
+  margin-left: -2px !important;
 }
 
 .slides_container .fields{
