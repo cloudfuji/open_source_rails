@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '3.1.0.rc4'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -23,7 +23,7 @@ gem 'activeadmin', :git=>"https://github.com/gregbell/active_admin/", :branch=>"
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'nested_form', :git=>"https://github.com/ryanb/nested_form.git"
 
-gem 'sprockets', ">=2.0.0.beta12"
+gem 'sprockets', ">=2.0.0.beta10"
 gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
