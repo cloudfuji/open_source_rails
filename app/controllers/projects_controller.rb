@@ -33,8 +33,8 @@ class ProjectsController < ApplicationController
                                        @project.project_category_id,
                                        @project.id)
 
-    unless @project.approved?
-      render :status=>404
+    if @project.not_approved?
+      raise ActionController::RoutingError.new('Not Found')
     end
   end
 
