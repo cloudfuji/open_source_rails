@@ -218,10 +218,19 @@ p.feature_info {
     width:960px;
 }
 .app {
+    text-decoration:none !important;
+    display:block;
     margin:0 -2px 0 0;
     float:left;
     width:320px;
     height:170px;
+    background: url("../images/applist-single-cell.png") no-repeat;
+}
+.app:hover {
+    width:320px;
+    height:170px;
+    opacity:0.7;
+    filter:alpha(opacity=40);
     background: url("../images/applist-single-cell.png") no-repeat;
 }
 .app_logo {
@@ -530,11 +539,11 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 	Set to display block
 */
 
-.slides_container a {
+/*.slides_container a {
     width:960px;
     height:360px;
 
-}
+}*/
 
 .slides_container a img {
     display:block;

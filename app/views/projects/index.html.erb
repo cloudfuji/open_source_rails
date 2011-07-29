@@ -6,7 +6,8 @@
 	  </div>
 	<div id="feature_holder">
 	  <div id="feature">
-    <%= link_to image_tag(@featured_project.thumbnail.url(:large)), @featured_project %>
+	    <%= link_to image_tag(@featured_project.thumbnail.url(:large)), @featured_project %>
+
 	  </div>
 	    <div id="feature_description">
 <p class="feature_title">
@@ -33,15 +34,17 @@
               <%- if @counter == 0 or (@counter % 6)==0 %>
 	      <div class="slide_holder">
 	      <%- end %>
-		<div class="app">
+	      <a href="/projects/<%= p.slug %>" class="app">
 		  <div class="app_logo">
-                    <%= link_to image_tag(p.thumbnail.url(:medium)), p %>
+		    <span><img src="<%= p.thumbnail.url(:medium) %>" /></span>
+
 		  </div>
 		  <div class="app_discription">
-		    <p class="title"><%= link_to p.title, p %></p>
+		    <p class="title"><%= p.title %></p>
 		    <p class="subtitle"><%= p.project_category.name %></p><br/>
 		  </div>
-		</div>
+	      </a>
+
 		<%- if (@projects_count == @counter + 1) or (@counter+1)%6 == 0 %>
 	      </div><!--closes slide holder -->
               <%- end %>
