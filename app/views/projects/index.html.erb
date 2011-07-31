@@ -2,26 +2,17 @@
 <p class="notice"><%= flash[:notice] %></p>
 <% end %>
 	<% unless @featured_project.nil? %>
-	  <div id="feature_ribbon">
-	  </div>
-	<div id="feature_holder">
+	<a href="/projects/<%= @featured_project.slug %>" id="feature_holder">
 	  <div id="feature">
-	    <%= link_to image_tag(@featured_project.thumbnail.url(:large)), @featured_project %>
-
+	   <span><img src="<%= @featured_project.thumbnail.url(:large) %>" /></span>
 	  </div>
 	    <div id="feature_description">
-<p class="feature_title">
-      <%= link_to @featured_project.title, @featured_project %>
-    </p>
-    <p class="feature_subtitle">
-      <%= @featured_project.project_category.name %>
-    </p><br/>
-    <p class="feature_discription">
-      <%= @featured_project.short_desc %>
-      <%= link_to "Find out more!",@featured_project, :style=>"text-decoration:none;color:#003366" %>
-    </p>
+	      <p class="feature_title"><%= @featured_project.title %></p>
+	      <p class="feature_subtitle"><%= @featured_project.project_category.name %></p><br/>
+	      <p class="feature_discription"><%= @featured_project.short_desc %>.</p>
+	      <p class="feature_discription_blue">Find out more!</p>
 	  </div>
-	</div>
+	</a>
 	<% end %>
 	<div id="apps_holder">
 	  <% unless @projects.nil? or @projects.length == 0%>

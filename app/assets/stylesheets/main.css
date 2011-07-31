@@ -150,18 +150,27 @@ ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
 }
 
 #feature_holder {
+    display:block;
     margin-top:15px;
     padding:20px 0 20px 20px;
     width:950px;
     height:175px;
-    background: url("../images/background-featured.png") no-repeat;
+    background: url("../images/background-featured_with_ribbon.png") no-repeat;
+    text-decoration:none !important;
+}
+#feature_holder:hover {
+    width:950px;
+    height:175px;
+    opacity:0.7;
+    filter:alpha(opacity=40);
+    background: url("../images/background-featured_with_ribbon.png") no-repeat;
 }
 #feature {
     padding:8px 0 0 8px;
     float:left;
     width:166px;
     height:166px;
-    background: url("../images/border-large.png") no-repeat;
+    background: url("../images/border-large-feat.png") no-repeat;
 }
 #feature a, #feature img {
     -webkit-border-radius: 5px !important;
@@ -174,19 +183,12 @@ ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
     width:560px;
     height:166px;
 }
-#feature_ribbon {
-    margin:11px 4px 0 0;
-    float:right;
-    width:175px;
-    height:176px;
-    background: url("../images/featured-app-ribbon.png") no-repeat;
-}
 p.feature_title, p.feature_title a {
     font-family:helvetica,sans-serif;
     color:#4c2d00;
     font-size:26pt;
     text-shadow: 1px 1px 0px #FFFFFF;
-    text-decoration:none;
+    text-decoration:none !important;
 }
 p.feature_subtitle {
     font-family:helvetica,sans-serif;
@@ -197,6 +199,13 @@ p.feature_subtitle {
 p.feature_discription {
     font-family:helvetica,sans-serif;
     color:#4c2d00;
+    font-size:18pt;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    line-height:120%;
+}
+p.feature_discription_blue {
+    font-family:helvetica,sans-serif;
+    color:#003366;
     font-size:18pt;
     text-shadow: 1px 1px 0px #FFFFFF;
     line-height:120%;
@@ -250,7 +259,7 @@ p.feature_info {
 .app_discription {
     padding:25px 0 0 5px;
     float:left;
-    width:140px;
+    width:146px;
     height:110px;
 }
 p.title, p.title a {
@@ -269,7 +278,7 @@ p.subtitle {
 p.discription {
     font-family:helvetica,sans-serif;
     color:#4c2d00;
-    font-size:12pt;
+    font-size:11pt;
     text-shadow: 1px 1px 0px #FFFFFF;
 }
 #launch_holder {
