@@ -66,19 +66,21 @@
 	  </ul>
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
-      		  <div class="info_holder">
-      		    <div class="screenshot_holder">
-      		        <div id="slides">
-        		        <div class="slides_container">
-        		        
-        		          <%=f.fields_for :screenshots do |sh_form| %>
-        		            <div class="fields"> 
-        		              <a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
-                          <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
-                            <%= sh_form.hidden_field attribute, :id => attribute %>  
-                          <% end %>
-                          <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
-                        </div>
+	      <div class="browse">
+	      </div>
+      	      <div class="info_holder">
+      		<div class="screenshot_holder">
+      		  <div id="slides">
+        	    <div class="slides_container">
+        	      
+        	      <%=f.fields_for :screenshots do |sh_form| %>
+        	      <div class="fields"> 
+        		<a href="#" class="info_thumb_blue" >Click Here To Upload A Screenshot</a>
+                        <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+                        <%= sh_form.hidden_field attribute, :id => attribute %>  
+                        <% end %>
+                        <%= sh_form.file_field :image, :accept=>"image/*", :class=>"screenshot_input" %>
+                      </div>
                       <%- end %>
 
                     </div><!-- slides_container -->

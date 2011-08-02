@@ -32,19 +32,39 @@
 	  </ul>
 	  <div class="tab_container">
 	    <div id="tab1" class="tab_content">
-	      <div id="slideshow">
+	      <div class="info_holder">
+		<div class="screenshot_holder">
 	          <% unless @project.screenshots.nil? or @project.screenshots.blank? %>
-              <%-#assuming here that there's atleast one screenshot %>
-              <%- @first_id = @project.screenshots.first.id %>
-              <%- @project.screenshots.each do |s| %>
-                <%- if s.id == @first_id %>
-                  <%= image_tag s.image.url(:large), :class=>"active" %>
-                <%- else %>
-                  <%= image_tag s.image.url(:large) %>
-                <% end %>
-              <% end %>
-            <% end %>
-	      </div>
+		  <% unless @project.screenshots.length < 2 %>
+		  <div class="browse">
+		  </div>
+		  <% end %>
+		  <div id="slides">
+		    <div class="slides_container">
+		      <%-#assuming here that there's atleast one screenshot %>
+		      <%- @first_id = @project.screenshots.first.id %>
+		      <%- @project.screenshots.each do |s| %>
+                      <%- if s.id == @first_id %>
+		      <div>
+			<%= image_tag s.image.url(:large), :class=>"active" %>
+		      </div>
+                      <%- else %>
+		      <div>
+			<%= image_tag s.image.url(:large) %>
+		      </div>
+                      <% end %>
+		      <% end %>
+		    </div><!--closes slide_container -->
+		    <% unless @project.screenshots.length < 2 %>
+		    <div id="arrow_holder">
+		      <a href="#" class="prev"><img src="/images/arrow-prev.png" alt="Arrow Prev"></a>
+		      <a href="#" class="next"><img src="/images/arrow-next.png" alt="Arrow Next"></a>
+		    </div>
+		    <% end %>
+		  </div><!-- slides -->
+		  <% end %>
+		</div><!-- screenshots_holder -->
+	      </div><!-- info_holder -->
 	    </div>
 	    <div id="tab2" class="tab_content">
 	      <div id="showcase_padd">
@@ -54,6 +74,7 @@
                     Author: 
                     <%= link_to @project.author.name, @project.author.url, :style => "text-decoration:none;color:#003366" %>
                 </p>
+
           </div>
 
           <div class="line_break">
