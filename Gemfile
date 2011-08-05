@@ -8,7 +8,8 @@ gem 'rails', '3.1.0.rc4'
 gem 'sqlite3'
 
 gem 'devise'
-gem 'devise_cas_authenticatable'
+gem 'devise_bushido_authenticatable', :path=>"/Users/akashmanohar/code/devise_cas_authenticatable"
+
 gem 'acts-as-taggable-on'
 gem 'paperclip'
 gem 'client_side_validations', '3.0.12'
