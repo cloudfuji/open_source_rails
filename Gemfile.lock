@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/Bushido/devise_cas_authenticatable.git
+  revision: b5eca23312110ed3c0149cc76eb8816c7a374c70
+  branch: ido_fork
+  specs:
+    devise_bushido_authenticatable (1.0.0.alpha10)
+      devise (>= 1.0.6)
+      rest-client
+      rubycas-client (>= 2.2.1)
+
+GIT
   remote: https://github.com/gregbell/active_admin/
   revision: 4a6a8fe7f683db4c458ba0d0edc162aee5b46855
   branch: rails-3-1
@@ -18,14 +28,6 @@ GIT
   revision: 57f32788f1952bcd633057b4b56b69b51df17610
   specs:
     nested_form (0.1.1)
-
-PATH
-  remote: /Users/akashmanohar/code/devise_cas_authenticatable
-  specs:
-    devise_bushido_authenticatable (1.0.0.alpha10)
-      devise (>= 1.0.6)
-      rest-client
-      rubycas-client (>= 2.2.1)
 
 GEM
   remote: http://rubygems.org/
