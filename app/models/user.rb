@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :cas_authenticatable,
+  devise :bushido_authenticatable,
          :rememberable, :trackable
 
   has_many :bookmarks
@@ -10,11 +10,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :ido_id, :password, :password_confirmation, :remember_me
 
-  def cas_extra_attributes(extra_attributes)
-    logger.debug "=EXTRA="*3
-    logger.debug "#{extra_attributes.inspect}"
-    logger.debug "=EXTRA="*3
-
+  def bushido_extra_attributes(extra_attributes)
     extra_attributes.each do |name, value|
       case name.to_sym
       when :email
@@ -25,7 +21,6 @@ class User < ActiveRecord::Base
         #   self.locale = value
       end
     end
-    logger.debug "==AFTER EVERYTHING=="
   end
 
 end

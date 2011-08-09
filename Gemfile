@@ -6,28 +6,28 @@ gem 'rails', '3.1.0.rc4'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
 gem 'devise'
-gem 'devise_bushido_authenticatable', :path=>"/Users/akashmanohar/code/devise_cas_authenticatable"
-
+gem 'devise_bushido_authenticatable', :path=>"~/code/devise_cas_authenticatable"
 gem 'acts-as-taggable-on'
 gem 'paperclip'
 gem 'client_side_validations', '3.0.12'
-
 gem 'nestful'
 
 # NOTES meta_search prerelease is required for activeadmin
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'activeadmin', :git=>"https://github.com/gregbell/active_admin/", :branch=>"rails-3-1"
 
-# Asset template engines
-gem 'sass-rails', "~> 3.1.0.rc"
 gem 'nested_form', :git=>"https://github.com/ryanb/nested_form.git"
-
-gem 'sprockets', ">=2.0.0.beta10"
-gem 'coffee-script'
-gem 'uglifier'
+gem 'sprockets', ">=2.0.0.beta13"
 gem 'jquery-rails'
+
+group :assets do
+#  gem 'therubyracer'
+#  gem 'sass-rails', "~> 3.1.0.rc"
+#  gem 'coffee-rails', "~> 3.1.0.rc"
+  gem 'uglifier'
+end
+
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
@@ -35,7 +35,6 @@ gem 'jquery-rails'
 group :test, :development do
   gem 'turn', :require => false
   gem 'spork'
-  gem 'autotest'
   gem 'rspec-rails'
   gem 'remarkable_activerecord', ">=4.0.0.alpha"
   gem 'cucumber-rails'
