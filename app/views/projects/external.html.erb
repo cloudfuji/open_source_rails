@@ -1,0 +1,14 @@
+<%- @projects.each do |p| %>
+
+  <a href="http://bushi.do/apps/new?repo=<%= p.source_url %>" class="app">
+    <div class="app_logo">
+      <span><img src="<%= p.thumbnail.url(:medium) %>" /></span>
+
+    </div>
+    <div class="app_discription">
+      <p class="title"><%= p.title %></p>
+      <p class="subtitle"><%= p.project_category.name %></p><br/>
+    </div>
+  </a>
+
+<%- end %>      

@@ -15,6 +15,19 @@ class ProjectsController < ApplicationController
     
   end
 
+
+  def external
+      @featured_project = FeaturedProject.includes(:project=>[:project_category]).
+                                        first.project                           
+
+      @projects = Project.includes(:project_category).
+                        where("id != ? AND approved = ?", @featured_project, true)
+
+    render :layout => 'external'
+
+  end
+
+
   def new
     @project = Project.new
     @project.build_author

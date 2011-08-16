@@ -11,6 +11,8 @@ Osrails::Application.routes.draw do
   
   match '/projects/icon' => 'projects#icon'
 
+  match '/external' => 'projects#external'
+
   resources :projects
 
   # The priority is based upon order of creation:
