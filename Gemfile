@@ -23,7 +23,7 @@ gem 'activeadmin', :git=>"https://github.com/gregbell/active_admin/", :branch=>"
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'nested_form', :git=>"https://github.com/ryanb/nested_form.git"
 
-gem 'sprockets', ">=2.0.0.beta10"
+gem 'sprockets'
 gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
