@@ -1,6 +1,6 @@
 <%- @projects.each do |p| %>
 
-  <a href="http://bushi.do/apps/new?repo=<%= p.source_url %>" class="app">
+  <a href="http://bushi.do/apps/new?repo=<%= p.source_url %>" target="_top" class="app">
     <div class="app_logo">
       <span><img src="<%= p.thumbnail.url(:medium) %>" /></span>
 
