@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_filter :authenticate_user!, :only=>[:new, :create]
+  caches_page :external
 
   def index
     begin
@@ -66,7 +67,7 @@ class ProjectsController < ApplicationController
       if @screenshot_count!=6
         (6-@screenshot_count).times {@project.screenshots.build}
       end
-
+      expire_page :action => :external
       render :new
     end
   end
