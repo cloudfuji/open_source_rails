@@ -7,7 +7,7 @@ gem 'rails', '3.1.0.rc4'
 
 gem 'sqlite3'
 gem 'devise'
-gem 'devise_bushido_authenticatable', :git=>"https://github.com/Bushido/devise_cas_authenticatable.git", :branch=>"ido_fork"
+gem 'devise_bushido_authenticatable', :git=>"https://github.com/Bushido/devise_cas_authenticatable.git"
 
 gem 'acts-as-taggable-on'
 gem 'paperclip'
