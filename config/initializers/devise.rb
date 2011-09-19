@@ -8,13 +8,11 @@ Devise.setup do |config|
   # NOTE: the new encryptor is bcrypt, we'll have to set it explicitly for god's sake
   config.encryptor = :bcrypt
 
-  if Rails.env.production?
-    config.cas_base_url = "https://auth.bushi.do/cas"
-  else
-    config.cas_base_url = "https://auth.bushi.do/cas"
-    # use the below if you've a problem with above and setup Kagi - github.com/bushido/kagi
-    # config.cas_base_url = "https://localhost:3001/cas"
+  if Rails.env.development?
+    config.cas_base_url = "https://sandbox.auth.bushi.do/cas"
   end
+
+  config.cas_username_column = :ido_id
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"

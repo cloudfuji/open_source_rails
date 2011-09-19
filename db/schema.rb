@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(:version => 20110728144554) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username"
+    t.string   "ido_id"
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20110728144554) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
