@@ -1,5 +1,7 @@
-opensourcerails
+Bushido OpenSourceRails
 ================
+
+Uses new Bushido Auth. For local testing, set the cas_base_url in the devise initializer to http://sandbox.auth.bushi.do/cas 
 
 Local setup
 ------------
@@ -20,4 +22,4 @@ TODO
 -----
 
 * move images from public/images to app/assets/images. And also fix image paths in CSS.
-* validate attachment size, type, presence,
+* validate attachment size, type, presence
