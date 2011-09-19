@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
   has_many :bookmarks
   has_many :projects
   
-  devise :bushido_authenticatable,
-         :rememberable, :trackable
+  devise :bushido_authenticatable, :trackable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :ido_id, :password, :password_confirmation, :remember_me
