@@ -38,8 +38,6 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'sqlite3'
-
   gem 'turn', :require => false
   gem 'spork'
   gem 'rspec-rails'
