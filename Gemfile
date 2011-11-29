@@ -13,6 +13,7 @@ gem 'devise_bushido_authenticatable', :git=>"https://github.com/Bushido/devise_c
 # Network related
 gem 'nestful'
 gem 'heroku'
+gem 'thin'
 
 # Model behavior
 gem 'acts-as-taggable-on'
