@@ -3,10 +3,11 @@ class Screenshot < ActiveRecord::Base
   belongs_to :project
 
   has_attached_file :image,
-                    :styles=>{:large => "938x455"},
-                    :url => "/store/:attachment/:id/:style/:basename.:extension",  
-                    :path => ":rails_root/permanent/store/:attachment/:id/:style/:basename.:extension",
-                    :processors => [:cropper] 
+                    :processors     => [ :cropper ],
+                    :s3_credentials => "config/s3.yml",
+                    :styles         => { :large => "938x455" },
+                    :url            => "/:attachment/:id/:style/:basename.:extension",  
+                    :path           => "#{ENV['S3_PREFIX']}/:attachment/:id/:style/:basename.:extension"
 
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
