@@ -6,6 +6,9 @@ gem 'rails', '3.1.0'
 # Database gems
 gem 'pg'
 
+# All-around goodness
+gem 'bushido', :git => "git://github.com/Bushido/bushidogem.git"
+
 # Authentication
 gem 'devise'
 gem 'devise_bushido_authenticatable', :git=>"https://github.com/Bushido/devise_cas_authenticatable.git"

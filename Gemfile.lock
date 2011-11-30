@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/Bushido/bushidogem.git
+  revision: 9ab6e5098e13b1baf3b67591e6826915b358f186
+  specs:
+    bushido (0.0.35)
+      highline (>= 1.6.1)
+      json (>= 1.4.6)
+      orm_adapter (~> 0.0.3)
+      rest-client (>= 1.6.1)
+
+GIT
   remote: https://github.com/Bushido/devise_cas_authenticatable.git
   revision: b76e04a13bd5ba63c4274b4ec8f941ff5a5eaaa8
   specs:
@@ -117,6 +127,7 @@ GEM
       rest-client (~> 1.6.1)
       rubyzip
       term-ansicolor (~> 1.0.5)
+    highline (1.6.8)
     hike (1.2.1)
     i18n (0.6.0)
     inherited_resources (1.2.2)
@@ -253,6 +264,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   acts-as-taggable-on
+  bushido!
   client_side_validations (= 3.0.12)
   coffee-script
   cucumber-rails
