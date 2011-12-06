@@ -3,13 +3,13 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = ENV['SMTP_USER']
 
   # NOTE: the new encryptor is bcrypt, we'll have to set it explicitly for god's sake
   config.encryptor = :bcrypt
 
   if Rails.env.development?
-    config.cas_base_url = "https://sandbox.auth.bushi.do/cas"
+    config.cas_base_url = "https://noshido.com:5000/cas"
   end
 
   config.cas_username_column = :ido_id
