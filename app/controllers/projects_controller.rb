@@ -81,10 +81,10 @@ class ProjectsController < ApplicationController
       image_path = "#{Rails::root.to_s}/public/images/generic.png"
     else
       response.headers['Content-Type'] = @project.thumbnail_content_type
-      image_path = @project.thumbnail.path
+      image_path = @project.thumbnail.url
     end
     response.headers['Content-Disposition'] = 'inline'
-    render :text => open(image_path, "rb").read
+    render :text => Net::HTTP.get_response(URI.parse(image_path)).body
   end
 
   def github_info
