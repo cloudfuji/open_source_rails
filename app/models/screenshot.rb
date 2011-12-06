@@ -3,6 +3,7 @@ class Screenshot < ActiveRecord::Base
   belongs_to :project
 
   has_attached_file :image,
+                    :storage        => :s3,
                     :processors     => [ :cropper ],
                     :s3_credentials => "config/s3.yml",
                     :styles         => { :large => "938x455" },

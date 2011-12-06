@@ -6,7 +6,7 @@ ActiveAdmin.register Project do
   
   index do
     column "Name" do |p|
-      link_to p.title, admin_project_path(p)
+      link_to p.title, admin_project_path(p.id)
     end
 
     column "Slug" do |p|

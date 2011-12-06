@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
   has_many :screenshots, :dependent => :destroy
  
   has_attached_file :thumbnail,
+                    :storage        => :s3,
                     :s3_credentials => "config/s3.yml",
                     :styles         => { :medium => "100x100", :large => "150x150" },
                     :url            => "/:attachment/:id/:style/:basename.:extension",
