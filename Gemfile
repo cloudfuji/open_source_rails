@@ -7,7 +7,7 @@ gem 'rails', '3.1.0'
 gem 'pg'
 
 # All-around goodness
-gem 'bushido', :git => "git://github.com/Bushido/bushidogem.git"
+gem 'bushido', :git=>"https://github.com/Bushido/bushidogem.git"
 
 # Authentication
 gem 'devise'
@@ -17,6 +17,7 @@ gem 'devise_bushido_authenticatable', :git=>"https://github.com/Bushido/devise_c
 gem 'nestful'
 gem 'heroku'
 gem 'thin'
+gem 'aws-s3'
 
 # Model behavior
 gem 'acts-as-taggable-on'
@@ -49,4 +50,6 @@ group :test, :development do
   gem 'cucumber-rails'
   gem 'fabrication'
   gem 'forgery'
+  gem 'awesome_print'
+  gem 'tane', :git=>"https://github.com/Bushido/tane.git"
 end
