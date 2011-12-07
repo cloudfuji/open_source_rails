@@ -41,6 +41,7 @@ end
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test, :development do
+  gem 'tane', :path => "../"
   gem 'turn', :require => false
   gem 'spork'
   gem 'rspec-rails'

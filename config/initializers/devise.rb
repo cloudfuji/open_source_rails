@@ -9,7 +9,7 @@ Devise.setup do |config|
   config.encryptor = :bcrypt
 
   if Rails.env.development?
-    config.cas_base_url = "https://sandbox.auth.bushi.do/cas"
+    config.cas_base_url = "https://noshido.com:5000/cas"
   end
 
   config.cas_username_column = :ido_id
