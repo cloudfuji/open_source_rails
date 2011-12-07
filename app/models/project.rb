@@ -41,9 +41,37 @@ class Project < ActiveRecord::Base
   after_save :reprocess_thumbnail, :if => :cropping?
   after_save :generate_slug
 
+  def to_param
+    slug
+  end
+
+  # approved is a boolean field and approved? is made available by rails
+  # returns true if the project is not approved
+  def not_approved?
+    !self.approved?
+  end
+
+  # approve a project in-place
+  def approve!
+    self.update_attribute :approved, true
+  end
+
+  # unapprove a project in-place
+  def unapprove!
+    self.update_attribute :approved, false
+  end
+
+  def cropping?
+    !crop_x.blank? && !crop_y.blank?
+  end
+
+  private
+
+  def reprocess_thumbnail
+    thumbnail.reprocess!
+  end
 
   def generate_slug
     self.update_attribute(:slug, self.id) if not self.slug
   end
-
 end
