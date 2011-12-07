@@ -5,36 +5,36 @@ ActiveAdmin.register Project do
   end
   
   index do
-    column "Name" do |p|
-      link_to p.title, admin_project_path(p)
+    column "Name" do |project|
+      link_to project.title, admin_project_path(project)
     end
 
-    column "Slug" do |p|
-      unless p.slug.nil?
-        p.slug
+    column "Slug" do |project|
+      unless project.slug.nil?
+        project.slug
       else
         "--nil--"
       end
     end
 
-    column "Status", :sortable=>:approved do |p|
-      if p.approved?
+    column "Status", :sortable=>:approved do |project|
+      if project.approved?
         "Approved"
       else
         "Not approved"
       end
     end
 
-    column "Category" do |p|
-      unless p.project_category.nil?
-        p.project_category.name
+    column "Category" do |project|
+      unless project.project_category.nil?
+        project.project_category.name
       else
         "--nil--"
       end
     end
 
-    column "Tags" do |p|
-      p.tag_list.join ", "
+    column "Tags" do |project|
+      project.tag_list.join ", "
     end
   end
 
