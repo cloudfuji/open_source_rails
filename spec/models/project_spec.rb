@@ -75,5 +75,10 @@ describe Project do
       project.unapprove!
       project.approved?.should be_false
     end
+
+    it "should have the id as the slug by default on creation" do
+      project = Fabricate(:project)
+      project.slug.should == project.id
+    end
   end
 end
