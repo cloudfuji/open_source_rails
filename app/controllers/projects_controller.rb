@@ -79,11 +79,13 @@ class ProjectsController < ApplicationController
     # image/png
     if @project.nil? or params[:repo].nil?
       response.headers['Content-Type'] = 'image/png'
-      image_path = "#{Rails::root.to_s}/public/images/generic.png"
-      render :text => File.read(image_path)
+
+      # Just hard-coding this
+      image_url = "http://s3.amazonaws.com/production.bulk.bushido/cute-daimyo-4214/files/15/original/generic.png"
+      redirect_to image_url
     else
       response.headers['Content-Type'] = @project.thumbnail_content_type
-      redirect @project.thumbnail.url
+      redirect_to @project.thumbnail.url
     end
   end
 
