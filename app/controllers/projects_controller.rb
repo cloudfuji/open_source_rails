@@ -74,17 +74,17 @@ class ProjectsController < ApplicationController
   
   def icon
     @project = Project.find_by_source_url(params[:repo])
+    response.headers['Content-Disposition'] = 'inline'
 
-    #image/png
+    # image/png
     if @project.nil? or params[:repo].nil?
       response.headers['Content-Type'] = 'image/png'
       image_path = "#{Rails::root.to_s}/public/images/generic.png"
+      render :text => File.read(image_path)
     else
       response.headers['Content-Type'] = @project.thumbnail_content_type
-      image_path = @project.thumbnail.url
+      redirect @project.thumbnail.url
     end
-    response.headers['Content-Disposition'] = 'inline'
-    render :text => Net::HTTP.get_response(URI.parse(image_path)).body
   end
 
   def github_info
