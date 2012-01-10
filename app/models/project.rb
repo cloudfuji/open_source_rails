@@ -39,6 +39,7 @@ class Project < ActiveRecord::Base
                                 :reject_if => proc { |attrs| attrs['image'].blank? }
 
   after_save :reprocess_thumbnail, :if => :cropping?
+  after_save :generate_slug
 
   def to_param
     slug
@@ -65,9 +66,12 @@ class Project < ActiveRecord::Base
   end
 
   private
-  
+
   def reprocess_thumbnail
     thumbnail.reprocess!
   end
 
+  def generate_slug
+    self.update_attribute(:slug, self.id) if not self.slug
+  end
 end
