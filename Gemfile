@@ -50,7 +50,7 @@ group :test, :development do
   gem 'fabrication'
   gem 'forgery'
   gem 'awesome_print'
-  gem 'tane', :git=>"https://github.com/Bushido/tane.git"
+  gem 'tane'
 end
 
 group :test do

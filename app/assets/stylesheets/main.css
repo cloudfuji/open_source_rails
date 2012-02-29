@@ -5,8 +5,9 @@ http://stever.ca
 http://www.cssstickyfooter.com
 */
 
-* {margin:0;
-padding:0;
+* {
+    margin:0;
+    padding:0;
 } 
 
 /* must declare 0 margins on everything, also for main layout components use padding, not 
@@ -177,6 +178,11 @@ ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
     -moz-border-radius: 5px !important;
     border-radius: 5px !important;
 }
+
+.external #feature_description{
+    width: 520px;
+}
+
 #feature_description {
     padding:5px 0 0 25px;
     float:left;
@@ -210,6 +216,12 @@ p.feature_discription_blue {
     text-shadow: 1px 1px 0px #FFFFFF;
     line-height:120%;
 }
+
+.external p.feature_info{
+    width: 570px;
+    font-size: 12pt;
+}
+
 p.feature_info {
     font-family:helvetica,sans-serif;
     color:#4c2d00;
@@ -251,24 +263,60 @@ p.feature_info {
     background: url("../images/border-small.png") no-repeat;
     
 }
+
+.external .app_logo{
+    width: 40px;
+    height: 40px;
+    background-size: 100%
+}
+
 .app_logo a, .app_logo img {
     -webkit-border-radius: 5px !important;
     -moz-border-radius: 5px !important;
     border-radius: 5px !important;
 }
+
+.external .app_discription{
+    width: auto;
+    height: auto;
+}
+
+.app_cell_header{
+    width: 100%;
+    height: 75px;
+    overflow: hidden;
+}
+
+.external p.description{
+    font-size: 12pt;
+    padding: 5px 0 0 25px;
+    height: 57px;
+    text-overflow: ellipsis;
+}
+
+.launch_note{
+    font-size: 8pt;
+    color: #000;
+    position: relative;
+    left: 40%;
+    opacity: 0.7;
+}
+
 .app_discription {
     padding:25px 0 0 5px;
     float:left;
     width:146px;
     height:110px;
 }
-p.title, p.title a {
+p.title, p.title a, p.description {
     font-family:helvetica,sans-serif;
     color:#003366;
     font-size:16pt;
     text-shadow: 1px 1px 0px #FFFFFF;
     text-decoration:none;
+    text-overflow: ellipsis;
 }
+
 p.subtitle {
     font-family:helvetica,sans-serif;
     color:#4c2d00;
@@ -349,6 +397,12 @@ p.discription {
     width:960px;
     height:140px;
 }
+
+.external .info_holder{
+    width: 910px;
+    padding-left: 25px;
+}
+
 .info_holder {
     padding:40px 0 25px 0;
     width:960px;

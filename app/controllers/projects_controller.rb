@@ -13,19 +13,43 @@ class ProjectsController < ApplicationController
     rescue Exception => e
       puts "No projects #{e}"
     end
-    
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @projects }
+    end
+
   end
 
 
   def external
-      @featured_project = FeaturedProject.includes(:project=>[:project_category]).
-                                        first.project                           
+      @featured_project = FeaturedProject.includes(:project=>[:project_category]).first.project                           
 
       @projects = Project.includes(:project_category).
                         where("id != ? AND approved = ?", @featured_project, true)
 
     render :layout => 'external'
 
+  end
+
+  def external_show
+    begin
+    @project = Project.includes(:project_category, :screenshots, :author).
+                       find_by_slug(params[:id])
+   
+    if @project.not_approved?
+        raise ActionController::RoutingError.new('Not Found')
+    end
+
+    @similar_projects = Project.includes(:project_category).
+                                where("approved = ? AND project_category_id = ? AND ID != ?",
+                                       true,
+                                       @project.project_category_id,
+                                       @project.id)
+    rescue Exception => e
+      raise ActionController::RoutingError.new('Not Found')
+    end  
+    render :layout => 'external'
   end
 
 

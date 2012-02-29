@@ -1,14 +1,43 @@
-<%- @projects.each do |p| %>
+<div id="apps_holder">
+  <% unless @projects.nil? or @projects.length == 0%>
+  <div id="slides">
+    <div class="slides_container">
+      <%- @counter = 0 %>
+      <%- @projects_count = @projects.count %>
+      <%- @projects.each do |p| %>
+      
+      <%- if @counter == 0 or (@counter % 6)==0 %>
+      <div class="slide_holder">
+	<%- end %>
+	<a href="/external/<%= p.slug %>" class="app">
+	  
+	  <div class="clearfix app_cell_header" >
+	    <div class="app_logo">
+	      <span><img src="<%= p.thumbnail.url(:medium) %>" /></span>
+	    </div>
 
-  <a href="http://bushi.do/apps/new?repo=<%= p.source_url %>" target="_top" class="app">
-    <div class="app_logo">
-      <span><img src="<%= p.thumbnail.url(:medium) %>" /></span>
+	    <div class="app_discription">
+	      <p class="title"><%= p.title %></p>
+	      <p class="subtitle"><%= p.project_category.name %></p><br/>
+	    </div>
+	  </div>
+	  <p class="description"><%= p.short_desc %></p>
+	  <span class="launch_note">click to launch</span>
 
-    </div>
-    <div class="app_discription">
-      <p class="title"><%= p.title %></p>
-      <p class="subtitle"><%= p.project_category.name %></p><br/>
-    </div>
-  </a>
+	</a>
 
-<%- end %>      
+	<%- if (@projects_count == @counter + 1) or (@counter+1)%6 == 0 %>
+      </div><!--closes slide holder -->
+      <%- end %>
+      <%- @counter = @counter.next %>
+      <%- end %>      
+    </div><!--closes slides container -->
+    <% unless @projects.count < 7 %>
+       <div id="arrow_holder">
+	 <a href="#" class="prev"><img src="/images/arrow-prev.png" alt="Arrow Prev"></a>
+	 <a href="#" class="next"><img src="/images/arrow-next.png" alt="Arrow Next"></a>
+       </div>
+       <% end %>
+  </div>
+  <% end %>
+</div>

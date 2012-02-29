@@ -1,6 +1,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails.validations
+//= require_tree ./vendor
+
 
 if(typeof window.console === 'undefined'){
    window.console = {log: function(){return false;}};
