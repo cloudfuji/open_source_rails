@@ -11,7 +11,7 @@ gem 'airbrake'
 
 # Authentication
 gem 'devise'
-gem 'devise_bushido_authenticatable', :git=>"https://github.com/Bushido/devise_cas_authenticatable.git"
+gem 'devise_bushido_authenticatable'
 
 # Network related
 gem 'nestful'
@@ -50,7 +50,7 @@ group :test, :development do
   gem 'fabrication'
   gem 'forgery'
   gem 'awesome_print'
-  gem 'tane', :git=>"https://github.com/Bushido/tane.git"
+  gem 'tane'
 end
 
 group :test do
