@@ -83,7 +83,7 @@ class ProjectsController < ApplicationController
       render :text => File.read(image_path)
     else
       response.headers['Content-Type'] = @project.thumbnail_content_type
-      redirect @project.thumbnail.url
+      redirect_to @project.thumbnail.url
     end
   end
 
