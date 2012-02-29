@@ -7,7 +7,8 @@ gem 'rails', '3.1.3'
 gem 'pg'
 
 # All-around goodness
-gem 'bushido', :git=>"https://github.com/Bushido/bushidogem.git"
+gem 'bushido'
+gem 'airbrake'
 
 # Authentication
 gem 'devise'
