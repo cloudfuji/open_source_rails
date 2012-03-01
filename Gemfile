@@ -9,6 +9,8 @@ gem 'pg'
 # All-around goodness
 gem 'airbrake'
 
+gem 'bushido'
+
 # Authentication
 gem 'devise'
 gem 'devise_bushido_authenticatable'
