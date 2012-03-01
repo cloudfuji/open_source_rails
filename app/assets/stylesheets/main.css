@@ -218,7 +218,7 @@ p.feature_discription_blue {
 }
 
 .external p.feature_info{
-    width: 570px;
+    width: 536px;
     font-size: 12pt;
 }
 
@@ -369,6 +369,12 @@ p.discription {
 #submit:hover {
      background-position:0 -58px;
 }
+
+.external .line_break{
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
 .line_break {
     display:block;
     width:930px;
@@ -384,6 +390,11 @@ p.discription {
 */
 #showcase_padd {
     padding-top:80px;
+}
+
+.external #showcase_holder{
+    height:430px;
+    background-size: 960px 430px;
 }
 
 #showcase_holder {
@@ -481,7 +492,7 @@ p.info_new_blue, p.info_new_blue a {
 }
 
 .tab_content .back_link{
-    bottom: 0px;
+    bottom: 25px;
     top: auto !important;
     color: #000;
 }
