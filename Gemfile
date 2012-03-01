@@ -7,11 +7,11 @@ gem 'rails', '3.1.3'
 gem 'pg'
 
 # All-around goodness
-gem 'bushido', :git=>"https://github.com/Bushido/bushidogem.git"
+gem 'airbrake'
 
 # Authentication
 gem 'devise'
-gem 'devise_bushido_authenticatable', :git=>"https://github.com/Bushido/devise_cas_authenticatable.git"
+gem 'devise_bushido_authenticatable'
 
 # Network related
 gem 'nestful'
