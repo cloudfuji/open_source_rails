@@ -1,3 +1,4 @@
+
 source 'http://rubygems.org'
 
 # Core rails gems
@@ -19,6 +20,7 @@ gem 'devise_bushido_authenticatable'
 gem 'nestful'
 gem 'heroku'
 gem 'thin'
+gem 'aws-sdk'
 gem 'aws-s3'
 
 # Model behavior
