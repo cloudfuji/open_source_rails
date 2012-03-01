@@ -11,8 +11,9 @@ Osrails::Application.routes.draw do
   
   match '/projects/icon' => 'projects#icon'
 
-  match '/external' => 'projects#external'
-  match '/external/:id' => 'projects#external_show'  
+  match '/external' => 'external#index'
+  match '/external/:id' => 'external#show'  
+  match '/proxy'=> 'external#proxy'
 
   resources :projects
 
