@@ -268,6 +268,12 @@ p.feature_info {
     width: 40px;
     height: 40px;
     background-size: 100%
+    padding: 5px 0 0 5px;
+}
+
+.external .app_logo{
+    width: 35px;
+    height: 35px;
 }
 
 .app_logo a, .app_logo img {
@@ -926,6 +932,12 @@ p.bs {
    left:602px;
    z-index:9000;
 }
+
+.external .screenshot_holder .slides_control img{
+    height: 380px !important;
+    margin-left: -25px;
+}
+
 /* sets slide img height: */
 .screenshot_holder .slides_control img{
     width:938px !important;
