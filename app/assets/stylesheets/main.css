@@ -298,6 +298,7 @@ p.feature_info {
     padding: 5px 0 0 25px;
     height: 57px;
     text-overflow: ellipsis;
+    width: 280px;
 }
 
 .launch_note{
@@ -658,6 +659,11 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  { /*--Makes sure that 
 /*
 	Next/prev buttons
 */
+
+.external #arrow_holder{
+    left: 285px;
+}
+
 #arrow_holder {
     width:332px;
     height:20px;
