@@ -6,21 +6,21 @@ class Project < ActiveRecord::Base
   has_one :author, :dependent => :destroy
   has_many :screenshots, :dependent => :destroy
  
-  # has_attached_file :thumbnail,
-  #                   :storage        => :s3,
-  #                   :s3_credentials => "config/s3.yml",
-  #                   :styles         => { :medium => "100x100", :large => "150x150" },
-  #                   :url            => "/:attachment/:id/:style/:basename.:extension",
-  #                   :path           => "#{ENV['S3_PREFIX']}/:attachment/:id/:style/:basename.:extension",
-  #                   :processors     => [:cropper]
-
-  # quick dev env compatibility
-  #
   has_attached_file :thumbnail,
-                    :styles=>{:medium=>"100x100", :large=>"150x150"},
-                    :url => "/store/:attachment/:id/:style/:basename.:extension",
-                    :path => ":rails_root/permanent/store/:attachment/:id/:style/:basename.:extension",
-                    :processors => [:cropper]
+                    :storage        => :s3,
+                    :s3_credentials => "config/s3.yml",
+                    :styles         => { :medium => "100x100", :large => "150x150" },
+                    :url            => "/:attachment/:id/:style/:basename.:extension",
+                    :path           => "#{ENV['S3_PREFIX']}/:attachment/:id/:style/:basename.:extension",
+                    :processors     => [:cropper]
+
+  # # quick dev env compatibility
+  # 
+  # has_attached_file :thumbnail,
+  #                   :styles=>{:medium=>"100x100", :large=>"150x150"},
+  #                   :url => "/store/:attachment/:id/:style/:basename.:extension",
+  #                   :path => ":rails_root/permanent/store/:attachment/:id/:style/:basename.:extension",
+  #                   :processors => [:cropper]
 
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
