@@ -385,6 +385,7 @@ p.discription {
 #showcase_padd {
     padding-top:80px;
 }
+
 #showcase_holder {
     padding:0 0 0 0;
     position:relative;
@@ -468,6 +469,31 @@ p.info_new_blue, p.info_new_blue a {
 /*
         Tabs
 */
+
+.back_link{
+    position: absolute;
+    font-size: 8pt;
+    text-decoration: none;
+    top: 10px;
+    left: 25px;
+    z-index: 10000;
+    color: #FFF;
+}
+
+.tab_content .back_link{
+    bottom: 0px;
+    top: auto !important;
+    color: #000;
+}
+
+.back_link:hover{
+    text-decoration: underline;
+}
+
+.external #bottom_ribbon{
+    display:none;
+}
+
 #bottom_ribbon {
     margin:0 0 0 -21px;
     z-index:-200;
