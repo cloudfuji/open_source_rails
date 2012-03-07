@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bushido</title>
+  <title>Proxy Page</title>
   <%= csrf_meta_tag %>
   <meta http-equiv="CACHE-CONTROL" content="PUBLIC"/>
   <meta http-equiv="EXPIRES" content="Sat, 01 Jan 2050 00:00:00 GMT"/>
-	<%= stylesheet_link_tag "reset.css" %>
 	<style type="text/css">
 	  html, body{
 	    height: 100%;
@@ -59,22 +58,18 @@
 		    }
 		}
 	</script>
-	<script type="text/javascript" src="/javascripts/easyXDM-2.4.15.118/easyXDM.min.js"></script>
+	<script type="text/javascript" src="/assets/vendor/easyXDM-2.4.15.118/easyXDM.debug.js"></script>
 	<script type="text/javascript">
-	easyXDM.DomHelper.requiresJSON("/javascripts/easyXDM-2.4.15.118/json2.js");
+	easyXDM.DomHelper.requiresJSON("/assets/vendor/easyXDM-2.4.15.118/json2.js");
 
-	
+
 	var rpc = new easyXDM.Rpc({}, {
 	    remote: {
-	        signUpModal: {}
-	        ,openModal: {}
-	        ,closeModal: {}
-	        ,closeAll: {}
-	        ,refreshBar: {}
-	        ,resizeModal: {}
+	        loginModal: {}
 	    }
 	});
 	
+	console.log("proxoy window rpc is ready", window.rpc);
 	</script>
 </body>
 </html>

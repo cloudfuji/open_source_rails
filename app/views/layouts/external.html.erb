@@ -21,10 +21,6 @@
       <div id="main" class="no_margin">
   	    <%= yield %>
       </div>
-  <script type="text/javascript">
-    window.onload = function(){
-     $('body').css('background', '#FFF !important');
-    };
-  </script>
+      <%= javascript_include_tag :external_application %>
   </body>
 </html>
