@@ -5,10 +5,13 @@ window.onload = function(){
 $(function(){
     var rpc = window.parent.rpc;
 
-    $('#launch').click(function(e){
-	e.preventDefault();
-	console.log(window.parent.rpc);
-	window.parent.rpc.launchModal($(this).attr('href'));
-	return false;
-    });
+    if(typeof window.parent.rpc != 'undefined'){
+	$('#launch').click(function(e){
+	    e.preventDefault();
+	    console.log(window.parent.rpc);
+	    window.parent.rpc.launchModal($(this).attr('href'));
+	    return false;
+	});
+    }
+
 });
