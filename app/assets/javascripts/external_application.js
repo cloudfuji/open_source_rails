@@ -1,5 +1,7 @@
 window.onload = function(){
-    $('body').css('background', '#FFF !important');
+    if(!$('body').hasClass('video'){
+	$('body').css('background', '#FFF !important');
+    }
 };
 
 $(function(){
@@ -12,10 +14,6 @@ $(function(){
 	    window.parent.rpc.launchModal($(this).attr('href'));
 	    return false;
 	});
-    }
-
-    if(window.parent.location.host == "embed.vidyard.com" && $("#apps_holder").length > 0){
-	$('body').prepend('<h1 style="margin-bottom:10px;color:#FFF;">Get Started With Bushido. Try An App Below.</h1>');
     }
 
 });

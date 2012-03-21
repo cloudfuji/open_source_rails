@@ -17,15 +17,10 @@
     <%= yield(:head) %>
     
   </head>
-  <body class="no_background external">
+  <body class="no_background external<%= (params[:video]) ? ' video' : '' %>">
       <div id="main" class="no_margin">
   	    <%= yield %>
       </div>
       <%= javascript_include_tag :external_application %>
-      <script type="text/javascript">
-	if(window.parent.location.host == 'embed.vidyard.com'){
-	  document.getElementsByTagName('body')[0].style.backgroundColor = '#FFFFFF';
-	}
-      </script>
   </body>
 </html>

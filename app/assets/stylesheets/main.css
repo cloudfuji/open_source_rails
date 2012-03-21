@@ -18,6 +18,16 @@ html, body {
     height: 100%;
 }
 
+body.video{
+    background-color: #000 !important;
+}
+
+body.video h1{
+    color: #FFF;
+    padding: 10px 5px;
+    font-size: 20px;
+}
+
 #wrap {
     min-height: 100%;
 }
