@@ -14,4 +14,8 @@ $(function(){
 	});
     }
 
+    if(window.parent.location.host == "embed.vidyard.com" && $("#apps_holder").length > 0){
+	$('body').prepend('<h1 style="margin-bottom:10px;color:#FFF;">Get Started With Bushido. Try An App Below.</h1>');
+    }
+
 });
