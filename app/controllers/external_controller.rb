@@ -2,6 +2,8 @@ class ExternalController < ApplicationController
   caches_page :external
 
   def index
+    return redirect_to "/external/#{@project.slug}" if @project = Project.find_by_slug(params[:project])
+
       @featured_project = FeaturedProject.includes(:project=>[:project_category]).first.project                           
 
       @projects = Project.includes(:project_category).
