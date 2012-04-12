@@ -8,8 +8,12 @@ class ExternalController < ApplicationController
 
       @projects = Project.includes(:project_category).
                         where("id != ? AND approved = ?", @featured_project, true)
-
-    render :layout => 'external'
+    respond_to do |format|
+      format.html do 
+        render :layout => 'external'
+      end
+      format.json { render :json => @projects, :callback => params[:callback]}
+    end
 
   end
 
@@ -29,8 +33,14 @@ class ExternalController < ApplicationController
                                        @project.id)
     rescue Exception => e
       raise ActionController::RoutingError.new('Not Found')
-    end  
-    render :layout => 'external'
+    end
+
+    respond_to do |format|
+      format.html do
+        render :layout => 'external'
+      end
+      format.json { render :json => @projects, :callback => params[:callback]}
+    end
   end
   
   def proxy
