@@ -53,6 +53,22 @@ class Project < ActiveRecord::Base
     slug
   end
 
+  def medium_thumbnail_url
+    thumbnail.url(:medium)
+  end
+
+  def small_thumbnail_url
+    thumbnail.url(:small)
+  end
+
+  def large_thumbnail_url
+    thumbnail.url(:large)
+  end
+
+  def as_json(options={})
+    super(:methods => [:medium_thumbnail_url, :small_thumbnail_url, :large_thumbnail_url])
+  end
+
   # approved is a boolean field and approved? is made available by rails
   # returns true if the project is not approved
   def not_approved?
@@ -82,4 +98,5 @@ class Project < ActiveRecord::Base
   def generate_slug
     self.update_attribute(:slug, self.id) if not self.slug
   end
+
 end
