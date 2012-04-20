@@ -1,5 +1,5 @@
 window.onload = function(){
-    if(!$('body').hasClass('video'){
+    if(!$('body').hasClass('video')){
 	$('body').css('background', '#FFF !important');
     }
 };
