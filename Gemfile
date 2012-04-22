@@ -6,15 +6,16 @@ gem 'rails', '3.1.3'
 
 # Database gems
 gem 'pg'
+gem 'sqlite3'
 
 # All-around goodness
 gem 'airbrake'
 
-gem 'bushido'
+gem 'cloudfuji'
 
 # Authentication
 gem 'devise'
-gem 'devise_bushido_authenticatable'
+gem 'devise_cloudfuji_authenticatable'
 
 # Network related
 gem 'nestful'
