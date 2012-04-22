@@ -11,11 +11,11 @@ gem 'sqlite3'
 # All-around goodness
 gem 'airbrake'
 
-gem 'cloudfuji'
+gem 'bushido'
 
 # Authentication
 gem 'devise'
-gem 'devise_cloudfuji_authenticatable'
+gem 'devise_bushido_authenticatable'
 
 # Network related
 gem 'nestful'
