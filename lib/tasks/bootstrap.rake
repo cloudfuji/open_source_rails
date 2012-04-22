@@ -13,6 +13,6 @@ task :bootstrap => :environment do
                        :source_url => "https://kevzettler@github.com/Bushido/bushido.git",
                        )
   end
+
   fp = FeaturedProject.create(:project => Project.first)
 end
-

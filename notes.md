@@ -83,7 +83,7 @@ Setting up devise with CAS auth (client) in third party Bushido Rails applicatio
 * Now find the devise initializer at _config/initializers/devise.rb_ and set the CAS base url. For localhost testing, with default options for rubycas-server, the config would look like
   
         if Rails.env.production?
-            # TODO add bushido CAS url later
+            # TODO add cloudfuji CAS url later
         else
             config.cas_base_url = "https://localhost:3001/cas"
         end
