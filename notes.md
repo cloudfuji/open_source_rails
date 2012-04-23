@@ -4,9 +4,9 @@ NOTES
 Localhost development setup
 -----------------------------
  
-This section helps you simulate Bushido authentication on your localhost for your development purposes.
+This section helps you simulate Cloudfuji authentication on your localhost for your development purposes.
 
-* Clone the rails app at <https://github.com/Bushido/kagi>
+* Clone the rails app at <https://github.com/cloudfuji/kagi>
 
 * Update the git module rubycas-server
 
@@ -44,10 +44,10 @@ This section helps you simulate Bushido authentication on your localhost for you
 
 * Then signup for a user account at <https://localhost:3001/users/sign_up> and thats how you sign up for more accounts when you need them :)
 
-* Just leave this rails app running when you test your applications. And follow the next section to setup user authentication for your Bushido Rails app.
+* Just leave this rails app running when you test your applications. And follow the next section to setup user authentication for your Cloudfuji Rails app.
 
 
-Setting up devise with CAS auth (client) in third party Bushido Rails applications
+Setting up devise with CAS auth (client) in third party Cloudfuji Rails applications
 -----------------------------------------------------------
 
 * Add the gem "devise_cas_authenticatable" to your Gemfile and do a

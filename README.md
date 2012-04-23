@@ -1,7 +1,7 @@
-Bushido OpenSourceRails
+Open-source Rails
 ================
 
-Uses new Bushido Auth. For local testing, set the cas_base_url in the devise initializer to http://sandbox.auth.bushi.do/cas 
+Uses new Cloudfuji Auth. For local testing, set the cas_base_url in the devise initializer to http://cloudfuji.com/cas 
 
 Local setup
 ------------

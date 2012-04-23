@@ -29,7 +29,7 @@ describe Project do
       end
     
       it "valid value"  do
-        should allow_values_for(:source_url, "https://github.com/bushido/opensourcerails.git")
+        should allow_values_for(:source_url, "https://github.com/cloudfuji/open_source_rails.git")
       end
 
       it "invalid value" do

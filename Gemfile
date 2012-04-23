@@ -6,6 +6,7 @@ gem 'rails', '3.1.3'
 
 # Database gems
 gem 'pg'
+gem 'sqlite3'
 
 # All-around goodness
 gem 'airbrake'

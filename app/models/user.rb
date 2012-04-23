@@ -5,12 +5,12 @@ class User < ActiveRecord::Base
   has_many :bookmarks
   has_many :projects
   
-  devise :bushido_authenticatable, :trackable
+  devise :cloudfuji_authenticatable, :trackable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :ido_id, :password, :password_confirmation, :remember_me
 
-  def bushido_extra_attributes(extra_attributes)
+  def cloudfuji_extra_attributes(extra_attributes)
     extra_attributes.each do |name, value|
       case name.to_sym
       when :email
