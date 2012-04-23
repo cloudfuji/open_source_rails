@@ -10,7 +10,7 @@ task :bootstrap => :environment do
                        :title => "project#{i}",
                        :short_desc => "lol cool project bro",
                        :homepage_url => "http://cloudfuji.com",
-                       :source_url => "https://kevzettler@github.com/Bushido/bushido.git",
+                       :source_url => "https://kevzettler@github.com/cloudfuji/cloudfuji_server.git",
                        )
   end
 
