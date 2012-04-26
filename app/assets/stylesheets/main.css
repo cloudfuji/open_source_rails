@@ -191,6 +191,28 @@ ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
 
 .external #feature_description{
     width: 520px;
+    height: auto;
+}
+
+.external #showcase_padd {
+  padding: 0;
+}
+
+.external .tab_content{
+ height: auto;
+}
+
+.external #screenshots{
+ margin-top: 20px
+}
+
+.external h2{
+ font-weight: normal
+}
+
+.external #arrow_holder, .external .pagination{
+  position: relative;
+  left: 43px !important
 }
 
 #feature_description {
@@ -425,11 +447,6 @@ p.discription {
     padding:0 0 25px 0;
     width:960px;
     height:140px;
-}
-
-.external .info_holder{
-    width: 910px;
-    padding-left: 25px;
 }
 
 .info_holder {
@@ -966,7 +983,7 @@ p.bs {
     border-bottom-left-radius: 5px;
 }
 .no_background{
-    background:none !important;
+    background:#FFF !important
 }
 .no_margin{
     margin:0 !important;
