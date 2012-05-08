@@ -206,13 +206,17 @@ ul#list-nav li.active a:link, ul#list-nav li.active a:visited{
  margin-top: 20px
 }
 
+.external .slides_container{
+ width: 843px;
+ margin: 0 auto;
+}
+
 .external h2{
  font-weight: normal
 }
 
 .external #arrow_holder, .external .pagination{
   position: relative;
-  left: 43px !important
 }
 
 #feature_description {
